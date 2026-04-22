@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./public/images:/app/public/images
+    env_file:
+      - .env
+    restart: always
+
+# Note: This configuration assumes you run 'docker-compose up -d' 
+# on your VPS. It maps the local public/images folder to the container,
+# allowing uploaded images to persist across rebuilds.

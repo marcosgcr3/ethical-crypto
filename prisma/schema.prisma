@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  id             String    @id @default(uuid())
+  title          String
+  slug           String    @unique
+  content        String
+  excerpt        String
+  imageUrl       String?
+  amazonProducts Json?
+  category       String?
+  published      Boolean   @default(false)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  reviewerId     String?
+  reviewer       Reviewer? @relation(fields: [reviewerId], references: [id])
+}
+
+model Reviewer {
+  id       String    @id @default(uuid())
+  name     String
+  title    String
+  imageUrl String?
+  bio      String?
+  articles Article[]
+}
+
+model Subscriber {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model SecurityLog {
+  id          String    @id @default(uuid())
+  ip          String
+  attempts    Int       @default(0)
+  lastAttempt DateTime  @default(now())
+  isLocked    Boolean   @default(false)
+  lockedUntil DateTime?
+}

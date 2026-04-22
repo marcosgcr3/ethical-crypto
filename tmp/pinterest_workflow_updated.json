@@ -1,0 +1,388 @@
+{
+  "id": "syd0sFTAm4fGIWst",
+  "name": "pinterest",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "01db70e3-7397-4638-b40b-36438ed8ddc5",
+      "name": "⏰ Cada 12 Horas",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -3664,
+        1296
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://ethicalbiohacking.com/sitemap.xml",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "fc3db4cb-4c55-4e84-96d9-5f7c3ec754d8",
+      "name": "🗺 Fetch Sitemap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3440,
+        1296
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse sitemap XML and aggregate all articles into a single item\nconst xmlText = $input.first().json.data;\n\n// Extract all <loc> URLs\nconst urlMatches = xmlText.match(/<loc>([^<]+)<\\/loc>/g) || [];\nconst allUrls = urlMatches.map(m => m.replace(/<\\/?loc>/g, '').trim());\n\n// Filter to article URLs only (exclude sitemap index, homepage, etc.)\nconst articleUrls = allUrls.filter(url => {\n  return (\n    url.includes('ethicalbiohacking.com') &&\n    !url.match(/sitemap/) &&\n    !url.match(/\\.xml$/) &&\n    url.split('/').filter(Boolean).length >= 4\n  );\n});\n\n// Category detection from URL path segments\nconst categorize = (url) => {\n  const lower = decodeURIComponent(url).toLowerCase();\n  if (lower.match(/sue[nñ]o|sleep/)) return 'Sueño';\n  if (lower.match(/nutrici[oó]n|nutrition|dieta|diet/)) return 'Nutrición';\n  if (lower.match(/ejercicio|exercise|fitness|entren/)) return 'Ejercicio';\n  if (lower.match(/mente|mind|cogni|neuro|cerebro/)) return 'Mente';\n  if (lower.match(/longevidad|longevity|aging|envejecimiento/)) return 'Longevidad';\n  if (lower.match(/suplemento|supplement|nootropi/)) return 'Suplementos';\n  if (lower.match(/ayuno|fasting/)) return 'Ayuno';\n  if (lower.match(/hormona|hormone|testoster|cortisol/)) return 'Hormonas';\n  if (lower.match(/estres|stress|cortisol/)) return 'Estrés';\n  return 'Biohacking';\n};\n\nconst hashtagMap = {\n  'Sueño':       '#Sueño #SleepOptimization #Biohacking',\n  'Nutrición':   '#Nutrición #NutriHacking #Biohacking',\n  'Ejercicio':   '#Ejercicio #PerformanceHacking #Biohacking',\n  'Mente':       '#Neurohacking #MindOptimization #Biohacking',\n  'Longevidad':  '#Longevidad #Longevity #Biohacking',\n  'Suplementos': '#Suplementos #Nootropics #Biohacking',\n  'Ayuno':       '#AyunoIntermitente #Fasting #Biohacking',\n  'Hormonas':    '#Hormonas #HormoneOptimization #Biohacking',\n  'Estrés':      '#GestiónDelEstrés #StressHacking #Biohacking',\n  'Biohacking':  '#Biohacking #EthicalBiohacking #Optimización'\n};\n\nconst articles = articleUrls.map(url => {\n  const category = categorize(url);\n  return {\n    url,\n    category,\n    hashtags: hashtagMap[category] || hashtagMap['Biohacking']\n  };\n});\n\nconsole.log(`Sitemap parsed: ${articles.length} articles found`);\n\nreturn [{ json: { articles } }];"
+      },
+      "id": "0ab2ce50-a002-40e7-9a7a-53bf25f47e31",
+      "name": "🔍 Parsear & Categorizar Sitemap",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -3216,
+        1296
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CREATE TABLE IF NOT EXISTS pinterest_biohacking_published (\n  id SERIAL PRIMARY KEY,\n  url TEXT UNIQUE NOT NULL,\n  category TEXT,\n  tweet_text TEXT,\n  published_at TIMESTAMPTZ DEFAULT NOW()\n);\nSELECT url, category FROM pinterest_biohacking_published ORDER BY published_at ASC;",
+        "options": {}
+      },
+      "id": "bac41177-199f-48b6-9430-1052b8e02099",
+      "name": "🗄 Leer Historial (DB)",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        -2992,
+        1296
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "HtpIZqTdofqZTWjJ",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all sitemap articles (from node-003 upstream)\nconst sitemapNode = $('🔍 Parsear & Categorizar Sitemap');\nconst articles = sitemapNode.first().json.articles;\n\n// Get all published records from Postgres results\nconst publishedItems = $input.all();\n\nconst publishedUrls = new Set(\n  publishedItems\n    .filter(item => item.json && item.json.url)\n    .map(item => item.json.url.trim())\n);\n\n// Get the LAST published category (most recent row)\n// Postgres returns rows ordered by published_at ASC so last element = most recent\nconst lastPublishedItem = publishedItems\n  .filter(item => item.json && item.json.category)\n  .at(-1);\n\nconst lastCategory = lastPublishedItem?.json?.category || null;\n\nconsole.log(`Published: ${publishedUrls.size} | Sitemap: ${articles.length} | Last category: ${lastCategory}`);\n\n// Find FIRST unpublished article that is NOT from the last category\nlet newArticle = articles.find(a => !publishedUrls.has(a.url) && a.category !== lastCategory);\n\n// Fallback: if all unpublished articles belong to the same last category, ignore the filter\nif (!newArticle) {\n  newArticle = articles.find(a => !publishedUrls.has(a.url));\n}\n\nif (!newArticle) {\n  console.log('No new articles to publish.');\n  return [{ json: { hasNew: false, url: null, category: null, hashtags: null } }];\n}\n\nconsole.log(`New article found: ${newArticle.url} | Category: ${newArticle.category}`);\nreturn [{ json: { hasNew: true, ...newArticle } }];"
+      },
+      "id": "43ec9f56-a6a9-4e58-a0a9-1e6f6903cd82",
+      "name": "🧠 Seleccionar Artículo Nuevo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2784,
+        1296
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "cond-hasnew",
+              "leftValue": "={{ $json.hasNew }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0cf882fe-0a0b-4151-898e-0cf19c37bdac",
+      "name": "¿Hay Novedades?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2560,
+        1296
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "4aebdc32-a931-4be3-8726-b374d239c2e2",
+      "name": "📄 Fetch Contenido Artículo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2336,
+        1152
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract metadata from raw HTML\nconst html = $input.first().json.data || '';\n\n// Get context from upstream IF node\nconst context = $('¿Hay Novedades?').first().json;\nconst articleUrl = context.url;\nconst category   = context.category;\nconst hashtags   = context.hashtags;\n\n// --- Title ---\nconst titleMatch = html.match(/<title[^>]*>([^<]+)<\\/title>/i);\nlet title = titleMatch ? titleMatch[1] : '';\ntitle = title.replace(/\\s*[|\\-–—]\\s*[^|\\-–—]{1,50}$/, '').trim();\n\n// --- Meta Description ---\nconst descMatch =\n  html.match(/<meta[^>]+name=[\"']description[\"'][^>]+content=[\"']([^\"']+)[\"']/i) ||\n  html.match(/<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+name=[\"']description[\"']/i) ||\n  html.match(/<meta[^>]+property=[\"']og:description[\"'][^>]+content=[\"']([^\"']+)[\"']/i);\nconst description = descMatch ? descMatch[1].trim() : '';\n\n// --- First meaningful paragraphs ---\nconst paragraphs = [];\nconst pRegex = /<p[^>]*>(.*?)<\\/p>/gi;\nlet match;\nwhile ((match = pRegex.exec(html)) !== null) {\n  const clean = match[1].replace(/<[^>]+>/g, '').trim();\n  if (clean.length > 60) paragraphs.push(clean);\n  if (paragraphs.length >= 4) break;\n}\nconst firstParagraphs = paragraphs.join(' ').substring(0, 900);\n\n// --- Image ---\nconst imgMatch = html.match(/<meta[^>]+property=[\"']og:image[\"'][^>]+content=[\"']([^\"']+)[\"']/i);\nconst imageUrl = imgMatch ? imgMatch[1].trim() : '';\n\nconsole.log(`Extracted - Title: \"${title}\" | Desc length: ${description.length} | Img: ${imageUrl} | Paragraphs: ${paragraphs.length}`);\n\nreturn [{\n  json: {\n    url: articleUrl,\n    category,\n    hashtags,\n    title,\n    description,\n    firstParagraphs,\n    imageUrl\n  }\n}];"
+      },
+      "id": "4ea834a8-1b67-46e2-bdb4-3af544eebbb7",
+      "name": "🔬 Extraer Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2112,
+        1152
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "responses": {
+          "values": [
+            {
+              "content": "=You are an expert in ethical biohacking and social media marketing. Generate Pinterest pin descriptions in ENGLISH for the blog ethicalbiohacking.com.\n\nRules:\n- Maximum 450 characters\n- Start with a relevant emoji and a catchy hook\n- Include 3-5 relevant hashtags at the end (#biohacking #longevity #health etc)\n- Share a concrete fact or spark curiosity that encourages clicking the link\n- Do NOT include the URL in your response\n- Return ONLY the pin description text\n\nGenerate a pin description for this article:\nTitle: {{ $json.title }}\nDescription: {{ $json.description }}\nCategory: {{ $json.category }}\nParagraphs: {{ $json.firstParagraphs }}"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        -1904,
+        960
+      ],
+      "id": "a7c17f85-f9d8-48ac-b9a0-b65929a2ad26",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "1xLpJ2tcklEPWRNT",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build final Pin description\nconst aiResponse = $input.first().json;\nconst metadata   = $('🔬 Extraer Metadata').first().json;\n\n// Extract text from OpenAI response\nlet pinText = '';\nif (aiResponse.message && aiResponse.message.content) {\n  pinText = aiResponse.message.content;\n} else if (aiResponse.choices && aiResponse.choices[0]) {\n  pinText = aiResponse.choices[0].message.content;\n} else if (typeof aiResponse === 'string') {\n  pinText = aiResponse;\n}\npinText = pinText.replace(/^\"|\"$/g, '').replace(/\\n+/g, '\\n').trim();\n\nconst url      = metadata.url;\nconst hashtags = metadata.hashtags;\n\n// Pinterest description limit is 500 characters\nconst maxChars = 500;\n\nif (pinText.length > maxChars) {\n  pinText = pinText.substring(0, maxChars - 3) + '...';\n}\n\nconsole.log(`Pin built (${pinText.length} chars visible):\\n${pinText}`);\n\nreturn [{\n  json: {\n    pinContent: pinText,\n    pinText,\n    url,\n    category: metadata.category,\n    imageUrl: metadata.imageUrl,\n    charCount: pinText.length\n  }\n}];"
+      },
+      "id": "74bf3cb2-2796-4d78-a2fe-c7c09a32b57f",
+      "name": "🔧 Construir Pin Final",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1664,
+        1152
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO pinterest_biohacking_published (url, category, tweet_text, published_at)\nVALUES (\n  '{{ $('🔧 Construir Pin Final').first().json.url.replace(/'/g, \"''\") }}',\n  '{{ $('🔧 Construir Pin Final').first().json.category }}',\n  '{{ $('🔧 Construir Pin Final').first().json.pinText.replace(/'/g, \"''\").replace(/\\n/g, ' ') }}',\n  NOW()\n)\nON CONFLICT (url) DO NOTHING;",
+        "options": {}
+      },
+      "id": "1db4c564-987d-4a71-9642-6c472d657179",
+      "name": "💾 Guardar en DB (Anti-duplicados)",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        -1232,
+        1152
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "HtpIZqTdofqZTWjJ",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "cedd2df2-7d0e-4963-bbdf-10e1b6fef4a0",
+      "name": "🛑 Sin Novedades — Stop",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2336,
+        1440
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.pinterest.com/v5/pins",
+        "authentication": "oAuth2",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"board_id\": \"YOUR_BOARD_ID_HERE\",\n  \"link\": \"{{ $('🔧 Construir Pin Final').item.json.url }}\",\n  \"title\": \"{{ $('🔬 Extraer Metadata').item.json.title }}\",\n  \"description\": \"{{ $('🔧 Construir Pin Final').item.json.pinContent }}\",\n  \"media_source\": {\n    \"source_type\": \"image_url\",\n    \"url\": \"{{ $('🔧 Construir Pin Final').item.json.imageUrl }}\"\n  }\n}"
+      },
+      "id": "e43b1767-1111-4444-9999-6c472d657179",
+      "name": "📌 Publish to Pinterest API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1456,
+        1168
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "",
+          "name": ""
+        }
+      }
+    }
+  ],
+  "connections": {
+    "⏰ Cada 12 Horas": {
+      "main": [
+        [
+          {
+            "node": "🗺 Fetch Sitemap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🗺 Fetch Sitemap": {
+      "main": [
+        [
+          {
+            "node": "🔍 Parsear & Categorizar Sitemap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔍 Parsear & Categorizar Sitemap": {
+      "main": [
+        [
+          {
+            "node": "🗄 Leer Historial (DB)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🗄 Leer Historial (DB)": {
+      "main": [
+        [
+          {
+            "node": "🧠 Seleccionar Artículo Nuevo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🧠 Seleccionar Artículo Nuevo": {
+      "main": [
+        [
+          {
+            "node": "¿Hay Novedades?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Hay Novedades?": {
+      "main": [
+        [
+          {
+            "node": "📄 Fetch Contenido Artículo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "🛑 Sin Novedades — Stop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📄 Fetch Contenido Artículo": {
+      "main": [
+        [
+          {
+            "node": "🔬 Extraer Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔬 Extraer Metadata": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "🔧 Construir Pin Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔧 Construir Pin Final": {
+      "main": [
+        [
+          {
+            "node": "📌 Publish to Pinterest API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📌 Publish to Pinterest API": {
+      "main": [
+        [
+          {
+            "node": "💾 Guardar en DB (Anti-duplicados)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,530 @@
+[
+  {
+    "path": "/",
+    "score": 0.89,
+    "performance": 0.7,
+    "accessibility": 0.95,
+    "best-practices": 0.92,
+    "seo": 1
+  },
+  {
+    "path": "/about",
+    "score": 0.82,
+    "performance": 0.41,
+    "accessibility": 0.94,
+    "best-practices": 0.92,
+    "seo": 1
+  },
+  {
+    "path": "/affiliate-disclosure",
+    "score": 0.96,
+    "performance": 0.96,
+    "accessibility": 0.94,
+    "best-practices": 0.92,
+    "seo": 1
+  },
+  {
+    "path": "/biohacking",
+    "score": 0.89,
+    "performance": 0.7,
+    "accessibility": 0.95,
+    "best-practices": 0.92,
+    "seo": 1
+  },
+  {
+    "path": "/contact",
+    "score": 0.88,
+    "performance": 0.68,
+    "accessibility": 0.9,
+    "best-practices": 0.92,
+    "seo": 1
+  },
+  {
+    "path": "/cookie-policy",
+    "score": 0.9,
+    "performance": 0.75,
+    "accessibility": 0.94,
+    "best-practices": 0.92,
+    "seo": 1
+  },
+  {
+    "path": "/disclaimer",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/guidelines",
+    "score": 0.98,
+    "performance": 0.98,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity-calculator",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/autophagy-guide-cellular-recycling-fasting",
+    "score": 0.98,
+    "performance": 0.96,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/bioethics-biohacking-nof1-experimentation-risks",
+    "score": 0.98,
+    "performance": 0.99,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/biological-age-testing-2026-epigenetic-clocks",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/blue-zones-vs-biohacking-ancestral-longevity",
+    "score": 0.98,
+    "performance": 0.99,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/epigenetics-functional-health-genetic-expression",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/ethical-biohacking-guide-2026",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/hormesis-mechanisms-cold-heat-longevity",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/longevity-biomarkers-essential-blood-tests",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/muscle-longevity-strength-predictor",
+    "score": 0.96,
+    "performance": 0.9,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/regenerative-medicine-2026-exosomes-stem-cells",
+    "score": 0.98,
+    "performance": 0.99,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/senolytic-nutrition-clear-zombie-cells",
+    "score": 0.96,
+    "performance": 0.9,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/telomere-science-2026-slowing-dna-shortening",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/longevity/vo2-max-longevity-cardiorespiratory-fitness",
+    "score": 0.97,
+    "performance": 0.93,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition",
+    "score": 0.98,
+    "performance": 0.98,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/anti-inflammatory-diet-pro-the-2026-protocol-to-combat-inflammaging",
+    "score": 0.96,
+    "performance": 0.91,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/berberine-vs-metformin-glucose-control-natural-biohacking",
+    "score": 0.98,
+    "performance": 0.98,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/best-hydrolyzed-collagen-2026-buyers-guide",
+    "score": 0.99,
+    "performance": 0.99,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/creatine-for-the-brain-why-this-bodybuilding-supplement-is-a-mental-longevity-essential",
+    "score": 0.97,
+    "performance": 0.95,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/fibermaxxing-gut-longevity-diet-protocol",
+    "score": 0.96,
+    "performance": 0.9,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/glp-1-diet-boost-satiety-naturally",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/gut-brain-axis-microbiome-mental-health-2026",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/heavy-metals-protein-powder-supplement-safety-testing",
+    "score": 0.98,
+    "performance": 0.96,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/intermittent-fasting-16-8-protocol-guide",
+    "score": 0.97,
+    "performance": 0.91,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/longevity-supplement-stack-2026-synergies",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/metabolic-flexibility-fat-adapted-science",
+    "score": 0.97,
+    "performance": 0.94,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/nutrient-density-vs-calories-functional-health-energy-optimization",
+    "score": 0.97,
+    "performance": 0.94,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/personalized-nutrigenomics-mthfr-apoe-guide",
+    "score": 0.99,
+    "performance": 1,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/top-5-natural-nootropics-focus-memory-2026",
+    "score": 0.99,
+    "performance": 1,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/nutrition/womens-biohacking-female-fasting-protocols",
+    "score": 0.98,
+    "performance": 0.96,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/privacy",
+    "score": 0.99,
+    "performance": 1,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/90-minute-pre-sleep-routine-biohacker-protocol",
+    "score": 0.97,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 0.96,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/best-sleep-supplements-2026-magnesium-glycine-melatonin",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/blue-light-glasses-sleep-analysis-2026",
+    "score": 0.98,
+    "performance": 0.98,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/deep-sleep-mastery",
+    "score": 0.98,
+    "performance": 0.99,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/hack-sleep-drive-adenosine-caffeine-timing",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/ideal-sleep-temperature-metabolism-18c",
+    "score": 0.98,
+    "performance": 0.98,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/insulin-resistance-sleep-metabolic-impact",
+    "score": 0.99,
+    "performance": 0.99,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/morning-sunlight-circadian-biohack",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/sleep-architecture-maximize-deep-sleep-rem",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/sleep-chronotype-manifesto-biology-productivity-hacking",
+    "score": 0.97,
+    "performance": 0.95,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/sleep-thermoregulation-smart-mattresses",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/sleep/social-jet-lag-hidden-circadian-disorder",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/terms",
+    "score": 0.99,
+    "performance": 1,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables",
+    "score": 0.98,
+    "performance": 0.98,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/active-wearables-3-0-real-time-biology-modification",
+    "score": 0.98,
+    "performance": 0.96,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/ai-health-coaches-2026-personalization-truth",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/ai-smart-glasses-healthcare-247",
+    "score": 0.98,
+    "performance": 0.96,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/best-biohacking-wearables-2026-apple-watch-oura-whoop",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/biohacking-data-privacy-biological-ownership-2026",
+    "score": 0.98,
+    "performance": 0.99,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/cgm-guide-non-diabetics-2026-metabolic-health",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/future-of-biohacking-beyond-wearables-neural-implants-2030",
+    "score": 0.98,
+    "performance": 0.95,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/hrv-mastery-guide-autonomic-nervous-system-2026",
+    "score": 0.98,
+    "performance": 0.97,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/red-light-therapy-2026-science-vs-hype",
+    "score": 0.98,
+    "performance": 0.96,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/senior-wearables-fall-detection-ecg-2026",
+    "score": 0.99,
+    "performance": 0.99,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/wearables/vagus-nerve-stimulation-anxiety-2026",
+    "score": 0.97,
+    "performance": 0.94,
+    "accessibility": 0.94,
+    "best-practices": 1,
+    "seo": 1
+  }
+]

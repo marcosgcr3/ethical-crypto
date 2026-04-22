@@ -3,17 +3,15 @@
 import { useState, useRef, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import { upsertArticle } from "@/app/ec-protocol-portal/actions";
-import LinkScanner from "./LinkScanner";
 
 export default function AdminForm({ 
   article 
 }: { 
-  article?: { id: string; title: string; slug: string; category: string; excerpt: string; imageUrl: string | null; content: string; published: boolean; amazonProducts?: any; createdAt?: Date | string | null } 
+  article?: { id: string; title: string; slug: string; category: string; excerpt: string; imageUrl: string | null; content: string; published: boolean; createdAt?: Date | string | null } 
 }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"content" | "links">("content");
 
   const [formData, setFormData] = useState({
     title: article?.title || "",
@@ -24,7 +22,6 @@ export default function AdminForm({
     content: article?.content || "",
     published: article?.published ?? true,
     createdAt: article?.createdAt ? new Date(article.createdAt).toISOString().slice(0, 16) : "",
-    amazonProducts: (article?.amazonProducts as any[]) || []
   });
 
   const [uploading, setUploading] = useState(false);
@@ -55,32 +52,6 @@ export default function AdminForm({
   const generateSlug = () => {
     const freshSlug = slugify(formData.title);
     setFormData({ ...formData, slug: freshSlug });
-  };
-
-  const addProduct = () => {
-    setFormData({
-      ...formData,
-      amazonProducts: [...formData.amazonProducts, { name: "", asin: "", url: "" }]
-    });
-  };
-
-  const removeProduct = (index: number) => {
-    const newProducts = [...formData.amazonProducts];
-    newProducts.splice(index, 1);
-    setFormData({ ...formData, amazonProducts: newProducts });
-  };
-
-  const handleProductChange = (index: number, field: string, value: string) => {
-    const newProducts = [...formData.amazonProducts];
-    newProducts[index] = { ...newProducts[index], [field]: value };
-    setFormData({ ...formData, amazonProducts: newProducts });
-  };
-
-  const handleContentFromScanner = (newContent: string) => {
-    setFormData({ ...formData, content: newContent });
-    // Flash the content tab or show a subtle notification
-    setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 2000);
   };
 
   const handleUploadClick = () => {
@@ -141,7 +112,6 @@ export default function AdminForm({
         content: formData.content,
         published: formData.published,
         createdAt: formData.createdAt ? new Date(formData.createdAt) : undefined,
-        amazonProducts: formData.amazonProducts,
       });
 
       if (res.success) {
@@ -159,42 +129,14 @@ export default function AdminForm({
 
   return (
     <div className="space-y-6">
-      {/* Tab Navigation */}
-      <div className="flex border-b border-black/5 mb-8">
-        <button
-          type="button"
-          onClick={() => setActiveTab("content")}
-          className={`px-8 py-4 text-xs font-black uppercase tracking-widest transition-all border-b-2 ${
-            activeTab === "content" 
-              ? "border-black text-black" 
-              : "border-transparent text-black opacity-40 hover:opacity-100"
-          }`}
-        >
-          📝 Protocol Content
-        </button>
-        <button
-          type="button"
-          onClick={() => setActiveTab("links")}
-          className={`px-8 py-4 text-xs font-black uppercase tracking-widest transition-all border-b-2 ${
-            activeTab === "links" 
-              ? "border-black text-black" 
-              : "border-transparent text-black opacity-40 hover:opacity-100"
-          }`}
-        >
-          🔗 Affiliate Links
-        </button>
-      </div>
-
       <form onSubmit={handleSubmit} className="space-y-6">
-        {activeTab === "content" ? (
-          <>
-            {error && <div className="bg-red-500/10 text-red-600 p-4 rounded-lg text-sm font-bold border border-red-500/20">{error}</div>}
-            {showSuccess && (
-              <div className="bg-emerald-500/10 text-emerald-600 p-4 rounded-xl text-xs font-black uppercase tracking-widest animate-pulse flex items-center shadow-sm border border-emerald-500/20">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                Content Synced - Ready to Deploy
-              </div>
-            )}
+        {error && <div className="bg-red-500/10 text-red-600 p-4 rounded-lg text-sm font-bold border border-red-500/20">{error}</div>}
+        {showSuccess && (
+          <div className="bg-emerald-500/10 text-emerald-600 p-4 rounded-xl text-xs font-black uppercase tracking-widest animate-pulse flex items-center shadow-sm border border-emerald-500/20">
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+            Content Synced - Ready to Deploy
+          </div>
+        )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -218,9 +160,10 @@ export default function AdminForm({
                   className="w-full px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-black font-bold"
                 >
                   <option value="protocols">Protocols</option>
-                  <option value="security">Security</option>
-                  <option value="hardware">Hardware</option>
-                  <option value="analysis">Analysis</option>
+                  <option value="wealthspan">Wealthspan</option>
+                  <option value="fundamentals">Fundamentals</option>
+                  <option value="wealthpumps">Wealthpumps</option>
+                  <option value="security">Security / Wallets</option>
                 </select>
               </div>
 
@@ -372,10 +315,7 @@ export default function AdminForm({
                 className="w-full px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-zinc-800 font-mono text-sm leading-relaxed" 
               />
             </div>
-          </>
-        ) : (
-          <LinkScanner content={formData.content} onContentChange={handleContentFromScanner} />
-        )}
+            </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center pt-6 border-t border-black/5 gap-4">
           <div className="flex flex-col gap-3">

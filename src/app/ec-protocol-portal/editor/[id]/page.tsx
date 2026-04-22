@@ -31,7 +31,7 @@ export default async function EditorPage({ params }: { params: { id: string } })
       </div>
 
       <div className="bg-white p-8 md:p-12 rounded-3xl shadow-[0_4px_40px_rgba(0,0,0,0.06)] border border-gray-100">
-        <AdminForm article={article ? { ...article, category: article.category ?? '' } : undefined} />
+        <AdminForm article={article ? JSON.parse(JSON.stringify(article)) : undefined} />
       </div>
     </div>
   );

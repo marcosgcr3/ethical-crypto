@@ -19,79 +19,82 @@ export async function upsertArticle(data: {
   content: string;
   published: boolean;
   createdAt?: string | Date | null;
-  amazonProducts?: any;
 }) {
-  await verifyAuth();
-  
-  // Enforce obtaining the first reviewer (since we seeded a default doctor)
-  const reviewer = await prisma.reviewer.findFirst();
-  if (!reviewer) {
-    throw new Error("No reviewer found for authorship. Please seed the DB.");
-  }
-
-  const { id, title, slug, category, excerpt, imageUrl, content, published, amazonProducts, createdAt } = data;
-
-  if (id) {
-    const existingArticle = await prisma.article.findUnique({
-      where: { id },
-      select: { published: true }
-    });
-
-    // Determine if we should update the "published at" (createdAt) date
-    // 1. If it was unpublished and is now being published
-    const shouldUpdatePublishDate = existingArticle && !existingArticle.published && published;
+  try {
+    await verifyAuth();
     
-    let finalCreatedAt = createdAt ? new Date(createdAt) : undefined;
-    if (!finalCreatedAt && shouldUpdatePublishDate) {
-      finalCreatedAt = new Date();
+    // Enforce obtaining the first reviewer (since we seeded a default doctor)
+    const reviewer = await prisma.reviewer.findFirst();
+    if (!reviewer) {
+      throw new Error("Missing Author: No reviewer found in database. Use seed or create one in the database.");
     }
 
-    // Update Mode
-    await prisma.article.update({
-      where: { id },
-      data: {
-        title,
-        slug,
-        category,
-        excerpt,
-        imageUrl,
-        content,
-        published,
-        createdAt: finalCreatedAt,
-        amazonProducts: amazonProducts || [],
-      },
-    });
-  } else {
-    // Create Mode
-    let finalCreatedAt = createdAt ? new Date(createdAt) : undefined;
-    if (!finalCreatedAt && published) {
-      finalCreatedAt = new Date();
+    const { id, title, slug, category, excerpt, imageUrl, content, published, createdAt } = data;
+
+    if (id) {
+      const existingArticle = await prisma.article.findUnique({
+        where: { id },
+        select: { published: true }
+      });
+
+      // Determine if we should update the "published at" (createdAt) date
+      const shouldUpdatePublishDate = existingArticle && !existingArticle.published && published;
+      
+      let finalCreatedAt = createdAt ? new Date(createdAt) : undefined;
+      if (!finalCreatedAt && shouldUpdatePublishDate) {
+        finalCreatedAt = new Date();
+      }
+
+      // Update Mode
+      await prisma.article.update({
+        where: { id },
+        data: {
+          title,
+          slug,
+          category,
+          excerpt,
+          imageUrl,
+          content,
+          published,
+          createdAt: finalCreatedAt,
+        },
+      });
+    } else {
+      // Create Mode
+      let finalCreatedAt = createdAt ? new Date(createdAt) : undefined;
+      if (!finalCreatedAt && published) {
+        finalCreatedAt = new Date();
+      }
+      
+      await prisma.article.create({
+        data: {
+          title,
+          slug,
+          category,
+          excerpt,
+          imageUrl,
+          content,
+          reviewerId: reviewer.id,
+          published,
+          createdAt: finalCreatedAt || new Date(),
+        },
+      });
     }
-    
-    await prisma.article.create({
-      data: {
-        title,
-        slug,
-        category,
-        excerpt,
-        imageUrl,
-        content,
-        reviewerId: reviewer.id,
-        published,
-        createdAt: finalCreatedAt || new Date(), // Always defaults to now if not provided
-        amazonProducts: amazonProducts || [],
-      },
-    });
+
+    // Revalidate the entire site cache
+    revalidatePath("/");
+    revalidatePath("/ec-protocol-portal");
+    revalidatePath(`/${category}`);
+    revalidatePath(`/${category}/${slug}`);
+
+    return { success: true };
+  } catch (err: any) {
+    console.error("Critical error in upsertArticle:", err);
+    return { 
+      success: false, 
+      error: err.message || "Protocol transmission failed. Verify database connection." 
+    };
   }
-
-  // Revalidate the entire site cache so updates show up immediately
-  revalidatePath("/");
-  revalidatePath("/ec-protocol-portal");
-  revalidatePath(`/${category}`);
-  revalidatePath(`/${category}/${slug}`);
-
-  // Need a return object to trigger client-side redirects securely
-  return { success: true };
 }
 
 export async function deleteArticle(id: string) {

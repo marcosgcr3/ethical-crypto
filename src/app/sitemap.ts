@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethicalbiohacking.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethicalcrypto.com';
 
   // Fetch all published articles
   const articles = await prisma.article.findMany({
@@ -28,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/biohacking`,
+      url: `${baseUrl}/protocols`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,

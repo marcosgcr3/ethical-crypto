@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
-const SECRET_KEY = process.env.SESSION_SECRET || "eb_biohacking_default_secret_32_chars_long_and_more";
+const SECRET_KEY = process.env.SESSION_SECRET || "ec_crypto_default_secret_32_chars_long_and_more";
 const key = new TextEncoder().encode(SECRET_KEY);
 
 export const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours

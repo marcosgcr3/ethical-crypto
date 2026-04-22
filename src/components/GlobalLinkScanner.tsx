@@ -266,7 +266,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
 
         {/* Footer */}
         <div className="px-8 py-4 bg-gray-50/50 border-t border-gray-100 text-[10px] text-slate opacity-40 uppercase font-bold tracking-widest text-center">
-            Ethical Biohacking System Scanner v1.0
+            Ethical Crypto System Scanner v1.0
         </div>
       </div>
     </div>

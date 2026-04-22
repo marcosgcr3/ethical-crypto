@@ -1,7 +1,7 @@
 import { ImageLoaderProps } from 'next/image';
 
 /**
- * Custom Image Loader for Ethical Biohacking
+ * Custom Image Loader for Ethical Crypto
  * Maps local image paths to our optimization API route.
  * 
  * Example: /images/example.png -> /api/images/example.png?w=640

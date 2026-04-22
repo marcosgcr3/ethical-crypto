@@ -27,7 +27,7 @@ export async function subscribeEmail(email: string) {
     revalidatePath("/eb-clinical-portal");
     revalidatePath("/");
 
-    return { success: true, message: "Welcome to the Ethical Biohacking digest!" };
+    return { success: true, message: "Welcome to the Ethical Crypto intelligence stream!" };
   } catch (error) {
     console.error("Newsletter subscription error:", error);
     return { success: false, error: "Something went wrong. Please try again." };

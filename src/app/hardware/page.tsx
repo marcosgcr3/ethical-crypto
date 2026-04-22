@@ -131,7 +131,7 @@ export default async function HardwarePillarPage() {
                   In the decentralized era, the <strong>Physical Layer</strong> is the final bridge between the digital state and absolute sovereignty. While protocols are code, they execute on silicon. To be truly autonomous is to own the hardware that signs your transactions and validates the network.
                 </p>
                 <p>
-                  We treat hardware as <strong>Critical Infrastructure</strong>. In 2026, the biohacking approach to hardware means moving beyond the consumer laptop and into the realm of enterprise-grade security. We deploy hardware security modules (HSMs), specialized validator rigs, and custom network topologies that prioritize resilience over convenience.
+                  We treat hardware as <strong>Critical Infrastructure</strong>. In 2026, the crypto approach to hardware means moving beyond the consumer laptop and into the realm of enterprise-grade security. We deploy hardware security modules (HSMs), specialized validator rigs, and custom network topologies that prioritize resilience over convenience.
                 </p>
                 <p>
                   The goal of <strong>Ethical Crypto Hardware</strong> is the elimination of the "Cloud Subsidy"—removing the reliance on third-party data centers and reclaiming the means of production for the digital asset economy.

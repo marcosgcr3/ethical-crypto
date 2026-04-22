@@ -225,66 +225,7 @@ export default function AdminForm({
               </div>
             </div>
 
-            <div className="bg-zinc-50 p-6 rounded-2xl border border-black/5">
-              <div className="flex justify-between items-center mb-6">
-                <label className="text-xs font-black uppercase tracking-widest text-black opacity-70">Affiliate Products (CTA Blocks)</label>
-                <button type="button" onClick={addProduct} className="bg-black text-white px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-zinc-800 transition-all">
-                  + Add Product
-                </button>
-              </div>
-              
-              <div className="space-y-4">
-                {formData.amazonProducts.map((product: any, index: number) => (
-                  <div key={index} className="flex flex-col bg-white p-6 rounded-2xl border border-black/5 shadow-sm relative space-y-4">
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-                        <div className="w-full">
-                            <label className="block text-[10px] font-black uppercase text-black opacity-40 mb-1">Product Name</label>
-                            <input 
-                                type="text" 
-                                placeholder="e.g. Ledger Nano X"
-                                value={product.name}
-                                onChange={(e) => handleProductChange(index, 'name', e.target.value)}
-                                className="w-full px-4 py-2 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none text-sm text-black font-medium"
-                            />
-                        </div>
-                        <div className="w-full">
-                            <label className="block text-[10px] font-black uppercase text-black opacity-40 mb-1">Product ID (ASIN)</label>
-                            <input 
-                                type="text" 
-                                placeholder="e.g. B0C123..."
-                                value={product.asin}
-                                onChange={(e) => handleProductChange(index, 'asin', e.target.value)}
-                                className="w-full px-4 py-2 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none text-sm text-black font-medium"
-                            />
-                        </div>
-                        <div className="w-full flex gap-3 items-end">
-                            <div className="flex-1">
-                                <label className="block text-[10px] font-black uppercase text-black opacity-40 mb-1">Direct Affiliate Link</label>
-                                <input 
-                                    type="text" 
-                                    placeholder="Paste full URL..."
-                                    value={product.url || ""}
-                                    onChange={(e) => handleProductChange(index, 'url', e.target.value)}
-                                    className="w-full px-4 py-2 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none text-sm text-black font-medium"
-                                />
-                            </div>
-                            <button type="button" onClick={() => removeProduct(index)} className="bg-red-500/10 text-red-600 p-2 rounded-lg hover:bg-red-500/20 transition-all flex items-center justify-center shrink-0">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                            </button>
-                        </div>
-                      </div>
-                      {product.url && (
-                        <div className="text-[10px] text-black font-black uppercase bg-black/5 px-3 py-1.5 rounded-lg inline-block self-start">
-                          ⚡ Priority: Direct link active.
-                        </div>
-                      )}
-                  </div>
-                ))}
-                {formData.amazonProducts.length === 0 && (
-                  <p className="text-[10px] text-black opacity-40 italic text-center py-4">No affiliate products added.</p>
-                )}
-              </div>
-            </div>
+
 
             <div>
               <label className="block text-xs font-black uppercase tracking-widest text-black opacity-70 mb-2">
@@ -314,7 +255,6 @@ export default function AdminForm({
                 onChange={handleChange} 
                 className="w-full px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-zinc-800 font-mono text-sm leading-relaxed" 
               />
-            </div>
             </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center pt-6 border-t border-black/5 gap-4">

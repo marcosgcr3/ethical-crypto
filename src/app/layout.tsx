@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Ethical Crypto",
     images: [
       {
-        url: "/brand/ethical-crypto.png",
+        url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/ethical-crypto.png",
         width: 1200,
         height: 1200,
         alt: "Ethical Crypto Protocol Operations",
@@ -45,16 +45,16 @@ export const metadata: Metadata = {
     description: "Master the digital frontier with data-driven crypto insights. Expert analysis on DeFi and protocol engineering.",
     site: "@ethicalcrypto",
     creator: "@ethicalcrypto",
-    images: ["/brand/ethical-crypto.png"],
+    images: ["https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/ethical-crypto.png"],
   },
   icons: {
     icon: [
-      { url: "/brand-icon.png", sizes: "48x48", type: "image/png" },
-      { url: "/brand-icon.png", sizes: "96x96", type: "image/png" },
-      { url: "/brand-icon.png", sizes: "192x192", type: "image/png" },
+      { url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png", sizes: "48x48", type: "image/png" },
+      { url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png", sizes: "96x96", type: "image/png" },
+      { url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
-      { url: "/brand-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png", sizes: "180x180", type: "image/png" },
     ],
   },
   applicationName: "Ethical Crypto",
@@ -90,7 +90,7 @@ export default function RootLayout({
               alternateName: 'EthicalCrypto',
               legalName: 'Ethical Crypto',
               url: 'https://ethicalcrypto.com',
-              logo: 'https://ethicalcrypto.com/brand/logo.png',
+              logo: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/logo.png',
               about: {
                 '@type': 'Thing',
                 name: 'Cryptocurrency',

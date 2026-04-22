@@ -166,7 +166,7 @@ export default function AdminForm({
           onClick={() => setActiveTab("content")}
           className={`px-8 py-4 text-xs font-black uppercase tracking-widest transition-all border-b-2 ${
             activeTab === "content" 
-              ? "border-[#00F5FF] text-[#00F5FF]" 
+              ? "border-white text-white" 
               : "border-transparent text-white opacity-40 hover:opacity-100"
           }`}
         >
@@ -177,7 +177,7 @@ export default function AdminForm({
           onClick={() => setActiveTab("links")}
           className={`px-8 py-4 text-xs font-black uppercase tracking-widest transition-all border-b-2 ${
             activeTab === "links" 
-              ? "border-[#00F5FF] text-[#00F5FF]" 
+              ? "border-white text-white" 
               : "border-transparent text-white opacity-40 hover:opacity-100"
           }`}
         >
@@ -205,7 +205,7 @@ export default function AdminForm({
                   required 
                   value={formData.title} 
                   onChange={handleChange} 
-                  className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-white" 
+                  className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white" 
                 />
               </div>
 
@@ -215,7 +215,7 @@ export default function AdminForm({
                   name="category" 
                   value={formData.category} 
                   onChange={handleChange} 
-                  className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-white"
+                  className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white"
                 >
                   <option value="protocols">Protocols</option>
                   <option value="security">Security</option>
@@ -225,10 +225,10 @@ export default function AdminForm({
               </div>
 
               <div>
-                 <label className="flex justify-between items-center text-xs font-black uppercase tracking-widest text-white opacity-70 mb-2">
-                   <span>URL Slug</span>
-                   <button type="button" onClick={generateSlug} className="text-[#00F5FF] hover:underline text-[10px]">Auto-Generate</button>
-                 </label>
+                  <label className="flex justify-between items-center text-xs font-black uppercase tracking-widest text-white opacity-70 mb-2">
+                    <span>URL Slug</span>
+                    <button type="button" onClick={generateSlug} className="text-white opacity-60 hover:opacity-100 hover:underline text-[10px]">Auto-Generate</button>
+                  </label>
                 <input 
                   type="text" 
                   name="slug" 
@@ -245,16 +245,16 @@ export default function AdminForm({
                   <input 
                     type="text" 
                     name="imageUrl" 
-                    placeholder="/images/example.png"
+                    placeholder="Leave empty for no photo"
                     value={formData.imageUrl} 
                     onChange={handleChange} 
-                    className="flex-1 px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-white" 
+                    className="flex-1 px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white" 
                   />
                   <button
                     type="button"
                     onClick={handleUploadClick}
                     disabled={uploading}
-                    className="bg-[#00F5FF] text-black px-4 py-3 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-white transition-all flex items-center justify-center min-w-[80px]"
+                    className="bg-white text-black px-4 py-3 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-zinc-200 transition-all flex items-center justify-center min-w-[80px]"
                   >
                     {uploading ? (
                       <svg className="animate-spin h-4 w-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -290,7 +290,7 @@ export default function AdminForm({
             <div className="bg-black p-6 rounded-2xl border border-gray-800">
               <div className="flex justify-between items-center mb-6">
                 <label className="text-xs font-black uppercase tracking-widest text-white opacity-70">Affiliate Products (CTA Blocks)</label>
-                <button type="button" onClick={addProduct} className="bg-[#00F5FF] text-black px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-white transition-all">
+                <button type="button" onClick={addProduct} className="bg-white text-black px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-zinc-200 transition-all">
                   + Add Product
                 </button>
               </div>
@@ -336,7 +336,7 @@ export default function AdminForm({
                         </div>
                       </div>
                       {product.url && (
-                        <div className="text-[10px] text-[#00F5FF] font-black uppercase bg-[#00F5FF]/10 px-3 py-1.5 rounded-lg inline-block self-start">
+                        <div className="text-[10px] text-white font-black uppercase bg-white/10 px-3 py-1.5 rounded-lg inline-block self-start">
                           ⚡ Priority: Direct link active.
                         </div>
                       )}
@@ -359,7 +359,7 @@ export default function AdminForm({
                 rows={3}
                 value={formData.excerpt} 
                 onChange={handleChange} 
-                className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-white resize-none" 
+                className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white resize-none" 
               />
             </div>
 
@@ -374,7 +374,7 @@ export default function AdminForm({
                 rows={16}
                 value={formData.content} 
                 onChange={handleChange} 
-                className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-white font-mono text-sm leading-relaxed" 
+                className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white font-mono text-sm leading-relaxed" 
               />
             </div>
           </>
@@ -390,7 +390,7 @@ export default function AdminForm({
                 name="published" 
                 checked={formData.published} 
                 onChange={handleCheckboxChange} 
-                className="w-5 h-5 accent-[#00F5FF] rounded bg-black border-gray-800" 
+                className="w-5 h-5 accent-white rounded bg-black border-gray-800" 
               />
               <span className="text-sm font-black uppercase tracking-widest text-white opacity-80">
                 {formData.published ? "Published (Live)" : "Draft (Hidden)"}
@@ -405,7 +405,7 @@ export default function AdminForm({
                 name="createdAt" 
                 value={formData.createdAt} 
                 onChange={handleChange} 
-                className="px-3 py-2 text-sm rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-white" 
+                className="px-3 py-2 text-sm rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white" 
               />
             </div>
           </div>
@@ -425,7 +425,7 @@ export default function AdminForm({
             <button 
               type="submit" 
               disabled={loading}
-              className="bg-[#00F5FF] text-black px-10 py-4 rounded-xl font-black hover:bg-white transition-all uppercase tracking-widest text-sm shadow-[0_10px_20px_rgba(0,245,255,0.2)] disabled:opacity-50"
+              className="bg-white text-black px-10 py-4 rounded-xl font-black hover:bg-zinc-200 transition-all uppercase tracking-widest text-sm shadow-[0_10px_20px_rgba(255,255,255,0.1)] disabled:opacity-50"
             >
               {loading ? "Saving..." : "Save Protocol"}
             </button>

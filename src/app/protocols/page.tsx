@@ -102,14 +102,18 @@ export default async function ProtocolsPillarPage() {
                   {articles.map((article) => (
                     <Link key={article.id} href={`/protocols/${article.slug}`} className="group relative block cursor-pointer">
                       <article>
-                        <div className="relative overflow-hidden rounded-3xl mb-6 bg-zinc-50 h-56 border border-zinc-100 shadow-sm transition-all group-hover:border-black/10 group-hover:shadow-md">
-                          {article.imageUrl && (
-                            <Image src={article.imageUrl} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
+                          {article.imageUrl ? (
+                            <div className="relative overflow-hidden rounded-3xl mb-6 bg-zinc-50 h-56 border border-zinc-100 shadow-sm transition-all group-hover:border-black/10 group-hover:shadow-md">
+                              <Image src={article.imageUrl} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
+                              <div className="absolute top-6 left-6">
+                                <span className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-black tracking-widest border border-black/5 shadow-sm">PROTOCOL</span>
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="mb-4">
+                               <span className="bg-black text-white px-3 py-1.5 rounded-lg text-[8px] font-black uppercase tracking-widest">PROTOCOL</span>
+                            </div>
                           )}
-                          <div className="absolute top-6 left-6">
-                            <span className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-black tracking-widest border border-black/5 shadow-sm">PROTOCOL</span>
-                          </div>
-                        </div>
                         <h3 className="font-heading text-xl font-black mb-3 text-black group-hover:text-zinc-500 transition-colors leading-tight uppercase tracking-tight">{article.title}</h3>
                         <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2 mb-4 font-medium">{article.excerpt}</p>
                         <div className="flex items-center text-[10px] font-black tracking-widest text-zinc-300">

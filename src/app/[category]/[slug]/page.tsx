@@ -258,10 +258,10 @@ export default async function ArticlePage({ params }: { params: { category: stri
               <RelatedArticles articles={relatedArticles} />
               
               <div className="mt-20 text-center pb-20">
-                   <Link 
-                     href="/" 
-                     className="inline-flex items-center gap-4 text-[#00F5FF] font-black px-12 py-5 rounded-2xl bg-white/5 hover:bg-white/10 transition-all text-xs uppercase tracking-[0.2em] border border-white/5 group"
-                   >
+                    <Link 
+                      href="/" 
+                      className="inline-flex items-center gap-4 text-black font-black px-12 py-5 rounded-2xl bg-zinc-50 hover:bg-zinc-100 transition-all text-xs uppercase tracking-[0.2em] border border-black/5 group"
+                    >
                      <IconArrowUpRight className="w-4 h-4 -rotate-[135deg] group-hover:-translate-x-1 transition-transform" />
                      Return to Intelligence Feed
                    </Link>

@@ -93,25 +93,27 @@ export default async function Home() {
                                            category === 'crypto' ? 'protocols' : 
                                            category === 'hardware' ? 'wallets' : category;
                     
-                    const imgSrc = article.imageUrl || CATEGORY_IMAGES[displayCategory] || '/brand/staking.png';
+                    const imgSrc = article.imageUrl;
                     const readTime = Math.max(5, Math.ceil(article.content.split(' ').length / 200));
                     const dateStr = new Date(article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
                     return (
                       <Link key={article.id} href={`/${displayCategory}/${article.slug}`} className="group relative block cursor-pointer">
                           <article className="bg-white rounded-[3rem] border border-black/5 hover:border-zinc-300 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-2xl">
-                              <div className="relative overflow-hidden h-56 bg-zinc-50">
-                                  <Image 
-                                    src={imgSrc} 
-                                    alt={article.title} 
-                                    fill 
-                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 opacity-90 group-hover:opacity-100" 
-                                  />
-                                  <div className="absolute top-6 left-6">
-                                      <span className="bg-black text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg">{displayCategory}</span>
-                                  </div>
-                              </div>
+                              {imgSrc && (
+                                <div className="relative overflow-hidden h-56 bg-zinc-50">
+                                    <Image 
+                                      src={imgSrc} 
+                                      alt={article.title} 
+                                      fill 
+                                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 opacity-90 group-hover:opacity-100" 
+                                    />
+                                    <div className="absolute top-6 left-6">
+                                        <span className="bg-black text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg">{displayCategory}</span>
+                                    </div>
+                                </div>
+                              )}
                               <div className="p-10">
                                 <h3 className="font-heading text-2xl font-black mb-4 group-hover:text-zinc-500 transition-colors leading-[1.1] text-black uppercase tracking-tighter">{article.title}</h3>
                                 <p className="text-sm leading-relaxed line-clamp-3 text-zinc-500 mb-8 font-medium">{article.excerpt}</p>

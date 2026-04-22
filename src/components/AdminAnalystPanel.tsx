@@ -97,10 +97,10 @@ export default function AdminAnalystPanel({
       <div className="flex items-center justify-between mb-10">
         <div>
           <h2 className="text-xl font-black uppercase tracking-[0.2em] text-white">Analyst Persona Config</h2>
-          <p className="text-[10px] text-[#00F5FF]/60 mt-2 uppercase tracking-[0.1em] font-bold">This signature represents the authoritative voice across all protocol logic.</p>
+          <p className="text-[10px] text-white/40 mt-2 uppercase tracking-[0.1em] font-bold">This signature represents the authoritative voice across all protocol logic.</p>
         </div>
         {showSuccess && (
-          <div className="bg-[#00F5FF]/10 text-[#00F5FF] px-6 py-2 rounded-lg text-[10px] font-black uppercase tracking-[0.2em] animate-pulse border border-[#00F5FF]/20">
+          <div className="bg-white/10 text-white px-6 py-2 rounded-lg text-[10px] font-black uppercase tracking-[0.2em] animate-pulse border border-white/20">
             Dossier Updated
           </div>
         )}
@@ -119,7 +119,7 @@ export default function AdminAnalystPanel({
                 required 
                 value={formData.name} 
                 onChange={handleChange} 
-                className="w-full px-5 py-4 rounded-xl border border-white/5 bg-[#05070A] focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-white font-bold" 
+                className="w-full px-5 py-4 rounded-xl border border-white/5 bg-[#05070A] focus:outline-none focus:ring-2 focus:ring-white/20 text-white font-bold" 
               />
             </div>
 
@@ -131,7 +131,7 @@ export default function AdminAnalystPanel({
                 required 
                 value={formData.title} 
                 onChange={handleChange} 
-                className="w-full px-5 py-4 rounded-xl border border-white/5 bg-[#05070A] focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-white font-bold" 
+                className="w-full px-5 py-4 rounded-xl border border-white/5 bg-[#05070A] focus:outline-none focus:ring-2 focus:ring-white/20 text-white font-bold" 
               />
             </div>
 
@@ -150,7 +150,7 @@ export default function AdminAnalystPanel({
                   type="button"
                   onClick={handleUploadClick}
                   disabled={uploading}
-                  className="bg-[#00F5FF] text-black px-8 py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] shadow-[0_10px_20px_rgba(0,245,255,0.2)] hover:bg-white transition-all min-w-[120px]"
+                  className="bg-white text-black px-8 py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] shadow-lg hover:bg-zinc-200 transition-all min-w-[120px]"
                 >
                   {uploading ? "SYNC..." : "UPLOAD"}
                 </button>
@@ -166,8 +166,8 @@ export default function AdminAnalystPanel({
           </div>
 
           <div className="flex flex-col items-center justify-center p-10 bg-[#05070A] rounded-[2rem] border border-white/5 relative group overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00F5FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#00F5FF]/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] mb-6 bg-[#0A0D11]">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] mb-6 bg-[#0A0D11]">
               <img 
                 src={formData.imageUrl || '/images/vanguard.png'} 
                 alt="Preview" 
@@ -175,7 +175,7 @@ export default function AdminAnalystPanel({
                 onError={(e) => (e.currentTarget.src = '/images/vanguard.png')}
               />
             </div>
-            <p className="text-[9px] font-black uppercase tracking-[0.3em] text-[#00F5FF] opacity-60">Visual ID Preview</p>
+            <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white opacity-40">Visual ID Preview</p>
           </div>
         </div>
 
@@ -187,7 +187,7 @@ export default function AdminAnalystPanel({
             rows={5}
             value={formData.bio} 
             onChange={handleChange} 
-            className="w-full px-5 py-4 rounded-xl border border-white/5 bg-[#05070A] focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 text-gray-400 text-sm leading-relaxed" 
+            className="w-full px-5 py-4 rounded-xl border border-white/5 bg-[#05070A] focus:outline-none focus:ring-2 focus:ring-white/20 text-gray-400 text-sm leading-relaxed" 
             placeholder="Define the analyst mission parameters..."
           />
         </div>
@@ -196,7 +196,7 @@ export default function AdminAnalystPanel({
           <button 
             type="submit" 
             disabled={loading}
-            className="bg-white text-black px-12 py-5 rounded-2xl font-black hover:bg-[#00F5FF] transition-all uppercase tracking-[0.2em] text-sm shadow-xl disabled:opacity-50"
+            className="bg-white text-black px-12 py-5 rounded-2xl font-black hover:bg-zinc-200 transition-all uppercase tracking-[0.2em] text-sm shadow-xl disabled:opacity-50"
           >
             {loading ? "COMMITTING..." : "COMMIT ANALYST CHANGES"}
           </button>

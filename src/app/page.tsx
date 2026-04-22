@@ -98,7 +98,7 @@ export default async function Home() {
 
                     return (
                       <Link key={article.id} href={`/${displayCategory}/${article.slug}`} className="group relative block cursor-pointer">
-                          <article className="bg-white rounded-[3rem] border border-zinc-100 hover:border-black transition-all duration-500 overflow-hidden shadow-sm hover:shadow-2xl">
+                          <article className="bg-white rounded-[3rem] border border-black/5 hover:border-zinc-300 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-2xl">
                               <div className="relative overflow-hidden h-56 bg-zinc-50">
                                   <Image 
                                     src={imgSrc} 

@@ -28,7 +28,7 @@ export default function RelatedArticles({ articles }: RelatedArticlesProps) {
             <Link 
               key={article.id} 
               href={`/${article.category}/${article.slug}`}
-              className="bg-white rounded-[2rem] border border-black/5 p-4 flex flex-col h-full group hover:border-black transition-all duration-500 hover:shadow-2xl"
+              className="bg-white rounded-[2rem] border border-black/5 p-4 flex flex-col h-full group hover:border-zinc-300 transition-all duration-500 hover:shadow-2xl"
             >
               {/* Image Container */}
               <div className="relative aspect-[16/10] overflow-hidden bg-black/5 rounded-[1.5rem]">

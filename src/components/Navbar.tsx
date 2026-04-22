@@ -32,12 +32,7 @@ export default function Navbar() {
                     <Link href="/wealthpumps" className="hover:text-black transition-colors duration-200 uppercase tracking-widest text-black/60 font-black text-sm">WealthPumps</Link>
                     <Link href="/fundamentals" className="hover:text-black transition-colors duration-200 uppercase tracking-widest text-black/60 font-black text-sm">Fundamentals</Link>
                     <Link href="/security" className="hover:text-black transition-colors duration-200 uppercase tracking-widest text-black/60 font-black text-sm">Security/Wallets</Link>
-                    <Link href="/wealthspan-calculator" className="flex items-center gap-3 bg-black text-white hover:bg-zinc-800 transition-all duration-300 uppercase tracking-[0.2em] font-black px-8 py-4 rounded-2xl text-xs border border-black shadow-[0_10px_25px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.2)] group active:scale-95">
-                        <svg className="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
-                        STAKING CALC
-                    </Link>
+                    <Link href="/wealthspan-calculator" className="hover:text-black transition-colors duration-200 uppercase tracking-widest text-black/60 font-black text-sm">Calculator</Link>
                 </div>
 
                 {/* Mobile Hamburger Button */}
@@ -65,12 +60,7 @@ export default function Navbar() {
                   <Link href="/wealthpumps" onClick={() => setIsOpen(false)} className="text-black/60 hover:text-black transition-colors duration-200 uppercase tracking-widest font-black text-sm border-b border-black/5 pb-2">WealthPumps</Link>
                   <Link href="/fundamentals" onClick={() => setIsOpen(false)} className="text-black/60 hover:text-black transition-colors duration-200 uppercase tracking-widest font-black text-sm border-b border-black/5 pb-2">Fundamentals</Link>
                   <Link href="/security" onClick={() => setIsOpen(false)} className="text-black/60 hover:text-black transition-colors duration-200 uppercase tracking-widest font-black text-sm border-b border-black/5 pb-2">Security/Wallets</Link>
-                  <Link href="/wealthspan-calculator" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-3 bg-black text-white px-6 py-4 rounded-2xl font-black uppercase tracking-widest text-xs shadow-xl active:scale-95">
-                    <svg className="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                    STAKING CALCULATOR
-                  </Link>
+                  <Link href="/wealthspan-calculator" onClick={() => setIsOpen(false)} className="text-black/60 hover:text-black transition-colors duration-200 uppercase tracking-widest font-black text-sm border-b border-black/5 pb-2">Calculator</Link>
               </div>
             )}
         </div>

@@ -65,7 +65,7 @@ export default async function ProtocolsPillarPage() {
           src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero-v2.png" 
           alt="Protocol Background" 
           fill 
-          className="object-cover grayscale opacity-30 contrast-[1.1]" 
+          className="object-cover grayscale opacity-10 contrast-[1.1]" 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-white"></div>
         <div className="container mx-auto px-6 text-center relative z-10">

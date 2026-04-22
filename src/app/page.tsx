@@ -41,7 +41,7 @@ export default async function Home() {
                 src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero-v2.png" 
                 alt="Crypto Protocol Hero Illustration" 
                 fill 
-                className="object-cover contrast-[1.1] opacity-100" 
+                className="object-cover opacity-15" 
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"

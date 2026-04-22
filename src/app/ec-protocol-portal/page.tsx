@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/lib/prisma";
 
 export const dynamic = 'force-dynamic';
 
@@ -16,8 +16,6 @@ import { logoutAction } from "./login/actions";
 import { getSubscribers } from "../actions/newsletter";
 import AdminSubscribers from "../../components/AdminSubscribers";
 import AdminAnalystPanel from "../../components/AdminAnalystPanel";
-
-const prisma = new PrismaClient();
 
 import AdminTools from "../../components/AdminTools";
 import DeleteArticleButton from "../../components/DeleteArticleButton";
@@ -78,7 +76,7 @@ export default async function AdminDashboard() {
               </div>
               <div className="col-span-6 md:col-span-3 flex justify-end items-center gap-2">
                 <Link 
-                  href={`/${article.category}/${article.slug}`} 
+                  href={`/${article.category || 'protocols'}/${article.slug || ''}`} 
                   target="_blank"
                   title="Pulse Check"
                   className="p-2 text-black/30 hover:text-black hover:bg-black/5 rounded-xl transition-all"

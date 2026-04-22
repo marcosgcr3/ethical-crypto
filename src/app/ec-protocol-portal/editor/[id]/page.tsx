@@ -1,9 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/lib/prisma";
 import AdminForm from "@/components/AdminForm";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-const prisma = new PrismaClient();
 
 export default async function EditorPage({ params }: { params: { id: string } }) {
   const { id } = await params;

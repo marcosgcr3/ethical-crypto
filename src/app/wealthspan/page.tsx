@@ -82,33 +82,33 @@ export default async function WealthspanPillarPage() {
   };
 
   return (
-    <div className="bg-void min-h-screen text-white">
+    <div className="bg-white min-h-screen text-black">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
 
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-6 py-6" aria-label="Breadcrumb">
-        <ol className="flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-white/30">
-          <li><Link href="/" className="hover:text-white transition-colors">Terminal</Link></li>
+        <ol className="flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-black/30">
+          <li><Link href="/" className="hover:text-black transition-colors">Terminal</Link></li>
           <li className="mx-2 opacity-20">/</li>
-          <li className="text-white/60" aria-current="page">Wealthspan</li>
+          <li className="text-black/60" aria-current="page">Wealthspan</li>
         </ol>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden border-b border-white/5">
+      <section className="relative py-24 md:py-32 overflow-hidden border-b border-black/5 bg-zinc-50">
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
-          <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
+          <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(to right, #000000 1px, transparent 1px), linear-gradient(to bottom, #000000 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 text-white rounded-lg text-[10px] font-black uppercase tracking-[0.3em] mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/5 border border-black/10 text-black rounded-lg text-[10px] font-black uppercase tracking-[0.3em] mb-8">
             <IconClock className="w-3.5 h-3.5" />
             Engineering Autonomy
           </div>
-          <h1 className="font-heading text-5xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter uppercase max-w-5xl mx-auto">
-            Wealthspan: The Science of <span className="text-white/40">Capital Longevity</span>
+          <h1 className="font-heading text-5xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter uppercase max-w-5xl mx-auto text-black">
+            Wealthspan: The Science of <span className="text-black/20">Capital Longevity</span>
           </h1>
-          <p className="text-lg md:text-xl font-medium text-white/50 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl font-medium text-black/50 max-w-3xl mx-auto leading-relaxed">
             Deploying technical frameworks for protocol resilience, validator efficiency, and the systematic maximization of long-term capital horizons.
           </p>
         </div>
@@ -123,10 +123,10 @@ export default async function WealthspanPillarPage() {
             
             {/* Section 1: The Wealthspan Paradigm */}
             <section id="paradigm">
-              <h2 className="font-heading text-3xl md:text-5xl font-black text-white mb-10 border-l-8 border-white pl-8 uppercase tracking-tighter">
+              <h2 className="font-heading text-3xl md:text-5xl font-black text-black mb-10 border-l-8 border-black pl-8 uppercase tracking-tighter">
                 The Wealthspan Paradigm
               </h2>
-              <div className="prose prose-invert lg:prose-xl max-w-none text-white/60 leading-relaxed font-medium">
+              <div className="prose prose-zinc lg:prose-xl max-w-none text-black/60 leading-relaxed font-medium">
                 <p>
                   In the decentralized era, <strong>Wealthspan Engineering</strong> is the fundamental shift from passive accumulation to active operational sovereignty. Traditional finance models fail to account for the unique risks and opportunities of the blockchain—where your "Wealthspan" is directly proportional to your technical mastery of the protocol stack.
                 </p>
@@ -141,50 +141,50 @@ export default async function WealthspanPillarPage() {
 
             {/* Section 2: Technical Protocols */}
             <section id="protocols">
-              <h2 className="font-heading text-3xl md:text-4xl font-black text-white mb-12 uppercase tracking-tight">
+              <h2 className="font-heading text-3xl md:text-4xl font-black text-black mb-12 uppercase tracking-tight">
                 Operational Protocols
               </h2>
               
               <div className="space-y-10">
                 {/* Protocol: Yield Optimization */}
-                <div className="bg-void p-10 rounded-[2.5rem] border border-white/5 hover:border-white/10 transition-all group">
-                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <IconYield className="w-8 h-8 text-white" />
+                <div className="bg-zinc-50 p-10 rounded-[2.5rem] border border-black/5 hover:border-black/10 transition-all group">
+                  <div className="w-14 h-14 rounded-2xl bg-black/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <IconYield className="w-8 h-8 text-black" />
                   </div>
-                  <h3 className="font-heading text-2xl font-black text-white mb-4 uppercase tracking-tight">1. Yield Efficiency Engine</h3>
-                  <div className="text-white/40 leading-relaxed space-y-4 font-medium">
+                  <h3 className="font-heading text-2xl font-black text-black mb-4 uppercase tracking-tight">1. Yield Efficiency Engine</h3>
+                  <div className="text-black/40 leading-relaxed space-y-4 font-medium">
                     <p>
                       Optimizing the <strong>Net Capital Turnover</strong> is essential for Wealthspan. This involves the technical auditing of LST (Liquid Staking Token) de-peg risk and the deployment of assets into low-latency yield aggregators that leverage MEV-Boost to capture outsized rewards.
                     </p>
                     <p>
-                      <span className="font-bold text-white/60">Tactical Targets:</span> Validating liquid wrapper stability, monitoring slashing insurance pools, and utilizing delta-neutral yield strategies to insulate capital from directional market volatility.
+                      <span className="font-bold text-black/60">Tactical Targets:</span> Validating liquid wrapper stability, monitoring slashing insurance pools, and utilizing delta-neutral yield strategies to insulate capital from directional market volatility.
                     </p>
                   </div>
                 </div>
 
                 {/* Protocol: Infrastructure */}
-                <div className="bg-void p-10 rounded-[2.5rem] border border-white/5 hover:border-purple-400/20 transition-all group">
-                  <div className="w-14 h-14 rounded-2xl bg-purple-400/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <IconNode className="w-8 h-8 text-purple-400" />
+                <div className="bg-zinc-50 p-10 rounded-[2.5rem] border border-black/5 hover:border-black/10 transition-all group">
+                  <div className="w-14 h-14 rounded-2xl bg-black/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <IconNode className="w-8 h-8 text-black" />
                   </div>
-                  <h3 className="font-heading text-2xl font-black text-white mb-4 uppercase tracking-tight">2. Infrastructure Resilience</h3>
-                  <div className="text-white/40 leading-relaxed space-y-4 font-medium">
+                  <h3 className="font-heading text-2xl font-black text-black mb-4 uppercase tracking-tight">2. Infrastructure Resilience</h3>
+                  <div className="text-black/40 leading-relaxed space-y-4 font-medium">
                     <p>
                       Your Wealthspan is only as strong as the nodes that secure it. Moving capital from centralized exchanges to <strong>sovereign validator setups</strong> reduces counterparty risk and captures the full protocol reward spectrum.
                     </p>
                     <p>
-                      <span className="font-bold text-purple-400">Technical Spec:</span> Deploying DVT (Distributed Validator Technology) to ensure zero-slashing risk and 100% uptime through redundant, geographically distributed nodes.
+                      <span className="font-bold text-black/60">Technical Spec:</span> Deploying DVT (Distributed Validator Technology) to ensure zero-slashing risk and 100% uptime through redundant, geographically distributed nodes.
                     </p>
                   </div>
                 </div>
 
                 {/* Protocol: Analysis */}
-                <div className="bg-void p-10 rounded-[2.5rem] border border-white/5 hover:border-emerald-400/20 transition-all group">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-400/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <IconAnalysis className="w-8 h-8 text-emerald-400" />
+                <div className="bg-zinc-50 p-10 rounded-[2.5rem] border border-black/5 hover:border-black/10 transition-all group">
+                  <div className="w-14 h-14 rounded-2xl bg-black/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <IconAnalysis className="w-8 h-8 text-black" />
                   </div>
-                  <h3 className="font-heading text-2xl font-black text-white mb-4 uppercase tracking-tight">3. Protocol Intelligence</h3>
-                  <div className="text-white/40 leading-relaxed space-y-4 font-medium">
+                  <h3 className="font-heading text-2xl font-black text-black mb-4 uppercase tracking-tight">3. Protocol Intelligence</h3>
+                  <div className="text-black/40 leading-relaxed space-y-4 font-medium">
                     <p>
                       Continuous <strong>On-Chain Monitoring</strong> and technical deep-dives into protocol codebases are the preventative medicine of finance. Identifying "Technical Debt" in a smart contract before it results in an exploit is the most effective form of risk mitigation.
                     </p>
@@ -197,30 +197,30 @@ export default async function WealthspanPillarPage() {
             {articles.length > 0 && (
               <section>
                 <div className="flex items-center justify-between mb-12">
-                  <h2 className="font-heading text-3xl font-black text-white uppercase tracking-tighter">
-                    Wealthspan <span className="text-white/40">Intel</span>
+                  <h2 className="font-heading text-3xl font-black text-black uppercase tracking-tighter">
+                    Wealthspan <span className="text-black/10">Intel</span>
                   </h2>
-                  <Link href="/wealthspan" className="text-[10px] font-black uppercase tracking-widest text-white border-b border-white/30 pb-1 hover:border-white transition-all">View All →</Link>
+                  <Link href="/wealthspan" className="text-[10px] font-black uppercase tracking-widest text-black border-b border-black/30 pb-1 hover:border-black transition-all">View All →</Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   {articles.map((article) => (
                     <Link key={article.id} href={`/wealthspan/${article.slug}`} className="group relative block cursor-pointer">
                       <article>
                         {article.imageUrl ? (
-                          <div className="relative overflow-hidden rounded-[2rem] mb-6 bg-void h-52 border border-white/10 transition-all group-hover:border-white/30">
-                            <Image src={article.imageUrl} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-100" />
+                          <div className="relative overflow-hidden rounded-[2rem] mb-6 bg-zinc-50 h-52 border border-black/5 transition-all group-hover:border-black/20">
+                            <Image src={article.imageUrl} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
                             <div className="absolute top-6 left-6">
-                              <span className="bg-black/90 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-white tracking-widest border border-white/10">WEALTHSPAN</span>
+                              <span className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-black tracking-widest border border-black/5 shadow-sm">WEALTHSPAN</span>
                             </div>
                           </div>
                         ) : (
                           <div className="mb-4">
-                             <span className="bg-white/10 text-white px-3 py-1.5 rounded-lg text-[8px] font-black uppercase tracking-widest">WEALTHSPAN</span>
+                             <span className="bg-black text-white px-3 py-1.5 rounded-lg text-[8px] font-black uppercase tracking-widest">WEALTHSPAN</span>
                           </div>
                         )}
-                        <h3 className="font-heading text-xl font-bold mb-3 text-white group-hover:text-white/60 transition-colors leading-tight">{article.title}</h3>
-                        <p className="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4 font-medium">{article.excerpt}</p>
-                        <div className="flex items-center text-[10px] font-black tracking-widest text-white/20">
+                        <h3 className="font-heading text-xl font-bold mb-3 text-black group-hover:text-black/60 transition-colors leading-tight uppercase tracking-tight">{article.title}</h3>
+                        <p className="text-sm text-black/40 leading-relaxed line-clamp-2 mb-4 font-medium">{article.excerpt}</p>
+                        <div className="flex items-center text-[10px] font-black tracking-widest text-black/20">
                           <span>{Math.max(5, Math.ceil(article.content.split(' ').length / 200))} MIN READ</span>
                           <span className="mx-2">•</span>
                           <span>{new Date(article.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
@@ -234,19 +234,19 @@ export default async function WealthspanPillarPage() {
 
             {/* FAQ Section */}
             <section id="faq" className="scroll-mt-32">
-              <h2 className="font-heading text-3xl md:text-5xl font-black text-white mb-16 uppercase tracking-tighter">
-                Wealthspan <span className="text-white/40">FAQ</span>
+              <h2 className="font-heading text-3xl md:text-5xl font-black text-black mb-16 uppercase tracking-tighter">
+                Wealthspan <span className="text-black/20">FAQ</span>
               </h2>
               <div className="space-y-6">
                 {faqItems.map((item, idx) => (
-                  <details key={idx} className="group bg-black/40 rounded-[2rem] border border-white/5 overflow-hidden hover:border-white/10 transition-all">
-                    <summary className="flex items-center justify-between cursor-pointer p-8 font-heading text-xl font-black text-white group-open:text-white/60 transition-colors">
+                  <details key={idx} className="group bg-zinc-50 rounded-[2rem] border border-black/5 overflow-hidden hover:border-black/10 transition-all">
+                    <summary className="flex items-center justify-between cursor-pointer p-8 font-heading text-xl font-black text-black group-open:text-black/60 transition-colors">
                       <span className="uppercase tracking-tight">{item.question}</span>
-                      <svg className="w-5 h-5 shrink-0 ml-4 text-white opacity-40 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 shrink-0 ml-4 text-black opacity-40 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                       </svg>
                     </summary>
-                    <div className="px-8 pb-8 text-white/50 leading-relaxed font-medium">
+                    <div className="px-8 pb-8 text-black/50 leading-relaxed font-medium">
                       <p>{item.answer}</p>
                     </div>
                   </details>
@@ -257,55 +257,54 @@ export default async function WealthspanPillarPage() {
 
           {/* Sidebar */}
           <aside className="lg:w-1/3 flex flex-col gap-12">
-            <div className="bg-void p-10 rounded-[3rem] border border-white/5 shadow-2xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-white/[0.02] blur-3xl rounded-full"></div>
-              <h3 className="font-heading text-[10px] font-black mb-8 uppercase tracking-[0.3em] text-white/30 relative">Tactical Navigation</h3>
-              <nav className="flex flex-col gap-6 text-sm font-black text-white/40 relative">
-                <a href="#paradigm" className="hover:text-white transition-colors flex items-center justify-between group/link">
+            <div className="bg-zinc-50 p-10 rounded-[3rem] border border-black/5 shadow-sm relative overflow-hidden group">
+              <h3 className="font-heading text-[10px] font-black mb-8 uppercase tracking-[0.3em] text-black/30 relative">Tactical Navigation</h3>
+              <nav className="flex flex-col gap-6 text-sm font-black text-black/40 relative">
+                <a href="#paradigm" className="hover:text-black transition-colors flex items-center justify-between group/link">
                   01. THE PARADIGM
-                  <span className="w-6 h-6 border border-white/10 rounded-lg flex items-center justify-center text-[10px] group-hover/link:border-white/30 group-hover/link:text-white">↓</span>
+                  <span className="w-6 h-6 border border-black/10 rounded-lg flex items-center justify-center text-[10px] group-hover/link:border-black/30 group-hover/link:text-black">↓</span>
                 </a>
-                <a href="#protocols" className="hover:text-white transition-colors flex items-center justify-between group/link">
+                <a href="#protocols" className="hover:text-black transition-colors flex items-center justify-between group/link">
                   02. OPERATIONAL PROTOCOLS
-                  <span className="w-6 h-6 border border-white/10 rounded-lg flex items-center justify-center text-[10px] group-hover/link:border-white/30 group-hover/link:text-white">↓</span>
+                  <span className="w-6 h-6 border border-black/10 rounded-lg flex items-center justify-center text-[10px] group-hover/link:border-black/30 group-hover/link:text-black">↓</span>
                 </a>
-                <a href="#faq" className="hover:text-white transition-colors flex items-center justify-between group/link">
+                <a href="#faq" className="hover:text-black transition-colors flex items-center justify-between group/link">
                   03. FAQ
-                  <span className="w-6 h-6 border border-white/10 rounded-lg flex items-center justify-center text-[10px] group-hover/link:border-white/30 group-hover/link:text-white">↓</span>
+                  <span className="w-6 h-6 border border-black/10 rounded-lg flex items-center justify-center text-[10px] group-hover/link:border-black/30 group-hover/link:text-black">↓</span>
                 </a>
               </nav>
             </div>
 
-            <div className="bg-gradient-to-br from-void to-black p-10 rounded-[3rem] border border-white/5 shadow-2xl">
+            <div className="bg-zinc-50 p-10 rounded-[3rem] border border-black/5 shadow-sm">
               <div className="flex items-center gap-2 mb-8">
-                <IconTarget className="w-5 h-5 text-white/40" />
-                <h3 className="font-heading text-[10px] font-black uppercase tracking-[0.3em] text-white/30">Protocol Benchmarks</h3>
+                <IconTarget className="w-5 h-5 text-black/40" />
+                <h3 className="font-heading text-[10px] font-black uppercase tracking-[0.3em] text-black/30">Protocol Benchmarks</h3>
               </div>
               <ul className="space-y-6 text-xs">
-                <li className="flex justify-between items-center border-b border-white/5 pb-4">
-                  <span className="font-black uppercase tracking-widest text-white/40">Infrastructure</span>
-                  <span className="text-white font-black">SOVEREIGN NODE</span>
+                <li className="flex justify-between items-center border-b border-black/5 pb-4">
+                  <span className="font-black uppercase tracking-widest text-black/40">Infrastructure</span>
+                  <span className="text-black font-black">SOVEREIGN NODE</span>
                 </li>
-                <li className="flex justify-between items-center border-b border-white/5 pb-4">
-                  <span className="font-black uppercase tracking-widest text-white/40">Custody</span>
-                  <span className="text-white font-black">AIR-GAPPED MULTISIG</span>
+                <li className="flex justify-between items-center border-b border-black/5 pb-4">
+                  <span className="font-black uppercase tracking-widest text-black/40">Custody</span>
+                  <span className="text-black font-black">AIR-GAPPED MULTISIG</span>
                 </li>
-                <li className="flex justify-between items-center border-b border-white/5 pb-4">
-                  <span className="font-black uppercase tracking-widest text-white/40">Audit Depth</span>
-                  <span className="text-white font-black">FULL STACK</span>
+                <li className="flex justify-between items-center border-b border-black/5 pb-4">
+                  <span className="font-black uppercase tracking-widest text-black/40">Audit Depth</span>
+                  <span className="text-black font-black">FULL STACK</span>
                 </li>
                 <li className="flex justify-between items-center">
-                  <span className="font-black uppercase tracking-widest text-white/40">Yield Profile</span>
-                  <span className="text-white font-black">ALPHA GENERATING</span>
+                  <span className="font-black uppercase tracking-widest text-black/40">Yield Profile</span>
+                  <span className="text-black font-black">ALPHA GENERATING</span>
                 </li>
               </ul>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/20 mt-8 font-black">Optimized Frontier Range</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-black/20 mt-8 font-black">Optimized Frontier Range</p>
             </div>
 
 
 
-            <div className="p-8 border-t border-white/5">
-              <p className="text-[10px] font-black text-white/20 uppercase tracking-widest leading-[2]">
+            <div className="p-8 border-t border-black/5">
+              <p className="text-[10px] font-black text-black/20 uppercase tracking-widest leading-[2]">
                 Documentation audited by Ethical Crypto Research Unit. All protocols require independent technical verification. Not financial advice.
               </p>
             </div>

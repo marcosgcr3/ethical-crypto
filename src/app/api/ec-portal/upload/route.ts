@@ -14,6 +14,11 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    if (!supabaseAdmin) {
+      console.error("Upload: Supabase Admin client not initialized. Check environment variables.");
+      return NextResponse.json({ error: "Storage service not configured" }, { status: 500 });
+    }
+
     const formData = await req.formData();
     const file = formData.get("file") as File;
 

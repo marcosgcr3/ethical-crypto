@@ -53,7 +53,7 @@ export default function AdSense() {
   useEffect(() => {
     if (loadAds) {
       const script = document.createElement("script");
-      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8889459576747982";
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`;
       script.async = true;
       script.crossOrigin = "anonymous";
       document.head.appendChild(script);

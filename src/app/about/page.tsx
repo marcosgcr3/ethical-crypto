@@ -30,30 +30,13 @@ export default async function AboutUs() {
   return (
     <div className="bg-void min-h-screen py-24 md:py-32 text-ghost">
       <div className="container mx-auto px-6 max-w-4xl">
-        <div className="flex flex-col md:flex-row gap-12 items-center mb-24 text-left">
-          <div className="w-full md:w-1/3">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-black/10 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <Image 
-                src={profile.imageUrl} 
-                alt={`${profile.name} - ${profile.title}`} 
-                width={400} 
-                height={500} 
-                className="relative rounded-3xl shadow-2xl border border-black/5 aspect-[4/5] object-cover grayscale"
-                priority
-                fetchPriority="high"
-                sizes="(max-width: 768px) 100vw, 400px"
-              />
-            </div>
-          </div>
-          <div className="w-full md:w-2/3">
-            <h5 className="font-heading font-bold text-black uppercase tracking-widest text-xs mb-4">The Architect's Story</h5>
-            <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-black uppercase tracking-tighter mb-8 leading-[0.9]">
-              From Code to <span className="text-zinc-400 underline decoration-black/10">Protocol Intelligence</span>
-            </h1>
-            <div className="prose prose-slate lg:prose-lg text-dim font-medium whitespace-pre-wrap leading-relaxed">
-              {profile.bio}
-            </div>
+        <div className="text-center mb-24">
+          <h5 className="font-heading font-bold text-black uppercase tracking-widest text-xs mb-4">The Architect's Story</h5>
+          <h1 className="font-heading text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-10 leading-[0.9]">
+            From Code to <span className="text-zinc-400 underline decoration-black/10">Protocol Intelligence</span>
+          </h1>
+          <div className="prose prose-slate lg:prose-xl text-dim font-medium whitespace-pre-wrap leading-relaxed max-w-2xl mx-auto">
+            {profile.bio}
           </div>
         </div>
 

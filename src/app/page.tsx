@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 export const revalidate = 3600; // Cache for 1 hour
+// Force redeploy trigger: 2026-04-22
 
 // Fallback images per category
 const CATEGORY_IMAGES: Record<string, string> = {

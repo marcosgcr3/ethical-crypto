@@ -58,7 +58,7 @@ export default async function SecurityPillarPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 border-b border-zinc-100 overflow-hidden bg-zinc-50 flex items-center justify-center min-h-[400px] md:min-h-[500px]">
+      <section className="relative py-12 md:py-16 border-b border-zinc-100 overflow-hidden bg-zinc-50 flex items-center justify-center min-h-[300px] md:min-h-[350px]">
         <Image 
           src="/images/security.png" 
           alt="Security Operations Background" 
@@ -71,8 +71,8 @@ export default async function SecurityPillarPage() {
               <IconLock className="w-3.5 h-3.5" />
               Zero Trust Operations
             </div>
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tighter uppercase max-w-4xl mx-auto">
-              Security/<span className="text-zinc-500">Wallets</span>
+            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.1] tracking-tighter uppercase max-w-4xl mx-auto">
+              Security: <span className="text-zinc-500">Asset</span> Fortress
             </h1>
             <p className="text-lg md:text-xl font-medium text-zinc-700 max-w-2xl mx-auto leading-relaxed">
               Engineering a fortress for your assets. Master air-gapped custody, multi-signature governance, and the technical defense systems of the modern sovereign individual, including advanced wallet management.

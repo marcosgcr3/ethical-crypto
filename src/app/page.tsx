@@ -35,7 +35,7 @@ export default async function Home() {
     <div className="bg-white min-h-screen text-black selection:bg-black/10 selection:text-black">
       {/* Hero Section */}
       <section className="container mx-auto px-4 md:px-6 mb-10 md:mb-20 pt-10">
-          <div className="relative rounded-3xl md:rounded-[3rem] overflow-hidden shadow-sm h-[450px] md:h-[600px] lg:h-[700px] bg-zinc-50 border border-zinc-100">
+          <div className="relative rounded-3xl md:rounded-[3rem] overflow-hidden shadow-sm h-[350px] md:h-[450px] lg:h-[550px] bg-zinc-50 border border-zinc-100">
               <Image 
                 src="/images/hero-v2.png" 
                 alt="Crypto Protocol Hero Illustration" 
@@ -50,7 +50,7 @@ export default async function Home() {
                       <div className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full text-[10px] md:text-xs font-black uppercase tracking-[0.3em] mb-8 shadow-lg">
                         Protocol Intelligence 2026
                       </div>
-                      <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black leading-[0.85] mb-8 uppercase tracking-tighter text-black relative z-10">
+                      <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black leading-[0.85] mb-8 uppercase tracking-tighter text-black relative z-10">
                         Decentralized <br />
                         <span className="text-zinc-500">Intelligence</span>
                       </h1>

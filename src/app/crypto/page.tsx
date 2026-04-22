@@ -105,7 +105,7 @@ export default async function CryptoPillarPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-void border-b border-white/5">
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden bg-void border-b border-white/5">
         <Image 
           src="/images/hero.png" 
           alt="Crypto intelligence dashboard with advanced protocol analytics" 
@@ -117,10 +117,10 @@ export default async function CryptoPillarPage() {
           <span className="inline-block px-4 py-1.5 bg-cyan/20 text-cyan border border-cyan/30 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-6 shadow-[0_0_20px_rgba(0,245,255,0.2)]">
             Institutional Research 2026
           </span>
-          <h1 className="font-heading text-4xl md:text-7xl font-extrabold mb-6 leading-[1.05] tracking-tighter uppercase max-w-5xl mx-auto text-white">
+          <h1 className="font-heading text-3xl md:text-5xl font-extrabold mb-6 leading-[1.05] tracking-tighter uppercase max-w-5xl mx-auto text-white">
             Crypto Intelligence: The Ultimate <span className="text-cyan">Protocol Guide</span>
           </h1>
-          <p className="text-lg md:text-2xl font-light opacity-70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl font-light opacity-70 max-w-3xl mx-auto leading-relaxed">
             The technical framework for systematically engineering your wealthspan, securing your privacy, and achieving peak protocol performance.
           </p>
         </div>

@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="glass-nav border-b border-black/5 w-full relative z-40 bg-white/80 backdrop-blur-xl">
             <nav className="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center text-sm md:text-base font-medium">
                 <Link href="/" title="Ethical Crypto - Protocol Engineering & Security" className="flex items-center gap-3 font-heading text-xl font-extrabold text-black tracking-tight hover:opacity-90 transition-opacity">
-                    <Image src="/images/brand-icon-v3.png" alt="Ethical Crypto - Decentralized Intelligence" width={40} height={40} className="rounded-lg shadow-sm border border-black/5" />
+                    <Image src="/brand/brand-icon-v3.png" alt="Ethical Crypto - Decentralized Intelligence" width={40} height={40} className="rounded-lg shadow-sm border border-black/5" />
                     <span className="uppercase text-black">ETHICAL <span className="text-zinc-400">CRYPTO</span></span>
                 </Link>
                 

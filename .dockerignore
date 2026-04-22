@@ -11,5 +11,6 @@ dist
 .git
 .gitignore
 README.md
+public/brand
 public/images/*
 !public/images/.gitkeep

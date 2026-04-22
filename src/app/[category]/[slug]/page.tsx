@@ -119,7 +119,7 @@ export default async function ArticlePage({ params }: { params: { category: stri
       name: 'Ethical Crypto',
       logo: {
         '@type': 'ImageObject',
-        url: `${baseUrl}/images/logo.png`
+        url: `${baseUrl}/brand/logo.png`
       }
     },
     mainEntityOfPage: {

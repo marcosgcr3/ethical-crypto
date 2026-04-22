@@ -90,7 +90,7 @@ export default function RootLayout({
               alternateName: 'EthicalCrypto',
               legalName: 'Ethical Crypto',
               url: 'https://ethicalcrypto.com',
-              logo: 'https://ethicalcrypto.com/images/logo.png',
+              logo: 'https://ethicalcrypto.com/brand/logo.png',
               about: {
                 '@type': 'Thing',
                 name: 'Cryptocurrency',

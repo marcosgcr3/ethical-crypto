@@ -14,14 +14,15 @@ export default function imageLoader({ src, width, quality }: ImageLoaderProps) {
 
   // Handle our local images through the optimization API
   if (src.startsWith('/images/')) {
-    const filename = src.split('/').pop();
-    return `/api/images/${filename}?w=${width}${quality ? `&q=${quality}` : ''}`;
+    const relativePath = src.substring(8); // Remove '/images/'
+    return `/api/images/${relativePath}?w=${width}${quality ? `&q=${quality}` : ''}`;
   }
 
   // Handle our images already pointing to /api/images/
   if (src.startsWith('/api/images/')) {
     const baseUrl = src.split('?')[0];
-    return `${baseUrl}?w=${width}${quality ? `&q=${quality}` : ''}`;
+    const relativePath = baseUrl.substring(12); // Remove '/api/images/'
+    return `/api/images/${relativePath}?w=${width}${quality ? `&q=${quality}` : ''}`;
   }
 
   // Fallback for other paths

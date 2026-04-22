@@ -103,7 +103,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
       const urls = article.links.map(l => l.url);
       
       try {
-        const res = await fetch("/api/eb-portal/check-links", {
+        const res = await fetch("/api/ec-portal/check-links", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ urls }),
@@ -247,7 +247,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
                   </div>
 
                   <Link 
-                    href={`/eb-clinical-portal/editor/${s.id}`} 
+                    href={`/ec-protocol-portal/editor/${s.id}`} 
                     className="text-[10px] font-bold uppercase tracking-widest text-bioblue border border-bioblue/20 px-4 py-2 rounded-lg hover:bg-bioblue hover:text-white transition-all shrink-0"
                   >
                     Edit

@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: ['/', '/api/images'],
-      disallow: ['/eb-clinical-portal', '/api'],
+      disallow: ['/ec-protocol-portal', '/api'],
     },
     sitemap: `${baseUrl}/sitemap.xml`,
   };

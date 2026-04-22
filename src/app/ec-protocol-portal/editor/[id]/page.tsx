@@ -22,7 +22,7 @@ export default async function EditorPage({ params }: { params: { id: string } })
   return (
     <div className="container mx-auto px-6 py-20 max-w-4xl">
       <div className="mb-8">
-        <Link href="/eb-clinical-portal" className="text-xs font-bold uppercase tracking-widest text-slate opacity-60 hover:opacity-100 transition-opacity flex items-center mb-6">
+        <Link href="/ec-protocol-portal" className="text-xs font-bold uppercase tracking-widest text-slate opacity-60 hover:opacity-100 transition-opacity flex items-center mb-6">
           <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
           Back to Dashboard
         </Link>

@@ -24,7 +24,7 @@ export async function loginAction(formData: FormData) {
     await recordLoginAttempt(true);
     await createSession("admin-root");
     // Redirect to the obfuscated dashboard
-    redirect("/eb-clinical-portal");
+    redirect("/ec-protocol-portal");
   } else {
     await recordLoginAttempt(false);
     return { error: "Invalid password. Your IP has been logged for security audit." };

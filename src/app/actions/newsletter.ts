@@ -24,7 +24,7 @@ export async function subscribeEmail(email: string) {
     });
 
     // Revalidate the admin dashboard so the new subscriber appears
-    revalidatePath("/eb-clinical-portal");
+    revalidatePath("/ec-protocol-portal");
     revalidatePath("/");
 
     return { success: true, message: "Welcome to the Ethical Crypto intelligence stream!" };

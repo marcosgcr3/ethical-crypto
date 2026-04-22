@@ -49,13 +49,13 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
 
   // Load affiliate tag from localStorage on mount
   useEffect(() => {
-    const saved = localStorage.getItem("eb_admin_affiliate_id");
+    const saved = localStorage.getItem("ec_admin_affiliate_id");
     if (saved) setAffiliateTag(saved);
   }, []);
 
   const handleTagChange = (val: string) => {
     setAffiliateTag(val.trim());
-    localStorage.setItem("eb_admin_affiliate_id", val.trim());
+    localStorage.setItem("ec_admin_affiliate_id", val.trim());
   };
 
   // Scan content for Amazon links with broader support for international and shortened domains
@@ -135,7 +135,7 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
     });
 
     try {
-      const res = await fetch("/api/eb-portal/check-links", {
+      const res = await fetch("/api/ec-portal/check-links", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ urls }),

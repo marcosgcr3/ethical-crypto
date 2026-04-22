@@ -98,7 +98,7 @@ export default function AdminForm({
     data.append("file", file);
 
     try {
-      const res = await fetch("/api/eb-portal/upload", {
+      const res = await fetch("/api/ec-portal/upload", {
         method: "POST",
         body: data,
       });

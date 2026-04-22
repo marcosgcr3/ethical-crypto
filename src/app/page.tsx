@@ -40,7 +40,7 @@ export default async function Home() {
                 src="/images/hero-v2.png" 
                 alt="Crypto Protocol Hero Illustration" 
                 fill 
-                className="object-cover grayscale opacity-50 contrast-[1.1]" 
+                className="object-cover contrast-[1.1] opacity-100" 
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"

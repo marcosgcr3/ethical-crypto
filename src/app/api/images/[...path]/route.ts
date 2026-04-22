@@ -11,9 +11,10 @@ import sharp from "sharp";
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ filename: string }> }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
-  const { filename } = await params;
+  const { path: pathSegments } = await params;
+  const filename = pathSegments.join("/");
   
   // Define path to the images inside the persistent folder
   const uploadDir = path.join(process.cwd(), "public", "images");

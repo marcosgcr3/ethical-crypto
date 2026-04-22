@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { decrypt } from "@/lib/auth";
 
 // Protected base paths
-const protectedRoutes = ["/eb-clinical-portal", "/api/eb-portal"];
+const protectedRoutes = ["/ec-protocol-portal", "/api/ec-portal"];
 // Paths that should be accessible even if within a protected base path
-const publicRoutes = ["/eb-clinical-portal/login"];
+const publicRoutes = ["/ec-protocol-portal/login"];
 
 export default async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
@@ -20,7 +20,7 @@ export default async function middleware(request: NextRequest) {
       if (path.startsWith("/api/")) {
         return NextResponse.json({ error: "Unauthorized access" }, { status: 401 });
       }
-      return NextResponse.redirect(new URL("/eb-clinical-portal/login", request.nextUrl));
+      return NextResponse.redirect(new URL("/ec-protocol-portal/login", request.nextUrl));
     }
 
     try {
@@ -29,7 +29,7 @@ export default async function middleware(request: NextRequest) {
       return NextResponse.next();
     } catch (error) {
       console.error("Session validation failed:", error);
-      const res = NextResponse.redirect(new URL("/eb-clinical-portal/login", request.nextUrl));
+      const res = NextResponse.redirect(new URL("/ec-protocol-portal/login", request.nextUrl));
       res.cookies.delete("admin_session");
       return res;
     }
@@ -41,7 +41,7 @@ export default async function middleware(request: NextRequest) {
 // Optimization: Only run middleware on these paths
 export const config = {
   matcher: [
-    '/eb-clinical-portal/:path*',
-    '/api/eb-portal/:path*',
+    '/ec-protocol-portal/:path*',
+    '/api/ec-portal/:path*',
   ],
 };

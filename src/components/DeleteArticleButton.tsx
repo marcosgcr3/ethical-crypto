@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { deleteArticle } from "../app/eb-clinical-portal/actions";
+import { deleteArticle } from "../app/ec-protocol-portal/actions";
 
 interface DeleteArticleButtonProps {
   articleId: string;

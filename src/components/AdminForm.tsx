@@ -160,14 +160,14 @@ export default function AdminForm({
   return (
     <div className="space-y-6">
       {/* Tab Navigation */}
-      <div className="flex border-b border-gray-800 mb-8">
+      <div className="flex border-b border-black/5 mb-8">
         <button
           type="button"
           onClick={() => setActiveTab("content")}
           className={`px-8 py-4 text-xs font-black uppercase tracking-widest transition-all border-b-2 ${
             activeTab === "content" 
-              ? "border-white text-white" 
-              : "border-transparent text-white opacity-40 hover:opacity-100"
+              ? "border-black text-black" 
+              : "border-transparent text-black opacity-40 hover:opacity-100"
           }`}
         >
           📝 Protocol Content
@@ -177,8 +177,8 @@ export default function AdminForm({
           onClick={() => setActiveTab("links")}
           className={`px-8 py-4 text-xs font-black uppercase tracking-widest transition-all border-b-2 ${
             activeTab === "links" 
-              ? "border-white text-white" 
-              : "border-transparent text-white opacity-40 hover:opacity-100"
+              ? "border-black text-black" 
+              : "border-transparent text-black opacity-40 hover:opacity-100"
           }`}
         >
           🔗 Affiliate Links
@@ -188,9 +188,9 @@ export default function AdminForm({
       <form onSubmit={handleSubmit} className="space-y-6">
         {activeTab === "content" ? (
           <>
-            {error && <div className="bg-red-900/20 text-red-400 p-4 rounded-lg text-sm">{error}</div>}
+            {error && <div className="bg-red-500/10 text-red-600 p-4 rounded-lg text-sm font-bold border border-red-500/20">{error}</div>}
             {showSuccess && (
-              <div className="bg-emerald-900/20 text-emerald-400 p-4 rounded-xl text-xs font-black uppercase tracking-widest animate-pulse flex items-center shadow-sm border border-emerald-900/50">
+              <div className="bg-emerald-500/10 text-emerald-600 p-4 rounded-xl text-xs font-black uppercase tracking-widest animate-pulse flex items-center shadow-sm border border-emerald-500/20">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                 Content Synced - Ready to Deploy
               </div>
@@ -198,24 +198,24 @@ export default function AdminForm({
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-black uppercase tracking-widest text-white opacity-70 mb-2">Title</label>
+                <label className="block text-xs font-black uppercase tracking-widest text-black opacity-70 mb-2">Title</label>
                 <input 
                   type="text" 
                   name="title" 
                   required 
                   value={formData.title} 
                   onChange={handleChange} 
-                  className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white" 
+                  className="w-full px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-black font-bold" 
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-black uppercase tracking-widest text-white opacity-70 mb-2">Category</label>
+                <label className="block text-xs font-black uppercase tracking-widest text-black opacity-70 mb-2">Category</label>
                 <select 
                   name="category" 
                   value={formData.category} 
                   onChange={handleChange} 
-                  className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white"
+                  className="w-full px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-black font-bold"
                 >
                   <option value="protocols">Protocols</option>
                   <option value="security">Security</option>
@@ -225,9 +225,9 @@ export default function AdminForm({
               </div>
 
               <div>
-                  <label className="flex justify-between items-center text-xs font-black uppercase tracking-widest text-white opacity-70 mb-2">
+                  <label className="flex justify-between items-center text-xs font-black uppercase tracking-widest text-black opacity-70 mb-2">
                     <span>URL Slug</span>
-                    <button type="button" onClick={generateSlug} className="text-white opacity-60 hover:opacity-100 hover:underline text-[10px]">Auto-Generate</button>
+                    <button type="button" onClick={generateSlug} className="text-black opacity-60 hover:opacity-100 hover:underline text-[10px]">Auto-Generate</button>
                   </label>
                 <input 
                   type="text" 
@@ -235,12 +235,12 @@ export default function AdminForm({
                   required 
                   value={formData.slug} 
                   onChange={handleChange} 
-                  className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none text-white" 
+                  className="w-full px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none text-black font-medium" 
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-black uppercase tracking-widest text-white opacity-70 mb-2">Image URL (Optional)</label>
+                <label className="block text-xs font-black uppercase tracking-widest text-black opacity-70 mb-2">Image URL (Optional)</label>
                 <div className="flex gap-2 mb-4">
                   <input 
                     type="text" 
@@ -248,20 +248,15 @@ export default function AdminForm({
                     placeholder="Leave empty for no photo"
                     value={formData.imageUrl} 
                     onChange={handleChange} 
-                    className="flex-1 px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white" 
+                    className="flex-1 px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-black font-medium" 
                   />
                   <button
                     type="button"
                     onClick={handleUploadClick}
                     disabled={uploading}
-                    className="bg-white text-black px-4 py-3 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-zinc-200 transition-all flex items-center justify-center min-w-[80px]"
+                    className="bg-black text-white px-4 py-3 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-zinc-800 transition-all flex items-center justify-center min-w-[80px]"
                   >
-                    {uploading ? (
-                      <svg className="animate-spin h-4 w-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    ) : "Upload"}
+                    {uploading ? "SYNC..." : "Upload"}
                   </button>
                   <input 
                     type="file" 
@@ -272,7 +267,7 @@ export default function AdminForm({
                   />
                 </div>
                 {formData.imageUrl && (
-                  <div className="relative w-full h-32 rounded-xl overflow-hidden border border-gray-800 bg-black flex items-center justify-center">
+                  <div className="relative w-full h-32 rounded-xl overflow-hidden border border-black/5 bg-zinc-50 flex items-center justify-center shadow-inner">
                     <img 
                       src={`${formData.imageUrl}${formData.imageUrl.includes('?') ? '&' : '?'}t=${Date.now()}`} 
                       alt="Preview" 
@@ -287,94 +282,94 @@ export default function AdminForm({
               </div>
             </div>
 
-            <div className="bg-black p-6 rounded-2xl border border-gray-800">
+            <div className="bg-zinc-50 p-6 rounded-2xl border border-black/5">
               <div className="flex justify-between items-center mb-6">
-                <label className="text-xs font-black uppercase tracking-widest text-white opacity-70">Affiliate Products (CTA Blocks)</label>
-                <button type="button" onClick={addProduct} className="bg-white text-black px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-zinc-200 transition-all">
+                <label className="text-xs font-black uppercase tracking-widest text-black opacity-70">Affiliate Products (CTA Blocks)</label>
+                <button type="button" onClick={addProduct} className="bg-black text-white px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm hover:bg-zinc-800 transition-all">
                   + Add Product
                 </button>
               </div>
               
               <div className="space-y-4">
                 {formData.amazonProducts.map((product: any, index: number) => (
-                  <div key={index} className="flex flex-col bg-gray-900 p-6 rounded-2xl border border-gray-800 shadow-sm relative space-y-4">
+                  <div key={index} className="flex flex-col bg-white p-6 rounded-2xl border border-black/5 shadow-sm relative space-y-4">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
                         <div className="w-full">
-                            <label className="block text-[10px] font-black uppercase text-white opacity-40 mb-1">Product Name</label>
+                            <label className="block text-[10px] font-black uppercase text-black opacity-40 mb-1">Product Name</label>
                             <input 
                                 type="text" 
                                 placeholder="e.g. Ledger Nano X"
                                 value={product.name}
                                 onChange={(e) => handleProductChange(index, 'name', e.target.value)}
-                                className="w-full px-4 py-2 rounded-lg bg-black border border-gray-800 focus:outline-none text-sm text-white font-medium"
+                                className="w-full px-4 py-2 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none text-sm text-black font-medium"
                             />
                         </div>
                         <div className="w-full">
-                            <label className="block text-[10px] font-black uppercase text-white opacity-40 mb-1">Product ID (ASIN)</label>
+                            <label className="block text-[10px] font-black uppercase text-black opacity-40 mb-1">Product ID (ASIN)</label>
                             <input 
                                 type="text" 
                                 placeholder="e.g. B0C123..."
                                 value={product.asin}
                                 onChange={(e) => handleProductChange(index, 'asin', e.target.value)}
-                                className="w-full px-4 py-2 rounded-lg bg-black border border-gray-800 focus:outline-none text-sm text-white font-medium"
+                                className="w-full px-4 py-2 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none text-sm text-black font-medium"
                             />
                         </div>
                         <div className="w-full flex gap-3 items-end">
                             <div className="flex-1">
-                                <label className="block text-[10px] font-black uppercase text-white opacity-40 mb-1">Direct Affiliate Link</label>
+                                <label className="block text-[10px] font-black uppercase text-black opacity-40 mb-1">Direct Affiliate Link</label>
                                 <input 
                                     type="text" 
                                     placeholder="Paste full URL..."
                                     value={product.url || ""}
                                     onChange={(e) => handleProductChange(index, 'url', e.target.value)}
-                                    className="w-full px-4 py-2 rounded-lg bg-black border border-gray-800 focus:outline-none text-sm text-white font-medium"
+                                    className="w-full px-4 py-2 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none text-sm text-black font-medium"
                                 />
                             </div>
-                            <button type="button" onClick={() => removeProduct(index)} className="bg-red-900/20 text-red-400 p-2 rounded-lg hover:bg-red-900/40 transition-all flex items-center justify-center shrink-0">
+                            <button type="button" onClick={() => removeProduct(index)} className="bg-red-500/10 text-red-600 p-2 rounded-lg hover:bg-red-500/20 transition-all flex items-center justify-center shrink-0">
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                             </button>
                         </div>
                       </div>
                       {product.url && (
-                        <div className="text-[10px] text-white font-black uppercase bg-white/10 px-3 py-1.5 rounded-lg inline-block self-start">
+                        <div className="text-[10px] text-black font-black uppercase bg-black/5 px-3 py-1.5 rounded-lg inline-block self-start">
                           ⚡ Priority: Direct link active.
                         </div>
                       )}
                   </div>
                 ))}
                 {formData.amazonProducts.length === 0 && (
-                  <p className="text-[10px] text-white opacity-40 italic text-center py-4">No affiliate products added.</p>
+                  <p className="text-[10px] text-black opacity-40 italic text-center py-4">No affiliate products added.</p>
                 )}
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-black uppercase tracking-widest text-white opacity-70 mb-2">
+              <label className="block text-xs font-black uppercase tracking-widest text-black opacity-70 mb-2">
                   Preview Excerpt
               </label>
-              <p className="text-[10px] text-white/50 mb-3">2-3 sentences of plain text. No HTML.</p>
+              <p className="text-[10px] text-black/50 mb-3">2-3 sentences of plain text. No HTML.</p>
               <textarea 
                 name="excerpt" 
                 required 
                 rows={3}
                 value={formData.excerpt} 
                 onChange={handleChange} 
-                className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white resize-none" 
+                className="w-full px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-black resize-none font-medium" 
               />
             </div>
 
             <div>
-              <label className="block text-xs font-black uppercase tracking-widest text-white opacity-70 mb-2">
+              <label className="block text-xs font-black uppercase tracking-widest text-black opacity-70 mb-2">
                   Full Protocol HTML Content
               </label>
-              <p className="text-[10px] text-white/50 mb-3">Paste rich HTML content. Use &lt;h2&gt;, &lt;p&gt;, &lt;table&gt;.</p>
+              <p className="text-[10px] text-black/50 mb-3">Paste rich HTML content. Use &lt;h2&gt;, &lt;p&gt;, &lt;table&gt;.</p>
               <textarea 
                 name="content" 
                 required 
                 rows={16}
                 value={formData.content} 
                 onChange={handleChange} 
-                className="w-full px-4 py-3 rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white font-mono text-sm leading-relaxed" 
+                className="w-full px-4 py-3 rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-zinc-800 font-mono text-sm leading-relaxed" 
               />
             </div>
           </>
@@ -382,7 +377,7 @@ export default function AdminForm({
           <LinkScanner content={formData.content} onContentChange={handleContentFromScanner} />
         )}
 
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 border-t border-gray-800 gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 border-t border-black/5 gap-4">
           <div className="flex flex-col gap-3">
             <label className="flex items-center space-x-3 cursor-pointer">
               <input 
@@ -390,14 +385,14 @@ export default function AdminForm({
                 name="published" 
                 checked={formData.published} 
                 onChange={handleCheckboxChange} 
-                className="w-5 h-5 accent-white rounded bg-black border-gray-800" 
+                className="w-5 h-5 accent-black rounded bg-zinc-50 border-black/10" 
               />
-              <span className="text-sm font-black uppercase tracking-widest text-white opacity-80">
+              <span className="text-sm font-black uppercase tracking-widest text-black opacity-80">
                 {formData.published ? "Published (Live)" : "Draft (Hidden)"}
               </span>
             </label>
             <div className="flex flex-col gap-1">
-              <label className="text-[10px] font-black uppercase tracking-widest text-white opacity-60">
+              <label className="text-[10px] font-black uppercase tracking-widest text-black opacity-60">
                 Publication Date
               </label>
               <input 
@@ -405,7 +400,7 @@ export default function AdminForm({
                 name="createdAt" 
                 value={formData.createdAt} 
                 onChange={handleChange} 
-                className="px-3 py-2 text-sm rounded-lg bg-black border border-gray-800 focus:outline-none focus:ring-2 focus:ring-white/20 text-white" 
+                className="px-3 py-2 text-sm rounded-lg bg-zinc-50 border border-black/5 focus:outline-none focus:ring-2 focus:ring-black/10 text-black font-medium" 
               />
             </div>
           </div>
@@ -416,7 +411,7 @@ export default function AdminForm({
                 href={`/${formData.category}/${formData.slug}`} 
                 target="_blank" 
                 rel="noreferrer"
-                className="bg-gray-900 text-white px-6 py-4 rounded-xl font-black hover:bg-gray-800 transition-all uppercase tracking-widest text-sm shadow-sm flex items-center"
+                className="bg-zinc-100 text-black px-6 py-4 rounded-xl font-black hover:bg-zinc-200 transition-all uppercase tracking-widest text-sm shadow-sm flex items-center"
               >
                 Preview
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -425,7 +420,7 @@ export default function AdminForm({
             <button 
               type="submit" 
               disabled={loading}
-              className="bg-white text-black px-10 py-4 rounded-xl font-black hover:bg-zinc-200 transition-all uppercase tracking-widest text-sm shadow-[0_10px_20px_rgba(255,255,255,0.1)] disabled:opacity-50"
+              className="bg-black text-white px-10 py-4 rounded-xl font-black hover:bg-zinc-800 transition-all uppercase tracking-widest text-sm shadow-xl disabled:opacity-50"
             >
               {loading ? "Saving..." : "Save Protocol"}
             </button>

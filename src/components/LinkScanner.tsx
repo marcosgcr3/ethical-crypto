@@ -177,21 +177,21 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white p-6 rounded-2xl border border-black/5 shadow-sm">
         <div className="flex-1">
-          <h3 className="text-lg font-bold text-slate">Amazon Link Scanner</h3>
-          <p className="text-xs text-slate opacity-60">Found {links.length} potential Amazon links in this article. Verification checks if they lead to <strong>specific products</strong>.</p>
+          <h3 className="text-lg font-bold text-black uppercase tracking-tight">Amazon Link Scanner</h3>
+          <p className="text-xs text-black opacity-60">Found {links.length} potential Amazon links in this article. Verification checks if they lead to <strong>specific products</strong>.</p>
         </div>
         
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex flex-col gap-1">
-            <label className="text-[10px] font-bold text-slate opacity-40 uppercase tracking-widest">Affiliate Tag</label>
+            <label className="text-[10px] font-bold text-black opacity-40 uppercase tracking-widest">Affiliate Tag</label>
             <input 
               type="text" 
               placeholder="e.g. marco-20"
               value={affiliateTag}
               onChange={(e) => handleTagChange(e.target.value)}
-              className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-bioblue text-bioblue font-bold"
+              className="bg-zinc-50 border border-black/5 rounded-lg px-3 py-2 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-black/10 text-black font-bold"
             />
           </div>
 
@@ -201,7 +201,7 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
                 type="button"
                 onClick={handleVerifyAll}
                 disabled={verifying}
-                className="bg-gray-100 text-slate px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-gray-200 transition-all disabled:opacity-50 h-10"
+                className="bg-zinc-100 text-black px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all disabled:opacity-50 h-10 border border-black/5"
               >
                 {verifying ? "Checking..." : "Verify All Links"}
               </button>
@@ -210,7 +210,7 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
               <button
                 type="button"
                 onClick={applyReplacements}
-                className="bg-bioblue text-white px-6 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest shadow-md hover:bg-opacity-90 transition-all h-10"
+                className="bg-black text-white px-6 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest shadow-md hover:bg-zinc-800 transition-all h-10"
               >
                 Apply {pendingCount} Replacements
               </button>
@@ -219,10 +219,10 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
         </div>
       </div>
 
-      <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+      <div className="bg-white border border-black/5 rounded-2xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 text-slate text-[10px] font-bold uppercase tracking-widest border-b border-gray-100">
+            <thead className="bg-zinc-50 text-black text-[10px] font-bold uppercase tracking-widest border-b border-black/5">
               <tr>
                 <th className="text-left px-6 py-4 w-12 text-center">#</th>
                 <th className="text-left px-6 py-4 w-24">Status</th>
@@ -232,13 +232,13 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
                 <th className="text-left px-6 py-4">New Affiliate URL</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-black/5">
               {links.map((link, i) => {
                 const status = statuses[link.fullUrl] || "unchecked";
                 const detail = details[link.fullUrl];
                 return (
-                  <tr key={i} className="hover:bg-gray-50/50 transition-colors">
-                    <td className="px-6 py-4 text-slate opacity-40 font-mono text-xs text-center">{i + 1}</td>
+                  <tr key={i} className="hover:bg-zinc-50 transition-colors">
+                    <td className="px-6 py-4 text-black opacity-40 font-mono text-xs text-center">{i + 1}</td>
                     <td className="px-6 py-4">
                       <div className="flex flex-col gap-0.5">
                         <span className="text-lg leading-none">{STATUS_ICON[status]}</span>
@@ -248,9 +248,9 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-xs font-bold text-slate max-w-[200px] truncate">{link.context}</div>
+                      <div className="text-xs font-bold text-black max-w-[200px] truncate">{link.context}</div>
                       <div className="mt-1">
-                        <code className="bg-gray-50 text-slate opacity-40 px-2 py-0.5 rounded text-[8px] block max-w-[200px] truncate border border-gray-100 italic">
+                        <code className="bg-zinc-50 text-black opacity-40 px-2 py-0.5 rounded text-[8px] block max-w-[200px] truncate border border-black/5 italic">
                           Target: {link.fullUrl}
                         </code>
                         {detail?.finalUrl && (
@@ -260,7 +260,7 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
                               href={detail.finalUrl} 
                               target="_blank" 
                               rel="noreferrer" 
-                              className="text-[8px] text-bioblue hover:underline underline-offset-1 truncate max-w-[150px]"
+                              className="text-[8px] text-black/60 hover:underline underline-offset-1 truncate max-w-[150px]"
                             >
                               {detail.finalUrl}
                             </a>
@@ -271,22 +271,22 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
                     <td className="px-6 py-4">
                        {status === "ok" ? (
                          <div className="max-w-[200px]">
-                           <div className="text-[10px] font-medium text-slate line-clamp-2 leading-tight">
+                           <div className="text-[10px] font-medium text-black line-clamp-2 leading-tight">
                              {detail?.title}
                            </div>
                            <span className="text-[8px] text-emerald-600 font-bold uppercase mt-1 block font-extrabold tracking-widest">✅ Verified Product</span>
                          </div>
                        ) : status === "broken" ? (
                          <div className="max-w-[200px]">
-                           <div className="text-[10px] font-medium text-red-500 line-clamp-2 leading-tight">
+                           <div className="text-[10px] font-medium text-red-600 line-clamp-2 leading-tight">
                              {detail?.title || "Broken Link"}
                            </div>
                            {(detail?.title?.toLowerCase().includes("search") || 
                              detail?.title?.toLowerCase().includes("búsqueda") ||
                              detail?.title?.toLowerCase().includes("results")) ? (
-                             <span className="text-[8px] text-red-500 font-bold uppercase mt-1 block">⚠️ Redirected to Search</span>
+                             <span className="text-[8px] text-red-600 font-bold uppercase mt-1 block">⚠️ Redirected to Search</span>
                            ) : (
-                             <span className="text-[8px] text-red-500 font-bold uppercase mt-1 block">❌ Product Not Found</span>
+                             <span className="text-[8px] text-red-600 font-bold uppercase mt-1 block">❌ Product Not Found</span>
                            )}
                          </div>
                        ) : status === "error" && detail?.title?.includes("Blocked") ? (
@@ -295,11 +295,11 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
                              Amazon Blocked Verification
                            </div>
                            <span className="text-[8px] text-amber-500 font-bold uppercase mt-1 block">🔒 Bot Detection (Soft Check)</span>
-                           <p className="text-[7px] text-slate opacity-40 mt-1 uppercase tracking-tighter">Amazon prevented automated checking. Link might be correct.</p>
+                           <p className="text-[7px] text-black opacity-40 mt-1 uppercase tracking-tighter">Amazon prevented automated checking. Link might be correct.</p>
                          </div>
                        ) : (
                          <div className="flex flex-col gap-1">
-                            <span className="text-[10px] text-slate opacity-30 italic">Pending / Error</span>
+                            <span className="text-[10px] text-black opacity-30 italic">Pending / Error</span>
                             {status === "error" && !detail?.title?.includes("Blocked") && (
                                 <span className="text-[8px] text-amber-500 font-bold uppercase">Check timeout or DNS error</span>
                             )}
@@ -312,7 +312,7 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
                         placeholder="e.g. B0C..."
                         value={asins[link.index] || ""}
                         onChange={(e) => handleAsinChange(link.index, e.target.value)}
-                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-2 py-1.5 text-[10px] font-mono focus:outline-none focus:ring-1 focus:ring-bioblue text-bioblue font-bold uppercase"
+                        className="w-full bg-zinc-50 border border-black/5 rounded-lg px-2 py-1.5 text-[10px] font-mono focus:outline-none focus:ring-1 focus:ring-black/10 text-black font-bold uppercase"
                       />
                     </td>
                     <td className="px-6 py-4">
@@ -321,7 +321,7 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
                         placeholder="Paste full URL..."
                         value={replacements[link.index] || ""}
                         onChange={(e) => handleReplacementChange(link.index, e.target.value)}
-                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-2 py-1.5 text-[10px] font-mono focus:outline-none focus:ring-1 focus:ring-bioblue text-slate"
+                        className="w-full bg-zinc-50 border border-black/5 rounded-lg px-2 py-1.5 text-[10px] font-mono focus:outline-none focus:ring-1 focus:ring-black/10 text-black/60"
                       />
                     </td>
                   </tr>
@@ -329,7 +329,7 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
               })}
               {links.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-6 py-10 text-center text-xs text-slate opacity-40 italic">
+                  <td colSpan={6} className="px-6 py-10 text-center text-xs text-black opacity-40 italic">
                     No Amazon links detected in the current content.
                   </td>
                 </tr>
@@ -340,7 +340,7 @@ export default function LinkScanner({ content, onContentChange }: LinkScannerPro
       </div>
       
       {applied && (
-        <div className="fixed bottom-10 right-10 bg-emerald-500 text-white px-6 py-3 rounded-full shadow-2xl animate-bounce text-sm font-bold flex items-center gap-2 z-[99]">
+        <div className="fixed bottom-10 right-10 bg-black text-white px-6 py-3 rounded-full shadow-2xl animate-bounce text-sm font-bold flex items-center gap-2 z-[99]">
           <span>✅ Replacements applied locally. Press "Save Article" to finalize.</span>
         </div>
       )}

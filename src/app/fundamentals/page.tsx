@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import prisma from '@/lib/prisma';
-import NewsletterSidebar from '@/components/NewsletterSidebar';
 import { 
   IconAnalysis, 
   IconBlockchain, 
@@ -179,7 +178,7 @@ export default async function FundamentalsPillarPage() {
               </ul>
             </div>
 
-            <NewsletterSidebar />
+
           </aside>
         </div>
       </div>

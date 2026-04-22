@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import prisma from '@/lib/prisma';
 
 export const metadata: Metadata = {
@@ -21,10 +20,7 @@ export default async function AboutUs() {
 
   // Fallback values in case DB is empty
   const profile = {
-    name: founder?.name || "Marcus Sterling",
-    title: founder?.title || "Lead Protocol Analyst & Security Auditor",
     bio: founder?.bio || "Quantitative analyst and protocol architect specializing in decentralized security and yield engineering. Bringing rigorous institutional-grade standards to the art of blockchain research.",
-    imageUrl: founder?.imageUrl || "/images/doctor.png"
   };
 
   return (

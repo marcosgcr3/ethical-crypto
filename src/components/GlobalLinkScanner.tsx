@@ -137,54 +137,54 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
   };
 
   return (
-    <div className="fixed inset-0 bg-slate/80 backdrop-blur-sm z-[100] flex items-center justify-center p-6 sm:p-12 overflow-hidden">
-      <div className="bg-white w-full max-w-6xl h-full max-h-[90vh] rounded-3xl shadow-2xl flex flex-col border border-white/20">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-6 sm:p-12 overflow-hidden">
+      <div className="bg-white w-full max-w-6xl h-full max-h-[90vh] rounded-3xl shadow-2xl flex flex-col border border-black/5">
         
         {/* Header */}
-        <div className="flex items-center justify-between px-8 py-6 border-b border-gray-100">
+        <div className="flex items-center justify-between px-8 py-6 border-b border-black/5">
           <div>
-            <h2 className="text-2xl font-extrabold text-bioblue uppercase tracking-tight">Global Link Scanner</h2>
-            <p className="text-sm text-slate opacity-60">Verifying Amazon product integrity across all content.</p>
+            <h2 className="text-2xl font-extrabold text-black uppercase tracking-tight">Global Link Scanner</h2>
+            <p className="text-sm text-black opacity-60">Verifying Amazon product integrity across all content.</p>
           </div>
           <button 
             onClick={onClose}
-            className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-slate hover:bg-gray-50 transition-colors"
+            className="w-10 h-10 rounded-full border border-black/5 flex items-center justify-center text-black hover:bg-zinc-100 transition-colors"
           >
             ✕
           </button>
         </div>
 
         {/* Stats & Progress */}
-        <div className="px-8 py-6 bg-gray-50/50 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="px-8 py-6 bg-zinc-50 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex gap-4">
-            <div className="bg-white border border-gray-100 px-4 py-2 rounded-xl shadow-sm">
-              <span className="text-[10px] uppercase font-bold text-slate opacity-40 block">Healthy</span>
+            <div className="bg-white border border-black/5 px-4 py-2 rounded-xl shadow-sm">
+              <span className="text-[10px] uppercase font-bold text-black opacity-40 block">Healthy</span>
               <span className="text-lg font-extrabold text-emerald-600">{stats.healthy}</span>
             </div>
-            <div className="bg-white border border-gray-100 px-4 py-2 rounded-xl shadow-sm">
-              <span className="text-[10px] uppercase font-bold text-slate opacity-40 block">Partial</span>
+            <div className="bg-white border border-black/5 px-4 py-2 rounded-xl shadow-sm">
+              <span className="text-[10px] uppercase font-bold text-black opacity-40 block">Partial</span>
               <span className="text-lg font-extrabold text-amber-500">{stats.partial}</span>
             </div>
-            <div className="bg-white border border-gray-100 px-4 py-2 rounded-xl shadow-sm">
-              <span className="text-[10px] uppercase font-bold text-slate opacity-40 block">Critical</span>
+            <div className="bg-white border border-black/5 px-4 py-2 rounded-xl shadow-sm">
+              <span className="text-[10px] uppercase font-bold text-black opacity-40 block">Critical</span>
               <span className="text-lg font-extrabold text-red-500">{stats.critical}</span>
             </div>
-            <div className="bg-white border border-gray-100 px-4 py-2 rounded-xl shadow-sm hidden md:block">
-              <span className="text-[10px] uppercase font-bold text-slate opacity-40 block">No Links</span>
-              <span className="text-lg font-extrabold text-slate opacity-30">{stats.none}</span>
+            <div className="bg-white border border-black/5 px-4 py-2 rounded-xl shadow-sm hidden md:block">
+              <span className="text-[10px] uppercase font-bold text-black opacity-40 block">No Links</span>
+              <span className="text-lg font-extrabold text-black opacity-30">{stats.none}</span>
             </div>
           </div>
 
           <div className="flex-1 max-w-sm w-full">
             {scanning ? (
               <div className="space-y-2">
-                <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-bioblue">
+                <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-black">
                   <span>Scanning Articles...</span>
                   <span>{processedCount} / {articles.length}</span>
                 </div>
-                <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-2 bg-zinc-200 rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-bioblue transition-all duration-300"
+                    className="h-full bg-black transition-all duration-300"
                     style={{ width: `${(processedCount / articles.length) * 100}%` }}
                   ></div>
                 </div>
@@ -192,7 +192,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
             ) : (
                 <button 
                   onClick={startScan}
-                  className="w-full bg-bioblue text-white py-3 rounded-xl font-bold uppercase tracking-widest text-xs shadow-lg hover:shadow-bioblue/20 hover:scale-[1.02] active:scale-100 transition-all"
+                  className="w-full bg-black text-white py-3 rounded-xl font-bold uppercase tracking-widest text-xs shadow-lg hover:bg-zinc-800 transition-all"
                 >
                   Start Global Scan
                 </button>
@@ -213,7 +213,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
                   key={s.id} 
                   className={`
                     border rounded-2xl p-4 flex items-center gap-6 transition-all
-                    ${isProcessing ? 'border-bioblue bg-bioblue/5 scale-[0.99]' : 'border-gray-100 bg-white hover:border-gray-200'}
+                    ${isProcessing ? 'border-black bg-black/5 scale-[0.99]' : 'border-black/5 bg-white hover:border-black/10'}
                   `}
                 >
                   <div className="flex-1">
@@ -222,8 +222,8 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
                         {s.health === "partial" && <span className="text-amber-500">⚠️</span>}
                         {s.health === "critical" && <span className="text-red-500">❌</span>}
                         {s.health === "none" && <span className="opacity-20 italic">No links</span>}
-                      <h4 className="font-bold text-slate truncate max-w-md">{s.title}</h4>
-                      <span className="text-[10px] font-bold text-bioblue uppercase">{s.category}</span>
+                      <h4 className="font-bold text-black truncate max-w-md">{s.title}</h4>
+                      <span className="text-[10px] font-bold text-black/40 uppercase">{s.category}</span>
                     </div>
                     {s.links.length > 0 && (
                       <div className="mt-2 flex flex-wrap gap-2">
@@ -234,7 +234,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
                                 l.status === 'ok' ? 'bg-emerald-50 border-emerald-100 text-emerald-700' :
                                 l.status === 'broken' ? 'bg-red-50 border-red-100 text-red-700' :
                                 l.status === 'error' && l.title?.includes('Blocked') ? 'bg-amber-50 border-amber-100 text-amber-700' :
-                                'bg-gray-50 border-gray-100 text-slate opacity-40'
+                                'bg-zinc-50 border-black/5 text-black opacity-40'
                             }`}
                            >
                               {l.status === 'ok' ? 'VERIFIED' : 
@@ -248,7 +248,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
 
                   <Link 
                     href={`/ec-protocol-portal/editor/${s.id}`} 
-                    className="text-[10px] font-bold uppercase tracking-widest text-bioblue border border-bioblue/20 px-4 py-2 rounded-lg hover:bg-bioblue hover:text-white transition-all shrink-0"
+                    className="text-[10px] font-black uppercase tracking-widest text-black border border-black/10 px-4 py-2 rounded-lg hover:bg-black hover:text-white transition-all shrink-0"
                   >
                     Edit
                   </Link>
@@ -257,7 +257,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
             })}
             
             {!scanning && allSummaries.every(s => s.health === "none") && (
-                <div className="py-20 text-center opacity-30 italic">
+                <div className="py-20 text-center opacity-30 italic text-black">
                     Press "Start Global Scan" to analyze your content.
                 </div>
             )}
@@ -265,7 +265,7 @@ export default function GlobalLinkScanner({ articles, onClose }: GlobalLinkScann
         </div>
 
         {/* Footer */}
-        <div className="px-8 py-4 bg-gray-50/50 border-t border-gray-100 text-[10px] text-slate opacity-40 uppercase font-bold tracking-widest text-center">
+        <div className="px-8 py-4 bg-zinc-50 border-t border-black/5 text-[10px] text-black opacity-40 uppercase font-bold tracking-widest text-center">
             Ethical Crypto System Scanner v1.0
         </div>
       </div>

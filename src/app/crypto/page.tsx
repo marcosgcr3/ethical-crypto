@@ -107,7 +107,7 @@ export default async function CryptoPillarPage() {
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center overflow-hidden bg-void border-b border-white/5">
         <Image 
-          src="/images/hero.png" 
+          src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero.png" 
           alt="Crypto intelligence dashboard with advanced protocol analytics" 
           fill 
           className="object-cover opacity-20"

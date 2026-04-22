@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Ethical Crypto",
     images: [
       {
-        url: "/images/ethical-crypto.png",
+        url: "/brand/ethical-crypto.png",
         width: 1200,
         height: 1200,
         alt: "Ethical Crypto Protocol Operations",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description: "Master the digital frontier with data-driven crypto insights. Expert analysis on DeFi and protocol engineering.",
     site: "@ethicalcrypto",
     creator: "@ethicalcrypto",
-    images: ["/images/ethical-crypto.png"],
+    images: ["/brand/ethical-crypto.png"],
   },
   icons: {
     icon: [

@@ -17,11 +17,11 @@ export const revalidate = 3600; // Cache for 1 hour
 
 // Fallback images per category
 const CATEGORY_IMAGES: Record<string, string> = {
-  protocols: '/images/hero-v2.png',
-  wealthpumps: '/images/staking.png',
-  fundamentals: '/images/mining.png',
-  security: '/images/security.png',
-  wallets: '/images/wallets.png',
+  protocols: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero-v2.png',
+  wealthpumps: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/staking.png',
+  fundamentals: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/mining.png',
+  security: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/security.png',
+  wallets: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/wallets.png',
 };
 
 export default async function Home() {
@@ -38,7 +38,7 @@ export default async function Home() {
       <section className="container mx-auto px-4 md:px-6 mb-10 md:mb-20 pt-10">
           <div className="relative rounded-3xl md:rounded-[3rem] overflow-hidden shadow-sm h-[350px] md:h-[450px] lg:h-[550px] bg-zinc-50 border border-zinc-100">
               <Image 
-                src="/images/hero-v2.png" 
+                src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero-v2.png" 
                 alt="Crypto Protocol Hero Illustration" 
                 fill 
                 className="object-cover contrast-[1.1] opacity-100" 
@@ -93,7 +93,7 @@ export default async function Home() {
                                            category === 'crypto' ? 'protocols' : 
                                            category === 'hardware' ? 'wallets' : category;
                     
-                    const imgSrc = article.imageUrl || CATEGORY_IMAGES[displayCategory] || '/images/staking.png';
+                    const imgSrc = article.imageUrl || CATEGORY_IMAGES[displayCategory] || '/brand/staking.png';
                     const readTime = Math.max(5, Math.ceil(article.content.split(' ').length / 200));
                     const dateStr = new Date(article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 

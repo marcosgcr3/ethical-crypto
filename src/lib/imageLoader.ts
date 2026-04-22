@@ -7,8 +7,8 @@ import { ImageLoaderProps } from 'next/image';
  * Example: /images/example.png -> /api/images/example.png?w=640
  */
 export default function imageLoader({ src, width, quality }: ImageLoaderProps) {
-  // If it's an external URL, return as is (or with minimal processing)
-  if (src.startsWith('http')) {
+  // If it's an external URL or a brand asset, return as is
+  if (src.startsWith('http') || src.startsWith('/brand/')) {
     return src;
   }
 

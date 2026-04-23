@@ -16,9 +16,26 @@ export async function GET(
   const { path: pathSegments } = await params;
   const filename = pathSegments.join("/");
   
-  // Define path to the images inside the persistent folder
-  const uploadDir = path.join(process.cwd(), "public", "images");
-  const filePath = path.join(uploadDir, filename);
+  let fileBuffer: Buffer;
+  let ext: string;
+
+  if (pathSegments[0] === "supabase") {
+    // Fetch from Supabase
+    const supabasePath = pathSegments.slice(1).join("/");
+    const supabaseUrl = `https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/${supabasePath}`;
+    const response = await fetch(supabaseUrl);
+    if (!response.ok) {
+      return new NextResponse("Image not found on Supabase", { status: 404 });
+    }
+    fileBuffer = Buffer.from(await response.arrayBuffer());
+    ext = path.extname(supabasePath).toLowerCase();
+  } else {
+    // Define path to the images inside the persistent folder
+    const uploadDir = path.join(process.cwd(), "public", "images");
+    const filePath = path.join(uploadDir, filename);
+    fileBuffer = await fs.readFile(filePath);
+    ext = path.extname(filename).toLowerCase();
+  }
 
   try {
     // Parse query parameters for resizing and quality
@@ -29,10 +46,6 @@ export async function GET(
     // Check if browser supports WebP
     const acceptHeader = request.headers.get("accept") || "";
     const supportsWebp = acceptHeader.includes("image/webp");
-
-    // Read the file buffer
-    const fileBuffer = await fs.readFile(filePath);
-    const ext = path.extname(filename).toLowerCase();
 
     // Skip optimization for SVGs
     if (ext === ".svg") {

@@ -44,7 +44,7 @@ export default async function Home() {
                 className="object-cover opacity-30" 
                 priority
                 fetchPriority="high"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
+                sizes="100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/20 to-transparent flex items-center">
                   <div className="p-8 md:p-20 max-w-3xl">

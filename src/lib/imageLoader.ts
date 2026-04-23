@@ -7,7 +7,16 @@ import { ImageLoaderProps } from 'next/image';
  * Example: /images/example.png -> /api/images/example.png?w=640
  */
 export default function imageLoader({ src, width, quality }: ImageLoaderProps) {
-  // If it's an external URL or a brand asset, return as is
+  // If it's our Supabase bucket, route it through our optimizer
+  if (src.includes('wwvfyhszgbdffhzlapxz.supabase.co')) {
+    const pathSegments = src.split('/public/images/');
+    if (pathSegments.length > 1) {
+      const relativePath = pathSegments[1];
+      return `/api/images/supabase/${relativePath}?w=${width}${quality ? `&q=${quality}` : ''}`;
+    }
+  }
+
+  // If it's an external URL (not our Supabase) or a brand asset, return as is
   if (src.startsWith('http') || src.startsWith('/brand/')) {
     return src;
   }

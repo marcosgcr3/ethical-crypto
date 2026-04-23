@@ -64,6 +64,9 @@ export default async function WealthPumpsPillarPage() {
           alt="Wealth Engineering Background" 
           fill 
           className="object-cover grayscale opacity-10 contrast-[1.1]" 
+          priority
+          fetchPriority="high"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-white"></div>
         <div className="container mx-auto px-6 text-center relative z-10">

@@ -48,15 +48,17 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
       { url: "/api/images/supabase/brand-icon-v3.png?w=48", sizes: "48x48", type: "image/png" },
-      { url: "/api/images/supabase/brand-icon-v3.png?w=96", sizes: "96x96", type: "image/png" },
-      { url: "/api/images/supabase/brand-icon-v3.png?w=192", sizes: "192x192", type: "image/png" },
     ],
+    shortcut: ["/icon.png"],
     apple: [
-      { url: "/api/images/supabase/brand-icon-v3.png?w=180", sizes: "180x180", type: "image/png" },
+      { url: "/icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
   applicationName: "Ethical Crypto",
+  manifest: "/manifest.json",
   appleWebApp: {
     title: "Ethical Crypto",
     statusBarStyle: "black-translucent",

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import prisma from '@/lib/prisma';
-import NewsletterSidebar from '@/components/NewsletterSidebar';
 import { 
   IconNode, 
   IconBlockchain, 
@@ -296,7 +295,6 @@ export default async function HardwarePillarPage() {
               <p className="text-[10px] uppercase tracking-[0.2em] text-white/20 mt-8 font-black">Technical Infrastructure Pick</p>
             </div>
 
-            <NewsletterSidebar />
 
             <div className="p-8 border-t border-white/5">
               <p className="text-[10px] font-black text-white/20 uppercase tracking-widest leading-[2]">

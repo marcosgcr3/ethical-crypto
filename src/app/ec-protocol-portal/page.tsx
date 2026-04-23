@@ -13,8 +13,6 @@ export const metadata: Metadata = {
 import Link from "next/link";
 import { deleteArticle } from "./actions";
 import { logoutAction } from "./login/actions";
-import { getSubscribers } from "../actions/newsletter";
-import AdminSubscribers from "../../components/AdminSubscribers";
 import AdminAnalystPanel from "../../components/AdminAnalystPanel";
 
 import AdminTools from "../../components/AdminTools";
@@ -34,8 +32,6 @@ export default async function AdminDashboard() {
   const articles = await prisma.article.findMany({
     orderBy: { createdAt: "desc" },
   });
-
-  const subscribers = await getSubscribers();
 
   const drafts = articles.filter(a => !a.published);
   const published = articles.filter(a => a.published);
@@ -112,8 +108,6 @@ export default async function AdminDashboard() {
           </div>
           <AdminTools articles={articles} />
         </div>
-
-        <AdminSubscribers initialSubscribers={subscribers} />
 
         <AdminAnalystPanel reviewer={founder} />
 

@@ -15,7 +15,6 @@ model Article {
   content        String
   excerpt        String
   imageUrl       String?
-  amazonProducts Json?
   category       String?
   published      Boolean   @default(false)
   createdAt      DateTime  @default(now())
@@ -33,11 +32,7 @@ model Reviewer {
   articles Article[]
 }
 
-model Subscriber {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  createdAt DateTime @default(now())
-}
+
 
 model SecurityLog {
   id          String    @id @default(uuid())

@@ -81,7 +81,7 @@ export default function ContactForm() {
           <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-xs mt-2" />
         </div>
         
-        {state.errors && state.errors.length > 0 && (
+        {state.errors && (
           <p className="text-red-500 text-xs font-bold">Something went wrong. Please check your inputs or try again later.</p>
         )}
 

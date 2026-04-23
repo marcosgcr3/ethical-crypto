@@ -23,7 +23,7 @@ export default function Navbar() {
             <nav className="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center text-sm md:text-base font-medium">
                 <Link href="/" title="Ethical Crypto - Protocol Engineering & Security" className="flex items-center gap-3 font-heading text-xl font-extrabold text-black tracking-tight hover:opacity-90 transition-opacity">
                     <Image 
-                      src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png" 
+                      src="/api/images/supabase/brand-icon-v3.png" 
                       alt="Ethical Crypto - Decentralized Intelligence" 
                       width={40} 
                       height={40} 

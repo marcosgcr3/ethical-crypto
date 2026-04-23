@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3 font-heading text-xl font-black tracking-tight text-white uppercase">
               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center overflow-hidden p-1.5 shadow-sm">
-                <Image src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png" alt="Ethical Crypto" width={32} height={32} className="grayscale object-contain" />
+                <Image src="/api/images/supabase/brand-icon-v3.png" alt="Ethical Crypto" width={32} height={32} className="grayscale object-contain" />
               </div>
               <span>ETHICAL <span className="text-zinc-500">CRYPTO</span></span>
             </Link>

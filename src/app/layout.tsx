@@ -49,12 +49,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png", sizes: "48x48", type: "image/png" },
-      { url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png", sizes: "96x96", type: "image/png" },
-      { url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png", sizes: "192x192", type: "image/png" },
+      { url: "/api/images/supabase/brand-icon-v3.png?w=48", sizes: "48x48", type: "image/png" },
+      { url: "/api/images/supabase/brand-icon-v3.png?w=96", sizes: "96x96", type: "image/png" },
+      { url: "/api/images/supabase/brand-icon-v3.png?w=192", sizes: "192x192", type: "image/png" },
     ],
     apple: [
-      { url: "https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/brand-icon-v3.png", sizes: "180x180", type: "image/png" },
+      { url: "/api/images/supabase/brand-icon-v3.png?w=180", sizes: "180x180", type: "image/png" },
     ],
   },
   applicationName: "Ethical Crypto",

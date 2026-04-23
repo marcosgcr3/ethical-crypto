@@ -62,7 +62,7 @@ export default async function ProtocolsPillarPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 border-b border-zinc-100 overflow-hidden bg-zinc-50 flex items-center justify-center min-h-[300px] md:min-h-[350px]">
         <Image 
-          src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero-v2.png" 
+          src="/api/images/supabase/hero-v2.png" 
           alt="Protocol Background" 
           fill 
           className="object-cover opacity-10 contrast-[1.1]" 

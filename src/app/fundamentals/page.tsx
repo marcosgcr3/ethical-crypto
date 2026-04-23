@@ -56,7 +56,7 @@ export default async function FundamentalsPillarPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 border-b border-zinc-100 overflow-hidden bg-zinc-50 flex items-center justify-center min-h-[300px] md:min-h-[350px]">
         <Image 
-          src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/mining.png" 
+          src="/api/images/supabase/mining.png" 
           alt="Fundamentals Background" 
           fill 
           className="object-cover grayscale opacity-10 contrast-[1.1]" 

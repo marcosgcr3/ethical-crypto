@@ -59,7 +59,7 @@ export default async function SecurityPillarPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 border-b border-black/5 overflow-hidden bg-zinc-50 flex items-center justify-center min-h-[300px] md:min-h-[350px]">
         <Image 
-          src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/security.png" 
+          src="/api/images/supabase/security.png" 
           alt="Security Operations Background" 
           fill 
           className="object-cover opacity-10 contrast-[1.1]" 

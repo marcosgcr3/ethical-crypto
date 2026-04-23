@@ -17,11 +17,11 @@ export const revalidate = 3600; // Cache for 1 hour
 
 // Fallback images per category
 const CATEGORY_IMAGES: Record<string, string> = {
-  protocols: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero-v2.png',
-  wealthpumps: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/staking.png',
-  fundamentals: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/mining.png',
-  security: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/security.png',
-  wallets: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/wallets.png',
+  protocols: '/api/images/supabase/hero-v2.png',
+  wealthpumps: '/api/images/supabase/staking.png',
+  fundamentals: '/api/images/supabase/mining.png',
+  security: '/api/images/supabase/security.png',
+  wallets: '/api/images/supabase/wallets.png',
 };
 
 export default async function Home() {
@@ -38,7 +38,7 @@ export default async function Home() {
       <section className="container mx-auto px-4 md:px-6 mb-10 md:mb-20 pt-10">
           <div className="relative rounded-3xl md:rounded-[3rem] overflow-hidden shadow-sm h-[350px] md:h-[450px] lg:h-[550px] bg-zinc-50 border border-black/5">
               <Image 
-                src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero-v2.png" 
+                src="/api/images/supabase/hero-v2.png" 
                 alt="Crypto Protocol Hero Illustration" 
                 fill 
                 className="object-cover opacity-30" 

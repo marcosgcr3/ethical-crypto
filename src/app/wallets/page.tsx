@@ -55,10 +55,13 @@ export default async function WalletsPillarPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 border-b border-zinc-100 overflow-hidden bg-zinc-50 flex items-center justify-center min-h-[300px] md:min-h-[350px]">
         <Image 
-          src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/wallets.png" 
+          src="/api/images/supabase/wallets.png" 
           alt="Wallet Engineering Background" 
           fill 
           className="object-cover grayscale opacity-10 contrast-[1.1]" 
+          priority
+          fetchPriority="high"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-white"></div>
         <div className="container mx-auto px-6 text-center relative z-10">

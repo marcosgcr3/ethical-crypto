@@ -60,7 +60,7 @@ export default async function WealthPumpsPillarPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 border-b border-zinc-100 overflow-hidden bg-zinc-50 flex items-center justify-center min-h-[300px] md:min-h-[350px]">
         <Image 
-          src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/staking.png" 
+          src="/api/images/supabase/staking.png" 
           alt="Wealth Engineering Background" 
           fill 
           className="object-cover grayscale opacity-10 contrast-[1.1]" 

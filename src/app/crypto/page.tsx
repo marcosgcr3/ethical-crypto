@@ -86,7 +86,7 @@ export default async function CryptoPillarPage() {
   };
 
   return (
-    <div className="bg-void min-h-screen text-ghost">
+    <div className="bg-white min-h-screen text-black selection:bg-black selection:text-white font-sans">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
@@ -94,32 +94,33 @@ export default async function CryptoPillarPage() {
 
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-6 py-6" aria-label="Breadcrumb">
-        <ol className="flex items-center text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-white/20">
+        <ol className="flex items-center text-[10px] md:text-[11px] font-black uppercase tracking-widest text-zinc-300">
           <li>
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <Link href="/" className="hover:text-black transition-colors">Terminal</Link>
           </li>
           <li className="mx-2 opacity-20">/</li>
-          <li className="text-white/60" aria-current="page">Protocol Guide</li>
+          <li className="text-black" aria-current="page">Protocol Guide</li>
         </ol>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden bg-void border-b border-white/5">
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden bg-zinc-50 border-b border-black/5">
         <Image 
-          src="https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/hero.png" 
-          alt="Crypto intelligence dashboard with advanced protocol analytics" 
+          src="/api/images/supabase/hero-v2.png" 
+          alt="Crypto intelligence dashboard" 
           fill 
-          className="object-cover opacity-20"
+          className="object-cover opacity-10 contrast-[1.1]"
           priority
+          fetchPriority="high"
         />
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <span className="inline-block px-4 py-1.5 bg-white/10 text-white border border-white/20 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-6">
+          <span className="inline-block px-4 py-1.5 bg-zinc-100 text-zinc-500 border border-zinc-200 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-sm">
             Institutional Research 2026
           </span>
-          <h1 className="font-heading text-3xl md:text-5xl font-extrabold mb-6 leading-[1.05] tracking-tighter uppercase max-w-5xl mx-auto text-white">
+          <h1 className="font-heading text-3xl md:text-5xl lg:text-7xl font-black mb-6 leading-[1.05] tracking-tighter uppercase max-w-5xl mx-auto text-black">
             Crypto Intelligence: The Ultimate <span className="text-zinc-500">Protocol Guide</span>
           </h1>
-          <p className="text-lg md:text-xl font-light opacity-70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed">
             The technical framework for systematically engineering your wealthspan, securing your privacy, and achieving peak protocol performance.
           </p>
         </div>
@@ -134,17 +135,17 @@ export default async function CryptoPillarPage() {
             
             {/* 1. What is Protocol Intelligence? */}
             <section id="what-is-crypto" className="scroll-mt-32">
-              <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-white mb-8 border-l-8 border-white pl-6 uppercase tracking-tight">
+              <h2 className="font-heading text-3xl md:text-4xl font-black text-black mb-8 border-l-8 border-black pl-6 uppercase tracking-tighter">
                 What is Protocol Intelligence?
               </h2>
-              <div className="prose prose-invert lg:prose-xl max-w-none text-ghost/80 leading-relaxed font-medium">
+              <div className="prose prose-zinc lg:prose-xl max-w-none text-zinc-600 leading-relaxed font-medium">
                 <p>
                   At its core, <strong>protocol intelligence</strong> is the practice of using technical analysis, on-chain data, and architectural experimentation to take control of your digital footprint. It is a mindset that refuses to accept centralized reliance as the default. Instead, intelligent actors view the blockchain as a programmable global state machine—a layer of digital sovereignty that can be optimized for long-term <strong>Wealthspan</strong>.
                 </p>
                 
-                <div className="bg-white/5 border border-white/10 p-8 rounded-3xl my-10 shadow-inner">
-                  <h3 className="font-heading text-xl font-bold text-white mb-4">The Ethical Crypto Definition</h3>
-                  <p className="text-base italic m-0 border-l-4 border-white/20 pl-4">
+                <div className="bg-zinc-50 border border-zinc-100 p-8 rounded-3xl my-10 shadow-inner">
+                  <h3 className="font-heading text-xl font-black text-black mb-4 uppercase tracking-tight">The Ethical Crypto Definition</h3>
+                  <p className="text-base italic m-0 border-l-4 border-black/10 pl-4 text-zinc-500">
                     "Protocol intelligence is the art of mastering the systems you participate in. It is not about gambling; it is about engineering a sovereign digital future with the most robust tools and data available in the decentralized space."
                   </p>
                 </div>
@@ -157,33 +158,33 @@ export default async function CryptoPillarPage() {
 
             {/* 2. The 4 Pillars */}
             <section id="pillars">
-              <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-white mb-12 uppercase tracking-tight">
+              <h2 className="font-heading text-3xl md:text-4xl font-black text-black mb-12 uppercase tracking-tighter">
                 The Four Pillars of Ethical Crypto
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 
                 {/* Pillar: Wealthspan */}
-                <Link href="/wealthspan" className="bg-space/40 p-8 rounded-[2rem] border border-white/5 hover:border-white/20 hover:shadow-2xl transition-all duration-300 group block">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-void transition-colors">
+                <Link href="/wealthpumps" className="bg-zinc-50 p-8 rounded-[2rem] border border-zinc-100 hover:border-black/10 hover:shadow-2xl transition-all duration-300 group block">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition-colors border border-zinc-100">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                   </div>
-                  <h3 className="font-heading text-2xl font-bold text-white mb-4">Wealthspan & Assets</h3>
-                  <p className="text-sm text-dim mb-6 leading-relaxed">Focusing on yield generation, staking infrastructure, and protocol participation to ensure your assets outpace technological shifts and inflation.</p>
-                  <div className="text-white font-bold text-xs uppercase tracking-widest flex items-center group-hover:opacity-80 transition-opacity">
-                    Explore Wealthspan
+                  <h3 className="font-heading text-2xl font-black text-black mb-4 uppercase tracking-tighter">WealthPumps</h3>
+                  <p className="text-sm text-zinc-500 mb-6 leading-relaxed font-medium">Focusing on yield generation, staking infrastructure, and protocol participation to ensure your assets outpace technological shifts and inflation.</p>
+                  <div className="text-black font-black text-[10px] uppercase tracking-widest flex items-center group-hover:opacity-60 transition-opacity">
+                    Explore WealthPumps
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                   </div>
                 </Link>
 
                 {/* Pillar: Security */}
-                <Link href="/security" className="bg-space/40 p-8 rounded-[2rem] border border-white/5 hover:border-white/20 hover:shadow-2xl transition-all duration-300 group block">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-void transition-colors">
+                <Link href="/security" className="bg-zinc-50 p-8 rounded-[2rem] border border-zinc-100 hover:border-black/10 hover:shadow-2xl transition-all duration-300 group block">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition-colors border border-zinc-100">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                   </div>
-                  <h3 className="font-heading text-2xl font-bold text-white mb-4">Blockchain Security</h3>
-                  <p className="text-sm text-dim mb-6 leading-relaxed">The non-negotiable foundation of all digital mastery. Protecting your keys, validating contracts, and utilizing privacy-preserving technologies.</p>
-                  <div className="text-white font-bold text-xs uppercase tracking-widest flex items-center group-hover:opacity-80 transition-opacity">
+                  <h3 className="font-heading text-2xl font-black text-black mb-4 uppercase tracking-tighter">Security/Wallets</h3>
+                  <p className="text-sm text-zinc-500 mb-6 leading-relaxed font-medium">The non-negotiable foundation of all digital mastery. Protecting your keys, validating contracts, and utilizing privacy-preserving technologies.</p>
+                  <div className="text-black font-black text-[10px] uppercase tracking-widest flex items-center group-hover:opacity-60 transition-opacity">
                     Access Security Docs
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                   </div>
@@ -193,14 +194,14 @@ export default async function CryptoPillarPage() {
             </section>
 
             {/* Disclaimer */}
-            <section className="bg-void border border-white/5 p-12 rounded-[3rem] text-ghost shadow-2xl">
-               <h3 className="font-heading text-2xl md:text-3xl font-extrabold mb-6 text-white uppercase tracking-widest">Financial Transparency</h3>
-               <div className="text-dim leading-relaxed space-y-6">
+            <section className="bg-zinc-50 border border-zinc-100 p-12 rounded-[3rem] text-black shadow-inner">
+               <h3 className="font-heading text-2xl md:text-3xl font-black mb-6 text-black uppercase tracking-tighter">Financial Transparency</h3>
+               <div className="text-zinc-500 leading-relaxed space-y-6 font-medium">
                  <p>
                    At <strong>Ethical Crypto</strong>, we prioritize structural integrity over market noise. Our research is anchored in technical audits and mathematical models, rather than speculative hype. Every protocol discussed undergoes rigorous scrutiny regarding its decentralization, security model, and utility.
                  </p>
-                 <p className="text-xs border-t border-white/10 pt-6">
-                   <span className="font-bold text-white uppercase block mb-1">Financial Disclaimer:</span>
+                 <p className="text-[10px] font-black uppercase tracking-widest border-t border-zinc-200 pt-6 text-zinc-400">
+                   <span className="font-black text-black block mb-2">Financial Disclaimer:</span>
                    Engaging with blockchain protocols involves high capital risk. Past performance does not guarantee future protocol stability. Never invest capital that is not designated for high-risk technological research.
                  </p>
                </div>
@@ -208,19 +209,19 @@ export default async function CryptoPillarPage() {
 
             {/* FAQ */}
             <section id="faq" className="scroll-mt-32">
-              <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-white mb-12 border-l-8 border-white pl-6 uppercase tracking-tight">
+              <h2 className="font-heading text-3xl md:text-4xl font-black text-black mb-12 border-l-8 border-black pl-6 uppercase tracking-tighter">
                 Protocol intelligence FAQ
               </h2>
               <div className="space-y-6">
                 {faqItems.map((item, idx) => (
-                  <details key={idx} className="group bg-space/20 rounded-2xl border border-white/5 overflow-hidden hover:border-white/20 transition-all">
-                    <summary className="flex items-center justify-between cursor-pointer p-6 md:p-8 font-heading text-lg md:text-xl font-bold text-white group-open:text-white transition-colors">
-                      <span>{item.question}</span>
-                      <svg className="w-5 h-5 shrink-0 ml-4 text-white opacity-40 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <details key={idx} className="group bg-zinc-50 rounded-2xl border border-zinc-100 overflow-hidden hover:border-black/10 transition-all">
+                    <summary className="flex items-center justify-between cursor-pointer p-6 md:p-8 font-heading text-lg md:text-xl font-black text-black group-open:bg-black/5 transition-colors">
+                      <span className="uppercase tracking-tight">{item.question}</span>
+                      <svg className="w-5 h-5 shrink-0 ml-4 text-zinc-400 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                       </svg>
                     </summary>
-                    <div className="px-6 md:px-8 pb-6 md:pb-8 text-sm md:text-base text-dim leading-relaxed">
+                    <div className="px-6 md:px-8 pb-6 md:pb-8 text-sm md:text-base text-zinc-500 leading-relaxed font-medium bg-black/[0.02]">
                       <p>{item.answer}</p>
                     </div>
                   </details>
@@ -234,46 +235,46 @@ export default async function CryptoPillarPage() {
           <aside className="lg:w-1/3 space-y-12">
             
             {/* Guide Nav */}
-            <div className="bg-space/40 p-10 rounded-[2.5rem] border border-white/5 shadow-2xl">
-               <h3 className="font-heading text-lg font-extrabold mb-6 uppercase tracking-wider text-white">Guide Index</h3>
-               <nav className="flex flex-col space-y-4 text-xs font-bold text-dim">
-                 <a href="#what-is-crypto" className="hover:text-white transition-colors flex items-center justify-between group">
+            <div className="bg-zinc-50 p-10 rounded-[2.5rem] border border-zinc-100 shadow-inner">
+               <h3 className="font-heading text-lg font-black mb-6 uppercase tracking-tight text-black">Guide Index</h3>
+               <nav className="flex flex-col space-y-4 text-[10px] font-black text-zinc-400 uppercase tracking-widest">
+                 <a href="#what-is-crypto" className="hover:text-black transition-colors flex items-center justify-between group">
                    01. Protocol Intelligence
-                   <span className="w-4 h-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">↓</span>
+                   <span className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity">↓</span>
                  </a>
-                 <a href="#pillars" className="hover:text-white transition-colors flex items-center justify-between group">
+                 <a href="#pillars" className="hover:text-black transition-colors flex items-center justify-between group">
                    02. Core Pillars
-                   <span className="w-4 h-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">↓</span>
+                   <span className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity">↓</span>
                  </a>
-                 <a href="#faq" className="hover:text-white transition-colors flex items-center justify-between group">
+                 <a href="#faq" className="hover:text-black transition-colors flex items-center justify-between group">
                    03. FAQ
-                   <span className="w-4 h-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">↓</span>
+                   <span className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity">↓</span>
                  </a>
                </nav>
             </div>
 
             {/* Performance Targets */}
-            <div className="bg-void p-8 rounded-[2rem] border border-white/5 shadow-2xl">
-              <h3 className="font-heading text-xs font-extrabold mb-6 uppercase tracking-[0.2em] text-white/60">2026 Protocol Benchmarks</h3>
-              <ul className="space-y-4 text-xs">
-                <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                  <span className="text-dim">Native Staking APY</span>
-                  <span className="text-white font-bold">{`> 4.5%`}</span>
+            <div className="bg-white p-8 rounded-[2rem] border border-zinc-100 shadow-sm">
+              <h3 className="font-heading text-[10px] font-black mb-6 uppercase tracking-[0.2em] text-zinc-400">2026 Protocol Benchmarks</h3>
+              <ul className="space-y-4 text-[10px] font-black uppercase tracking-widest">
+                <li className="flex justify-between items-center border-b border-zinc-100 pb-2">
+                  <span className="text-zinc-400">Native Staking APY</span>
+                  <span className="text-black">{`> 4.5%`}</span>
                 </li>
-                <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                  <span className="text-dim">Node Uptime Target</span>
-                  <span className="text-white font-bold">99.99%</span>
+                <li className="flex justify-between items-center border-b border-zinc-100 pb-2">
+                  <span className="text-zinc-400">Node Uptime Target</span>
+                  <span className="text-black">99.99%</span>
                 </li>
-                <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                  <span className="text-dim">L2 Transaction Latency</span>
-                  <span className="text-white font-bold">{`< 200ms`}</span>
+                <li className="flex justify-between items-center border-b border-zinc-100 pb-2">
+                  <span className="text-zinc-400">L2 Latency</span>
+                  <span className="text-black">{`< 200ms`}</span>
                 </li>
                 <li className="flex justify-between items-center">
-                  <span className="text-dim">Protocol Decentralization</span>
-                  <span className="text-white font-bold">Nakamoto {`> 20`}</span>
+                  <span className="text-zinc-400">Decentralization</span>
+                  <span className="text-black">Nakamoto {`> 20`}</span>
                 </li>
               </ul>
-              <p className="text-[9px] uppercase tracking-widest text-dim/40 mt-6">Structural Health Indicators</p>
+              <p className="text-[8px] uppercase tracking-[0.3em] text-zinc-300 mt-6">Structural Health Indicators</p>
             </div>
 
             {/* Newsletter */}

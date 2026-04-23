@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { IconArrowUpRight } from './icons/CryptoIcons';
 
@@ -20,20 +19,6 @@ export default function ReviewerBox({ reviewer }: ReviewerProps) {
       <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-black/5 rounded-full blur-3xl group-hover:bg-black/10 transition-all duration-700"></div>
       
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
-        {/* Author Image */}
-        <div className="relative flex-shrink-0">
-          <div className="absolute -inset-1 bg-gradient-to-tr from-black to-zinc-400 rounded-full blur opacity-5 group-hover:opacity-10 transition duration-1000"></div>
-          <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-black/5 shadow-lg bg-white">
-            <Image
-              src={reviewer.imageUrl || '/images/vanguard.png'}
-              alt={reviewer.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 96px, 128px"
-            />
-          </div>
-        </div>
-
         {/* Author Content */}
         <div className="flex-1 text-center md:text-left">
           <div className="mb-4">

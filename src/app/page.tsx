@@ -53,7 +53,7 @@ export default async function Home() {
                       </div>
                       <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black leading-[0.85] mb-8 uppercase tracking-tighter text-black relative z-10">
                         Decentralized <br />
-                        <span className="text-zinc-300">Intelligence</span>
+                        <span className="text-zinc-500">Intelligence</span>
                       </h1>
                       <p className="text-lg md:text-2xl font-medium leading-relaxed text-black/70 mb-10 max-w-xl font-sans relative z-10">
                         The definitive guide to optimizing your digital footprint, securing your assets, and engineering protocol-level growth.
@@ -77,7 +77,7 @@ export default async function Home() {
           <div id="latest-insights" className="scroll-mt-32">
               <div className="flex items-center justify-between mb-16">
                 <h2 className="font-heading text-3xl md:text-4xl font-black text-black uppercase tracking-tighter flex items-center gap-4">
-                  Latest <span className="text-zinc-300">Insights</span>
+                  Latest <span className="text-zinc-500">Insights</span>
                 </h2>
                 <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
                    <span className="text-black border-b-2 border-black pb-1">All Sectors</span>

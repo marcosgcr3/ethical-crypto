@@ -93,7 +93,7 @@ export default async function ProtocolsPillarPage() {
             <section>
               <div className="flex items-center justify-between mb-12">
                 <h2 className="font-heading text-3xl font-black text-black uppercase tracking-tighter">
-                  Latest <span className="text-zinc-400">Reports</span>
+                  Latest <span className="text-zinc-500">Reports</span>
                 </h2>
               </div>
               
@@ -141,7 +141,7 @@ export default async function ProtocolsPillarPage() {
             {/* FAQ Section */}
             <section id="faq" className="scroll-mt-32">
               <h2 className="font-heading text-3xl md:text-5xl font-black text-black mb-12 uppercase tracking-tighter">
-                Protocol <span className="text-zinc-400">FAQ</span>
+                Protocol <span className="text-zinc-500">FAQ</span>
               </h2>
               <div className="space-y-4">
                 {faqItems.map((item, idx) => (

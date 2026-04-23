@@ -122,9 +122,9 @@ export async function upsertFounder(data: {
   const { name, title, bio, imageUrl } = data;
 
   await prisma.reviewer.upsert({
-    where: { id: 'marcus-sterling-id' },
+    where: { id: 'protocol-architect-id' },
     update: { name, title, bio, imageUrl },
-    create: { id: 'marcus-sterling-id', name, title, bio, imageUrl },
+    create: { id: 'protocol-architect-id', name, title, bio, imageUrl },
   });
 
   revalidatePath("/");

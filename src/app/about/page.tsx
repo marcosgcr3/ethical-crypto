@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import prisma from '@/lib/prisma';
 
 export const metadata: Metadata = {
-  title: 'About Marcus Sterling | Protocol Intelligence',
-  description: 'The story behind Ethical Crypto. Learn how Marcus Sterling blends quantitative analysis with protocol security to optimize digital wealthspan.',
+  title: 'About Ethical Crypto | Protocol Intelligence',
+  description: 'The story behind Ethical Crypto. Learn how we blend quantitative analysis with protocol security to optimize digital wealthspan.',
 };
 
 export const revalidate = 3600; // Incrementally revalidate every hour
@@ -12,7 +12,7 @@ export default async function AboutUs() {
   let founder = null;
   try {
     founder = await prisma.reviewer.findUnique({
-      where: { id: 'marcus-sterling-id' }
+      where: { id: 'protocol-architect-id' }
     });
   } catch (error) {
     console.error("Database fetch failed for About page. Build will continue with default profile.", error);
@@ -20,14 +20,14 @@ export default async function AboutUs() {
 
   // Fallback values in case DB is empty
   const profile = {
-    bio: founder?.bio || "Quantitative analyst and protocol architect specializing in decentralized security and yield engineering. Bringing rigorous institutional-grade standards to the art of blockchain research.",
+    bio: founder?.bio || "Quantitative analysts and protocol architects specializing in decentralized security and yield engineering. Bringing rigorous institutional-grade standards to the art of blockchain research.",
   };
 
   return (
     <div className="bg-white min-h-screen py-24 md:py-32 text-black font-sans">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-24">
-          <h5 className="font-heading font-bold text-black uppercase tracking-widest text-xs mb-4">The Architect's Story</h5>
+          <h5 className="font-heading font-bold text-black uppercase tracking-widest text-xs mb-4">The Intelligence Directive</h5>
           <h1 className="font-heading text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-10 leading-[0.9]">
             From Code to <span className="text-zinc-400 underline decoration-black/10">Protocol Intelligence</span>
           </h1>
@@ -40,10 +40,10 @@ export default async function AboutUs() {
           <div className="space-y-6 text-lg text-zinc-500 leading-relaxed font-medium">
             <h3 className="font-heading text-2xl font-black text-black uppercase tracking-tighter">The Quant Lab</h3>
             <p>
-              As a protocol architect, I've spent years auditing smart contracts and analyzing tokenomics through the lens of game theory and security. But theoretical analysis alone wasn’t enough. I needed to bridge the gap between whitepaper promises and on-chain reality.
+              As protocol architects, we've spent years auditing smart contracts and analyzing tokenomics through the lens of game theory and security. But theoretical analysis alone wasn’t enough. We needed to bridge the gap between whitepaper promises and on-chain reality.
             </p>
             <p>
-              I transitioned from being solely an auditor, to a <strong>rigorous quantitative researcher</strong>. I began measuring every network variable—from liquidity depth and MEV resistance to validator health and protocol-level governance dynamics.
+              We transitioned from being solely auditors, to <strong>rigorous quantitative researchers</strong>. We began measuring every network variable—from liquidity depth and MEV resistance to validator health and protocol-level governance dynamics.
             </p>
           </div>
           <div className="bg-black/5 p-8 rounded-3xl border border-black/10 flex flex-col justify-center">
@@ -74,10 +74,10 @@ export default async function AboutUs() {
         <div className="space-y-8 text-lg text-zinc-500 leading-relaxed font-medium">
           <h2 className="font-heading text-3xl font-black text-black border-b-4 border-black/5 inline-block pb-2 mb-4 uppercase tracking-tighter">Why Ethical Crypto?</h2>
           <p>
-            I founded <span className="text-black font-bold">Ethical Crypto</span> because the industry is flooded with hype-driven projects and inflationary protocols that prioritize exit liquidity over fundamental value.
+            We founded <span className="text-black font-bold">Ethical Crypto</span> because the industry is flooded with hype-driven projects and inflationary protocols that prioritize exit liquidity over fundamental value.
           </p>
           <p>
-            I wanted to create a sanctuary where engineering and ethics are inseparable. Our insights are driven by on-chain data, validated by cryptographic proof, and personally audited before they ever reach your screen.
+            We wanted to create a sanctuary where engineering and ethics are inseparable. Our insights are driven by on-chain data, validated by cryptographic proof, and personally audited before they ever reach your screen.
           </p>
           
           <div className="bg-black p-10 md:p-16 rounded-[3rem] text-white overflow-hidden relative group my-16">

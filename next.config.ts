@@ -31,9 +31,6 @@ const nextConfig: NextConfig = {
     // Set to true if build still crashes due to memory limits during type checking
     ignoreBuildErrors: false, 
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   experimental: {
     optimizePackageImports: ["@prisma/client", "jose"],
     workerThreads: false,

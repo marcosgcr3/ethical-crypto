@@ -1,7 +1,5 @@
 import { MetadataRoute } from 'next';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/lib/prisma';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethicalcrypto.com';
@@ -34,34 +32,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/longevity-calculator`,
+      url: `${baseUrl}/wealthspan-calculator`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/longevity`,
+      url: `${baseUrl}/wealthpumps`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
     },
     {
-      url: `${baseUrl}/nutrition`,
+      url: `${baseUrl}/fundamentals`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
     },
     {
-      url: `${baseUrl}/sleep`,
+      url: `${baseUrl}/security`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
     },
     {
-      url: `${baseUrl}/wearables`,
+      url: `${baseUrl}/wallets`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/hardware`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,

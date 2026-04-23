@@ -1,9 +1,7 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies, headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "@/lib/prisma";
 const SECRET_KEY = process.env.SESSION_SECRET || "ec_crypto_default_secret_32_chars_long_and_more";
 const key = new TextEncoder().encode(SECRET_KEY);
 

@@ -15,6 +15,7 @@ model Article {
   content        String
   excerpt        String
   imageUrl       String?
+  imageGrayscale Boolean   @default(true)
   category       String?
   published      Boolean   @default(false)
   createdAt      DateTime  @default(now())

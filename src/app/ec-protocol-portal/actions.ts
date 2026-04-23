@@ -16,6 +16,7 @@ export async function upsertArticle(data: {
   category: string;
   excerpt: string;
   imageUrl?: string | null;
+  imageGrayscale?: boolean;
   content: string;
   published: boolean;
   createdAt?: string | Date | null;
@@ -29,7 +30,7 @@ export async function upsertArticle(data: {
       throw new Error("Missing Author: No reviewer found in database. Use seed or create one in the database.");
     }
 
-    const { id, title, slug, category, excerpt, imageUrl, content, published, createdAt } = data;
+    const { id, title, slug, category, excerpt, imageUrl, imageGrayscale, content, published, createdAt } = data;
 
     if (id) {
       const existingArticle = await prisma.article.findUnique({
@@ -54,6 +55,7 @@ export async function upsertArticle(data: {
           category,
           excerpt,
           imageUrl,
+          imageGrayscale,
           content,
           published,
           createdAt: finalCreatedAt,
@@ -73,6 +75,7 @@ export async function upsertArticle(data: {
           category,
           excerpt,
           imageUrl,
+          imageGrayscale: imageGrayscale ?? true,
           content,
           reviewerId: reviewer.id,
           published,

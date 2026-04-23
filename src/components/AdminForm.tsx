@@ -7,7 +7,7 @@ import { upsertArticle } from "@/app/ec-protocol-portal/actions";
 export default function AdminForm({ 
   article 
 }: { 
-  article?: { id: string; title: string; slug: string; category: string; excerpt: string; imageUrl: string | null; content: string; published: boolean; createdAt?: Date | string | null } 
+  article?: { id: string; title: string; slug: string; category: string; excerpt: string; imageUrl: string | null; imageGrayscale?: boolean; content: string; published: boolean; createdAt?: Date | string | null } 
 }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -19,6 +19,7 @@ export default function AdminForm({
     category: article?.category || "protocols",
     excerpt: article?.excerpt || "",
     imageUrl: article?.imageUrl || "",
+    imageGrayscale: article?.imageGrayscale ?? true,
     content: article?.content || "",
     published: article?.published ?? true,
     createdAt: article?.createdAt ? new Date(article.createdAt).toISOString().slice(0, 16) : "",
@@ -109,6 +110,7 @@ export default function AdminForm({
         category: formData.category,
         excerpt: formData.excerpt,
         imageUrl: formData.imageUrl || null,
+        imageGrayscale: formData.imageGrayscale,
         content: formData.content,
         published: formData.published,
         createdAt: formData.createdAt ? new Date(formData.createdAt) : undefined,
@@ -221,6 +223,21 @@ export default function AdminForm({
                       Live Preview
                     </div>
                   </div>
+                )}
+                
+                {formData.imageUrl && (
+                  <label className="flex items-center space-x-3 cursor-pointer mt-4 bg-zinc-50 p-3 rounded-lg border border-black/5">
+                    <input 
+                      type="checkbox" 
+                      name="imageGrayscale" 
+                      checked={formData.imageGrayscale} 
+                      onChange={handleCheckboxChange} 
+                      className="w-4 h-4 accent-black rounded border-black/10" 
+                    />
+                    <span className="text-xs font-black uppercase tracking-widest text-black opacity-80">
+                      Apply Grayscale Filter
+                    </span>
+                  </label>
                 )}
               </div>
             </div>

@@ -49,7 +49,7 @@ export async function GET(
 
     // Skip optimization for SVGs
     if (ext === ".svg") {
-      return new NextResponse(fileBuffer, {
+      return new NextResponse(new Uint8Array(fileBuffer), {
         headers: {
           "Content-Type": "image/svg+xml",
           "Cache-Control": "public, max-age=31536000, immutable",

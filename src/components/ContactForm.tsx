@@ -44,17 +44,17 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-white border border-bioblue/10 p-12 rounded-3xl shadow-xl shadow-bioblue/5 animate-in fade-in zoom-in duration-500 text-center">
-        <div className="bg-bioblue/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 text-bioblue">
-          <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+      <div className="bg-zinc-50 border border-zinc-100 p-12 rounded-[2.5rem] shadow-inner animate-in fade-in zoom-in duration-500 text-center">
+        <div className="bg-white w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 text-zinc-400 border border-zinc-100 shadow-sm">
+          <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 13l4 4L19 7"></path></svg>
         </div>
-        <h2 className="font-heading text-3xl font-extrabold text-bioblue mb-4 uppercase tracking-tighter">Protocol Received</h2>
-        <p className="text-slate/70 mb-8 leading-relaxed">Your message has been securely transmitted. Our editorial team will review your inquiry and respond to <strong>{email}</strong> if required.</p>
+        <h2 className="font-heading text-3xl font-black text-black mb-4 uppercase tracking-tighter">Transmission Successful</h2>
+        <p className="text-zinc-500 mb-8 leading-relaxed font-medium">Your research inquiry has been securely transmitted to the Intelligence Unit. We will review your message and respond to <strong>{email}</strong> if required.</p>
         <button 
           onClick={() => setStatus('idle')}
-          className="text-bioblue font-bold uppercase tracking-widest text-xs hover:underline decoration-2 underline-offset-4"
+          className="text-black font-black uppercase tracking-widest text-[10px] hover:underline decoration-2 underline-offset-8"
         >
-          Send another message
+          Send New Inquiry
         </button>
       </div>
     );
@@ -64,48 +64,53 @@ export default function ContactForm() {
     <div className="bg-white border border-gray-100 p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-slate opacity-70 mb-2">Name</label>
+          <label className="block text-[10px] font-black uppercase tracking-widest text-black opacity-40 mb-3">Name / Organization</label>
           <input 
             type="text" 
             required 
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-bioblue/50 text-slate bg-gray-50 transition-all" 
-            placeholder="Name or Organization"
+            className="w-full px-6 py-4 rounded-2xl border border-zinc-100 focus:outline-none focus:ring-2 focus:ring-black/5 text-black bg-zinc-50 transition-all font-medium placeholder:text-zinc-300" 
+            placeholder="Analytical Entity Name"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-slate opacity-70 mb-2">Email Address</label>
+          <label className="block text-[10px] font-black uppercase tracking-widest text-black opacity-40 mb-3">Digital Terminal (Email)</label>
           <input 
             type="email" 
             required 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-bioblue/50 text-slate bg-gray-50 transition-all" 
-            placeholder="your@email.com"
+            className="w-full px-6 py-4 rounded-2xl border border-zinc-100 focus:outline-none focus:ring-2 focus:ring-black/5 text-black bg-zinc-50 transition-all font-medium placeholder:text-zinc-300" 
+            placeholder="terminal@protocol.ai"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-slate opacity-70 mb-2">Inquiry Type</label>
-          <select 
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-bioblue/50 text-slate bg-gray-50 appearance-none transition-all"
-            value={inquiryType}
-            onChange={(e) => setInquiryType(e.target.value)}
-          >
-            <option>Clinical Correction</option>
-            <option>Partnership</option>
-            <option>General Question</option>
-          </select>
+          <label className="block text-[10px] font-black uppercase tracking-widest text-black opacity-40 mb-3">Inquiry Vector</label>
+          <div className="relative">
+            <select 
+              className="w-full px-6 py-4 rounded-2xl border border-zinc-100 focus:outline-none focus:ring-2 focus:ring-black/5 text-black bg-zinc-50 appearance-none transition-all font-bold"
+              value={inquiryType}
+              onChange={(e) => setInquiryType(e.target.value)}
+            >
+              <option>Technical Correction</option>
+              <option>Institutional Partnership</option>
+              <option>General Research Question</option>
+            </select>
+            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+            </div>
+          </div>
         </div>
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-slate opacity-70 mb-2">Message</label>
+          <label className="block text-[10px] font-black uppercase tracking-widest text-black opacity-40 mb-3">Intelligence Requirements</label>
           <textarea 
             required 
             rows={5}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-bioblue/50 text-slate bg-gray-50 resize-none transition-all" 
-            placeholder="Details of your inquiry..."
+            className="w-full px-6 py-4 rounded-2xl border border-zinc-100 focus:outline-none focus:ring-2 focus:ring-black/5 text-black bg-zinc-50 resize-none transition-all font-medium placeholder:text-zinc-300" 
+            placeholder="Detailed requirements for research inquiry..."
           />
         </div>
         
@@ -116,9 +121,9 @@ export default function ContactForm() {
         <button 
           type="submit" 
           disabled={status === 'submitting'}
-          className="w-full bg-bioblue text-white px-6 py-4 rounded-xl font-bold hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all uppercase tracking-widest text-xs shadow-md"
+          className="w-full bg-black text-white px-8 py-5 rounded-2xl font-black hover:bg-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all uppercase tracking-[0.2em] text-[10px] shadow-xl"
         >
-          {status === 'submitting' ? 'Transmitting...' : 'Send Secure Message'}
+          {status === 'submitting' ? 'Transmitting Data...' : 'Submit Intelligence Inquiry'}
         </button>
       </form>
     </div>

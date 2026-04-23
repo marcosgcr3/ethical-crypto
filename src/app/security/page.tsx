@@ -183,8 +183,6 @@ export default async function SecurityPillarPage() {
                 </li>
               </ul>
             </div>
-
-
           </aside>
         </div>
       </div>

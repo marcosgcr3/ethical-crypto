@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import AdSense from "@/components/AdSense";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import { NewsletterProvider } from "@/context/NewsletterContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -106,16 +105,14 @@ export default function RootLayout({
 
       </head>
       <body className="font-sans min-h-full flex flex-col selection:bg-black selection:text-white">
-        <NewsletterProvider>
-          <Navbar />
-          <main className="flex-grow pt-16 md:pt-24 lg:pt-32">
-            {children}
-          </main>
-          <Footer />
-          <CookieConsent />
-          <AdSense />
-          <GoogleAnalytics gaId="G-H1BZS390ZD" />
-        </NewsletterProvider>
+        <Navbar />
+        <main className="flex-grow pt-16 md:pt-24 lg:pt-32">
+          {children}
+        </main>
+        <Footer />
+        <CookieConsent />
+        <AdSense />
+        <GoogleAnalytics gaId="G-H1BZS390ZD" />
       </body>
     </html>
   );

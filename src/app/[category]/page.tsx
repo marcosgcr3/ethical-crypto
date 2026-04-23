@@ -59,46 +59,47 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const categoryName = categoryLabels[category] || category.charAt(0).toUpperCase() + category.slice(1);
 
   return (
-    <div className="container mx-auto px-6 mb-24 min-h-screen bg-void pt-12">
+    <div className="container mx-auto px-6 mb-24 min-h-screen bg-white pt-12 font-sans">
         {/* Header */}
-        <header className="mb-16 border-b border-white/5 pb-12">
-            <h1 className="font-heading text-4xl md:text-6xl font-black leading-tight text-white uppercase tracking-tighter shadow-cyan-400/10">
-                {categoryName} <span className="text-cyan-400">Intelligence</span>
+        <header className="mb-16 border-b border-black/5 pb-12">
+            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-black uppercase tracking-tighter">
+                {categoryName} <span className="text-zinc-500">Intelligence</span>
             </h1>
-            <p className="text-xl text-white/50 mt-6 max-w-2xl font-medium leading-relaxed">
+            <p className="text-xl text-zinc-500 mt-6 max-w-2xl font-medium leading-relaxed">
                 Deploying cutting-edge frameworks and technical benchmarks for {categoryName.toLowerCase()}. High-signal research for the technical elite.
             </p>
         </header>
 
         {/* Empty State vs Full State */}
         {articles.length === 0 ? (
-            <div className="flex flex-col items-center justify-center text-center py-24 bg-void border border-white/5 rounded-3xl relative overflow-hidden group">
-                <div className="absolute inset-0 bg-cyan-400/[0.02] blur-3xl rounded-full"></div>
-                <svg className="w-20 h-20 text-cyan-400/20 mb-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-                <h3 className="font-heading text-3xl font-black text-white mb-3 uppercase tracking-tight">Access Restricted</h3>
-                <p className="text-white/40 max-w-md mx-auto mb-10 font-medium">Our Intelligence Unit is currently auditing and signing off on specific {categoryName} documentation. Access will be granted shortly.</p>
-                <Link href="/" className="bg-white text-black px-10 py-4 rounded-xl font-black hover:bg-cyan-500 transition-all text-xs uppercase tracking-widest shadow-xl">Return to Terminal</Link>
+            <div className="flex flex-col items-center justify-center text-center py-32 bg-zinc-50 border border-zinc-100 rounded-[3rem] relative overflow-hidden group shadow-inner">
+                <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mb-8 border border-zinc-100 shadow-sm group-hover:scale-110 transition-transform">
+                  <svg className="w-12 h-12 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <h3 className="font-heading text-3xl font-black text-black mb-4 uppercase tracking-tighter">Access Restricted</h3>
+                <p className="text-zinc-500 max-w-md mx-auto mb-10 font-medium">Our Intelligence Unit is currently auditing and signing off on specific {categoryName} documentation. Access will be granted shortly.</p>
+                <Link href="/" className="bg-black text-white px-10 py-5 rounded-2xl font-black hover:bg-zinc-800 transition-all text-[10px] uppercase tracking-[0.2em] shadow-xl">Return to Terminal</Link>
             </div>
         ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {articles.map((article) => (
                     <Link key={article.id} href={`/${category}/${article.slug}`} className="group relative block cursor-pointer">
                         <article className="h-full flex flex-col">
-                            <div className="relative overflow-hidden rounded-[2rem] mb-6 bg-void h-64 border border-white/10 shadow-2xl transition-all group-hover:border-cyan-400/30">
+                            <div className="relative overflow-hidden rounded-[2.5rem] mb-8 bg-zinc-50 h-72 border border-zinc-100 shadow-sm transition-all group-hover:border-black/10 group-hover:shadow-2xl">
                                 {article.imageUrl && (
-                                    <Image src={article.imageUrl} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                                    <Image src={article.imageUrl} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
                                 )}
-                                <div className="absolute top-6 left-6">
-                                    <span className="bg-black/80 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-cyan-400 tracking-[0.2em] border border-cyan-400/20">{category}</span>
+                                <div className="absolute top-8 left-8">
+                                    <span className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-black tracking-widest border border-black/5 shadow-sm">{category}</span>
                                 </div>
                             </div>
-                            <h3 className="font-heading text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors leading-[1.2] tracking-tight">{article.title}</h3>
-                            <p className="text-white/40 text-sm leading-relaxed line-clamp-3 mb-6 font-medium">{article.excerpt}</p>
-                            <div className="mt-auto flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-white/20">
+                            <h3 className="font-heading text-2xl font-black mb-4 text-black group-hover:text-zinc-500 transition-colors leading-[1.1] tracking-tighter uppercase">{article.title}</h3>
+                            <p className="text-zinc-500 text-sm leading-relaxed line-clamp-3 mb-8 font-medium">{article.excerpt}</p>
+                            <div className="mt-auto flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-zinc-300">
                                 <div className="flex items-center gap-2">
-                                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                   <span>{Math.max(5, Math.ceil(article.content.split(' ').length / 200))} MIN READ</span>
                                 </div>
                                 <span>{new Date(article.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>

@@ -221,34 +221,6 @@ export default async function ArticlePage({ params }: { params: { category: stri
                   dangerouslySetInnerHTML={{ __html: article.content }} 
               />
 
-              {/* Dynamic Amazon Multi-Product CTA Blocks */}
-              {article.amazonProducts && (article.amazonProducts as any[]).length > 0 && (
-                  <div className="space-y-8 my-24">
-                      {(article.amazonProducts as any[]).map((product: any, idx: number) => (
-                          <div key={idx} className="bg-zinc-50 border border-black/5 p-12 rounded-[3rem] shadow-xl flex flex-col md:flex-row items-center justify-between gap-12 group transition-all duration-500">
-                              <div className="flex-1">
-                                   <h4 className="font-heading text-2xl font-black text-black mb-4 flex items-center uppercase tracking-tight">
-                                       <IconHardware className="w-10 h-10 text-black mr-4 opacity-20" />
-                                       {product.name || "Protocol Toolset"}
-                                   </h4>
-                                  <p className="text-black/50 leading-relaxed m-0 text-lg font-medium">
-                                      This infrastructure component has been technically audited for <strong className="text-black">optimal security</strong> and cross-chain compatibility. 
-                                  </p>
-                              </div>
-                              <a 
-                                  href={(product.url && product.url.startsWith('http')) ? product.url : (product.asin && (product.asin.startsWith('http') ? product.asin : `https://www.amazon.com/dp/${product.asin}/?tag=${process.env.NEXT_PUBLIC_AMAZON_TAG || 'solarrv0e-20'}`))} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer" 
-                                  className="whitespace-nowrap font-black py-6 px-14 rounded-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 shadow-2xl bg-black text-white hover:bg-zinc-800 flex items-center no-underline text-[10px] uppercase tracking-[0.3em]"
-                               >
-                                   Procure Hardware
-                                   <IconArrowUpRight className="w-5 h-5 ml-4 group-hover:translate-x-1 transition-transform" />
-                               </a>
-                          </div>
-                      ))}
-                  </div>
-              )}
-
               {/* Author / Reviewer Box */}
               {article.reviewer && (
                 <ReviewerBox reviewer={article.reviewer} />

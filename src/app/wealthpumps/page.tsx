@@ -184,8 +184,6 @@ export default async function WealthPumpsPillarPage() {
                 </li>
               </ul>
             </div>
-
-
           </aside>
         </div>
       </div>

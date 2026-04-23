@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ContactUs() {
   return (
-    <article className="container mx-auto px-6 py-24 max-w-4xl bg-void text-ghost">
+    <article className="container mx-auto px-6 py-24 max-w-4xl bg-white text-black font-sans">
       <header className="mb-16 border-b border-black/10 pb-8 text-center md:text-left">
         <h1 className="font-heading text-4xl font-extrabold leading-tight text-black uppercase tracking-tighter mb-4">
           Protocol <span className="opacity-30">Support</span>
@@ -19,7 +19,7 @@ export default function ContactUs() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>
           <h2 className="font-heading text-2xl font-bold mb-6 text-black uppercase tracking-tight">Get in Touch</h2>
-          <p className="text-dim mb-8 leading-relaxed font-medium">
+          <p className="text-zinc-500 mb-8 leading-relaxed font-medium">
             Whether you have a question about a specific protocol audit, want to report a technical inaccuracy, or are interested in research partnerships, our team is ready to assist you.
           </p>
 

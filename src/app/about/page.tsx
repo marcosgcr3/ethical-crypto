@@ -24,21 +24,21 @@ export default async function AboutUs() {
   };
 
   return (
-    <div className="bg-void min-h-screen py-24 md:py-32 text-ghost">
+    <div className="bg-white min-h-screen py-24 md:py-32 text-black font-sans">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-24">
           <h5 className="font-heading font-bold text-black uppercase tracking-widest text-xs mb-4">The Architect's Story</h5>
           <h1 className="font-heading text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-10 leading-[0.9]">
             From Code to <span className="text-zinc-400 underline decoration-black/10">Protocol Intelligence</span>
           </h1>
-          <div className="prose prose-slate lg:prose-xl text-dim font-medium whitespace-pre-wrap leading-relaxed max-w-2xl mx-auto">
+          <div className="prose prose-zinc lg:prose-xl text-zinc-500 font-medium whitespace-pre-wrap leading-relaxed max-w-2xl mx-auto">
             {profile.bio}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-          <div className="space-y-6 text-lg text-dim leading-relaxed font-medium">
-            <h3 className="font-heading text-2xl font-bold text-black uppercase tracking-tight">The Quant Lab</h3>
+          <div className="space-y-6 text-lg text-zinc-500 leading-relaxed font-medium">
+            <h3 className="font-heading text-2xl font-black text-black uppercase tracking-tighter">The Quant Lab</h3>
             <p>
               As a protocol architect, I've spent years auditing smart contracts and analyzing tokenomics through the lens of game theory and security. But theoretical analysis alone wasn’t enough. I needed to bridge the gap between whitepaper promises and on-chain reality.
             </p>
@@ -71,8 +71,8 @@ export default async function AboutUs() {
           </div>
         </div>
         
-        <div className="space-y-8 text-lg text-dim leading-relaxed font-medium">
-          <h2 className="font-heading text-3xl font-extrabold text-black border-b-4 border-black/5 inline-block pb-2 mb-4 uppercase tracking-tighter">Why Ethical Crypto?</h2>
+        <div className="space-y-8 text-lg text-zinc-500 leading-relaxed font-medium">
+          <h2 className="font-heading text-3xl font-black text-black border-b-4 border-black/5 inline-block pb-2 mb-4 uppercase tracking-tighter">Why Ethical Crypto?</h2>
           <p>
             I founded <span className="text-black font-bold">Ethical Crypto</span> because the industry is flooded with hype-driven projects and inflationary protocols that prioritize exit liquidity over fundamental value.
           </p>

@@ -179,8 +179,6 @@ export default async function WalletsPillarPage() {
                 </li>
               </ul>
             </div>
-
-
           </aside>
         </div>
       </div>

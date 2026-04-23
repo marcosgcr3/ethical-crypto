@@ -180,8 +180,6 @@ export default async function FundamentalsPillarPage() {
                 </li>
               </ul>
             </div>
-
-
           </aside>
         </div>
       </div>

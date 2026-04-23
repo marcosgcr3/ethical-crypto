@@ -9,10 +9,16 @@ import { ImageLoaderProps } from 'next/image';
 export default function imageLoader({ src, width, quality }: ImageLoaderProps) {
   // If it's our Supabase bucket, route it through our optimizer
   if (src.includes('wwvfyhszgbdffhzlapxz.supabase.co')) {
-    const pathSegments = src.split('/public/images/');
-    if (pathSegments.length > 1) {
-      const relativePath = pathSegments[1];
-      return `/api/images/supabase/${relativePath}?w=${width}${quality ? `&q=${quality}` : ''}`;
+    try {
+      const url = new URL(src);
+      const parts = url.pathname.split('/');
+      const imagesIndex = parts.indexOf('images');
+      if (imagesIndex !== -1) {
+        const relativePath = parts.slice(imagesIndex + 1).join('/');
+        return `/api/images/supabase/${relativePath}?w=${width}${quality ? `&q=${quality}` : ''}`;
+      }
+    } catch (e) {
+      console.error("Failed to parse Supabase URL in loader", e);
     }
   }
 

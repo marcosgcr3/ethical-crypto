@@ -22,12 +22,22 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  experimental: {
-    optimizePackageImports: ["@prisma/client", "jose"],
-  },
   images: {
     loader: 'custom',
     loaderFile: './src/lib/imageLoader.ts',
+  },
+  // Resource optimization for VPS builds
+  typescript: {
+    // Set to true if build still crashes due to memory limits during type checking
+    ignoreBuildErrors: false, 
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  experimental: {
+    optimizePackageImports: ["@prisma/client", "jose"],
+    workerThreads: false,
+    cpus: 1,
   },
   async headers() {
     return [

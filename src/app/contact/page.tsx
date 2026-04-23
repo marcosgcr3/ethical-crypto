@@ -30,7 +30,12 @@ export default function ContactUs() {
               </div>
               <div>
                 <h3 className="font-bold uppercase tracking-widest text-[10px] mb-1 text-black">General & Research</h3>
-                <p className="opacity-50 text-sm font-bold">ethicalcrypto@outlook.es</p>
+                <a 
+                  href="mailto:ethicalbiohacking@outlook.es" 
+                  className="opacity-50 text-sm font-bold hover:opacity-100 transition-opacity underline decoration-zinc-300 underline-offset-4"
+                >
+                  ethicalbiohacking@outlook.es
+                </a>
               </div>
             </div>
 

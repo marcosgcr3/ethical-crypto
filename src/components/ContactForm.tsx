@@ -82,7 +82,20 @@ export default function ContactForm() {
         </div>
         
         {state.errors && (
-          <p className="text-red-500 text-xs font-bold">Something went wrong. Please check your inputs or try again later.</p>
+          <div className="bg-red-500/10 border border-red-500/20 text-red-600 p-4 rounded-xl text-xs font-bold">
+            <p className="mb-2">Transmission failed. The server returned the following errors:</p>
+            <ul className="list-disc list-inside opacity-80 space-y-1">
+              {state.errors.getFormErrors().map((err, i) => (
+                <li key={`form-${i}`}>{err.message || err.code}</li>
+              ))}
+              {state.errors.getAllFieldErrors().map(([field, errs]) => 
+                errs.map((err, i) => (
+                  <li key={`${field}-${i}`}>{field}: {err.message || err.code}</li>
+                ))
+              )}
+            </ul>
+            <p className="mt-2 text-[10px] opacity-60">Did you verify your email address in your Formspree account?</p>
+          </div>
         )}
 
         <button 

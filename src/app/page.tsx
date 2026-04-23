@@ -79,11 +79,6 @@ export default async function Home() {
                 <h2 className="font-heading text-3xl md:text-4xl font-black text-black uppercase tracking-tighter flex items-center gap-4">
                   Latest <span className="text-zinc-500">Insights</span>
                 </h2>
-                <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
-                   <span className="text-black border-b-2 border-black pb-1">All Sectors</span>
-                   <span className="hover:text-black cursor-pointer transition-colors">Yield Protocols</span>
-                   <span className="hover:text-black cursor-pointer transition-colors">Security Ops</span>
-                </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">

@@ -22,9 +22,7 @@ ENV DATABASE_URL=$DATABASE_URL
 ENV DIRECT_URL=$DIRECT_URL
 
 COPY package*.json ./
-# Copiamos la carpeta prisma antes para que el postinstall (prisma generate) no falle
 COPY prisma ./prisma
-
 RUN npm ci
 
 COPY . .
@@ -38,13 +36,14 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
+# Copiamos los archivos necesarios del modo standalone
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/prisma ./prisma
-COPY --from=builder /app/next.config.ts ./
-COPY --from=builder /app/src/lib/imageLoader.ts ./src/lib/imageLoader.ts
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 
 EXPOSE 3000
-CMD ["npm", "start"]
+
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+CMD ["node", "server.js"]

@@ -26,6 +26,7 @@ const nextConfig: NextConfig = {
     loader: 'custom',
     loaderFile: './src/lib/imageLoader.ts',
   },
+  output: 'standalone',
   // Resource optimization for VPS builds
   typescript: {
     // Set to true if build still crashes due to memory limits during type checking

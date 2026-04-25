@@ -1,6 +1,7 @@
 services:
   app:
     image: ghcr.io/marcosgcr3/ethical-crypto:v1
+    pull_policy: always
     # No necesitamos mapear puertos hacia afuera, Traefik se encarga
     expose:
       - "3000"

@@ -1,14 +1,13 @@
 services:
   app:
-    build: .
+    # En el VPS se usa la imagen pre-construida por GitHub Actions
+    # En desarrollo local se puede usar: `docker compose build` (sin image:)
+    image: ghcr.io/marcosgcr3/ethical-crypto:latest
     ports:
       - "3000:3000"
     volumes:
+      # Las imágenes subidas persisten fuera del contenedor
       - ./public/images:/app/public/images
     env_file:
       - .env
     restart: always
-
-# Note: This configuration assumes you run 'docker-compose up -d' 
-# on your VPS. It maps the local public/images folder to the container,
-# allowing uploaded images to persist across rebuilds.

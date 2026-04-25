@@ -1,7 +1,7 @@
 services:
   app:
     # En el VPS se usa la imagen pre-construida por GitHub Actions
-    image: ghcr.io/marcosgcr3/ethical-crypto:latest
+    image: ghcr.io/marcosgcr3/ethical-crypto:v1
     ports:
       - "3001:3000" # Mapeamos al 3001 para no chocar con el puerto 3000 de Dokploy
     volumes:

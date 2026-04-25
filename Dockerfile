@@ -4,7 +4,7 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Build args para variables NEXT_PUBLIC_* (se hornean en el bundle)
+# Build args para variables NEXT_PUBLIC_*
 ARG NEXT_PUBLIC_SITE_URL
 ARG NEXT_PUBLIC_ADSENSE_ID
 ARG NEXT_PUBLIC_GA_ID
@@ -22,10 +22,10 @@ ENV DATABASE_URL=$DATABASE_URL
 ENV DIRECT_URL=$DIRECT_URL
 
 COPY package*.json ./
-RUN npm ci
-
+# Copiamos la carpeta prisma antes para que el postinstall (prisma generate) no falle
 COPY prisma ./prisma
-RUN npx prisma generate
+
+RUN npm ci
 
 COPY . .
 RUN npm run build

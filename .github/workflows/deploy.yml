@@ -99,6 +99,7 @@ jobs:
             cd /opt/ethical-crypto
 
             echo "🔄 Restarting container with docker compose..."
+            docker compose down || true
             docker compose pull
             docker compose up -d --remove-orphans
 

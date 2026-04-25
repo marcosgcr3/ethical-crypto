@@ -35,8 +35,8 @@ export default async function Home() {
   return (
     <div className="bg-white min-h-screen text-black selection:bg-black/10 selection:text-black">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 md:px-6 mb-10 md:mb-20 pt-10">
-          <div className="relative rounded-3xl md:rounded-[3rem] overflow-hidden shadow-sm h-[350px] md:h-[450px] lg:h-[550px] bg-zinc-50 border border-black/5">
+      <section className="container mx-auto px-4 md:px-6 mb-10 md:mb-20 pt-6 md:pt-10">
+          <div className="relative rounded-3xl md:rounded-[3rem] overflow-hidden shadow-sm min-h-[500px] md:h-[450px] lg:h-[550px] bg-zinc-50 border border-black/5">
               <Image 
                 src="/api/images/supabase/hero-v2.png" 
                 alt="Crypto Protocol Hero Illustration" 
@@ -46,16 +46,16 @@ export default async function Home() {
                 fetchPriority="high"
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/20 to-transparent flex items-center">
-                  <div className="p-8 md:p-20 max-w-3xl">
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full text-[10px] md:text-xs font-black uppercase tracking-[0.3em] mb-8 shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/50 md:via-white/20 to-transparent flex items-center">
+                  <div className="py-12 px-6 md:p-20 max-w-3xl">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full text-[10px] md:text-xs font-black uppercase tracking-[0.3em] mb-6 md:mb-8 shadow-lg">
                         Protocol Intelligence 2026
                       </div>
-                      <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black leading-[0.85] mb-8 uppercase tracking-tighter text-black relative z-10">
+                      <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black leading-[0.85] mb-6 md:mb-8 uppercase tracking-tighter text-black relative z-10">
                         Decentralized <br />
                         <span className="text-zinc-500">Intelligence</span>
                       </h1>
-                      <p className="text-lg md:text-2xl font-medium leading-relaxed text-black/70 mb-10 max-w-xl font-sans relative z-10">
+                      <p className="text-base md:text-2xl font-medium leading-relaxed text-black/70 mb-8 md:mb-10 max-w-xl font-sans relative z-10">
                         The definitive guide to optimizing your digital footprint, securing your assets, and engineering protocol-level growth.
                       </p>
                       <div className="flex flex-col sm:flex-row gap-5">

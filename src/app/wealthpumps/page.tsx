@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'WealthPumps: Capital Acceleration & Yield Engineering | Ethical Crypto',
   description: 'The science of high-performance yield. Master liquid staking, capital turnover, and technical infrastructure for long-term wealth expansion.',
   alternates: {
-    canonical: 'https://ethicalcrypto.ai/wealthpumps',
+    canonical: 'https://ethical-crypto.com/wealthpumps',
   },
 };
 

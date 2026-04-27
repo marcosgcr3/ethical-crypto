@@ -15,7 +15,7 @@ export default function CookiePolicy() {
         <p className="opacity-50 text-sm font-bold">Effective Date: April 2026</p>
       </header>
       <div className="prose prose-slate max-w-none space-y-6 text-dim leading-relaxed">
-        <p>This is the Cookie Policy for Ethical Crypto, accessible from ethicalcrypto.com.</p>
+        <p>This is the Cookie Policy for Ethical Crypto, accessible from ethical-crypto.com.</p>
 
         <h2 className="font-heading text-2xl font-bold mt-8 mb-4 text-black uppercase tracking-tight">What Are Cookies</h2>
         <p>As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies.</p>

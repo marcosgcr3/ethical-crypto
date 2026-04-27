@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: 'Protocol Intelligence: Technical Audits & Network Analysis | Ethical Crypto',
   description: 'The definitive library of crypto protocols. Master network topology, smart contract security, and technical decentralization metrics.',
   alternates: {
-    canonical: 'https://ethicalcrypto.ai/protocols',
+    canonical: 'https://ethical-crypto.com/protocols',
   },
 };
 

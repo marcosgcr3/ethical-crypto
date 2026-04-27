@@ -25,9 +25,9 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   
   return {
     title: `${categoryName} | Tactical Intelligence | Ethical Crypto`,
-    description: `Deploy high-yield strategies and advanced operational security in ${categoryName.toLowerCase()}. Science-backed insights for the modern sovereign individual.`,
+    description: `Deploy high-yield strategies and advanced operational security in ${categoryName.toLowerCase()}. Science-backed cryptocurrency insights for the modern sovereign individual.`,
     alternates: {
-      canonical: `https://ethicalcrypto.ai/${category}`,
+      canonical: `https://ethical-crypto.com/${category}`,
     },
   };
 }

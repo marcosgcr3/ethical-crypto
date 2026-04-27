@@ -19,13 +19,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ethicalcrypto.com"),
+  metadataBase: new URL("https://ethical-crypto.com"),
   title: "Ethical Crypto: Decentralized Intelligence & Wealthspan Optimization",
   description: "Master the digital frontier with data-driven crypto insights. Expert analysis on DeFi, protocol engineering, and cold storage security for the next cycle.",
   openGraph: {
     title: "Ethical Crypto: Decentralized Intelligence & Wealthspan Optimization",
     description: "Master the digital frontier with data-driven crypto insights. Expert analysis on DeFi, protocol engineering, and cold storage security for the next cycle.",
-    url: "https://ethicalcrypto.com",
+    url: "https://ethical-crypto.com",
     siteName: "Ethical Crypto",
     images: [
       {
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     capable: true,
   },
-  keywords: ["Crypto", "Ethical Crypto", "DeFi", "Blockchain", "Staking", "Protocol Engineering", "Cold Storage", "Wealthspan"],
+  keywords: ["Crypto", "Ethical Crypto", "Cryptocurrency", "Cryptography", "DeFi", "Blockchain", "Staking", "Protocol Engineering", "Cold Storage", "Wealthspan"],
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
   },
@@ -90,7 +90,7 @@ export default function RootLayout({
               name: 'Ethical Crypto',
               alternateName: 'EthicalCrypto',
               legalName: 'Ethical Crypto',
-              url: 'https://ethicalcrypto.com',
+              url: 'https://ethical-crypto.com',
               logo: 'https://wwvfyhszgbdffhzlapxz.supabase.co/storage/v1/object/public/images/logo.png',
               about: {
                 '@type': 'Thing',

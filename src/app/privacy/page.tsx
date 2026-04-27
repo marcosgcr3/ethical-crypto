@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
         <p className="opacity-50 text-sm font-bold">Effective Date: April 2026</p>
       </header>
       <div className="prose prose-zinc max-w-none space-y-6 text-zinc-500 leading-relaxed font-medium">
-        <p>At Ethical Crypto, accessible from ethicalcrypto.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Ethical Crypto and how we use it.</p>
+        <p>At Ethical Crypto, accessible from ethical-crypto.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Ethical Crypto and how we use it.</p>
 
         <h2 className="font-heading text-2xl font-black mt-8 mb-4 text-black uppercase tracking-tight">Information We Collect</h2>
         <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>

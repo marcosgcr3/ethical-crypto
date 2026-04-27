@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Protocol Fundamentals: Tokenomics & Network Architecture | Ethical Crypto',
   description: 'The technical foundation of the crypto ecosystem. Master tokenomics architecture, network topology, and protocol incentives.',
   alternates: {
-    canonical: 'https://ethicalcrypto.ai/fundamentals',
+    canonical: 'https://ethical-crypto.com/fundamentals',
   },
 };
 

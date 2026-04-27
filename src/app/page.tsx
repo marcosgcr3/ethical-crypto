@@ -6,9 +6,9 @@ import ScrollButton from '@/components/ScrollButton';
 
 export const metadata: Metadata = {
   title: "Ethical Crypto: Protocol Intelligence & Wealth Engineering",
-  description: "Master the digital frontier with expert crypto insights. Explore the latest in DeFi, protocol development, and blockchain security.",
+  description: "Master the digital frontier with expert cryptocurrency insights. Explore the latest in DeFi, protocol development, and blockchain security.",
   alternates: {
-    canonical: 'https://ethicalcrypto.ai',
+    canonical: 'https://ethical-crypto.com',
   },
 };
 

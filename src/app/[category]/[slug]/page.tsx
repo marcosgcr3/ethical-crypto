@@ -18,7 +18,7 @@ export async function generateMetadata(
 
   if (!article) return {};
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethicalcrypto.ai';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethical-crypto.com';
   const canonicalUrl = `${baseUrl}/${category}/${slug}`;
 
   let displayTitle = article.title;
@@ -95,7 +95,7 @@ export default async function ArticlePage({ params }: { params: { category: stri
     orderBy: { createdAt: 'desc' }
   });
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethicalcrypto.ai';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethical-crypto.com';
   const articleUrl = `${baseUrl}/${article.category}/${article.slug}`;
 
   // JSON-LD Structured Data

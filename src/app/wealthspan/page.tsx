@@ -17,12 +17,12 @@ export const metadata: Metadata = {
   title: 'Wealthspan Engineering: Protocol Mastery & Yield Longevity | Ethical Crypto',
   description: 'The tactical guide to engineering capital longevity. Master liquid staking, L2 optimization, yield compounding, and the technical infrastructure of modern wealthspan.',
   alternates: {
-    canonical: 'https://ethicalcrypto.ai/wealthspan',
+    canonical: 'https://ethical-crypto.com/wealthspan',
   },
   openGraph: {
     title: 'Wealthspan Engineering: Protocol Mastery & Yield Longevity',
     description: 'Master the technical protocols that define long-term capital autonomy. From MEV optimization to validator efficiency.',
-    url: 'https://ethicalcrypto.ai/wealthspan',
+    url: 'https://ethical-crypto.com/wealthspan',
     siteName: 'Ethical Crypto',
     images: [{ url: '/images/wealthspan-og.png', width: 1200, height: 630, alt: 'Wealthspan Engineering and Capital Optimization' }],
     locale: 'en_US',
@@ -73,12 +73,12 @@ export default async function WealthspanPillarPage() {
     '@type': 'WebPage',
     name: 'Wealthspan Engineering: Protocol Mastery and Capital Longevity',
     description: metadata.description,
-    url: 'https://ethicalcrypto.ai/wealthspan',
+    url: 'https://ethical-crypto.com/wealthspan',
     datePublished: '2026-04-20T00:00:00Z',
     dateModified: new Date().toISOString(),
     inLanguage: 'en-US',
-    isPartOf: { '@type': 'WebSite', name: 'Ethical Crypto', url: 'https://ethicalcrypto.ai' },
-    author: { '@type': 'Organization', name: 'Ethical Crypto', url: 'https://ethicalcrypto.ai' },
+    isPartOf: { '@type': 'WebSite', name: 'Ethical Crypto', url: 'https://ethical-crypto.com' },
+    author: { '@type': 'Organization', name: 'Ethical Crypto', url: 'https://ethical-crypto.com' },
   };
 
   return (

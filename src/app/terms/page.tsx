@@ -16,7 +16,7 @@ export default function TermsOfService() {
       </header>
       <div className="prose prose-zinc max-w-none space-y-6 text-zinc-500 leading-relaxed font-medium">
         <p>Welcome to Ethical Crypto!</p>
-        <p>These terms and conditions outline the rules and regulations for the use of Ethical Crypto's Website, located at ethicalcrypto.com.</p>
+        <p>These terms and conditions outline the rules and regulations for the use of Ethical Crypto's Website, located at ethical-crypto.com.</p>
         <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use Ethical Crypto if you do not agree to take all of the terms and conditions stated on this page.</p>
         
         <h2 className="font-heading text-2xl font-black mt-8 mb-4 text-black uppercase tracking-tight">Cookies</h2>

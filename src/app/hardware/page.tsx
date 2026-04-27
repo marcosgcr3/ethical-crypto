@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   title: 'Hardware Infrastructure: Validator Nodes & HSM Security | Ethical Crypto',
   description: 'Master the technical hardware of the crypto ecosystem. From sovereign validator nodes and DVT to hardware security modules (HSM) and private key isolation.',
   alternates: {
-    canonical: 'https://ethicalcrypto.ai/hardware',
+    canonical: 'https://ethical-crypto.com/hardware',
   },
   openGraph: {
     title: 'Hardware Infrastructure: Validator Nodes & HSM Security',
     description: 'Engineering the physical layer of digital sovereignty. From validator nodes to hardware security modules.',
-    url: 'https://ethicalcrypto.ai/hardware',
+    url: 'https://ethical-crypto.com/hardware',
     siteName: 'Ethical Crypto',
     images: [{ url: '/images/hardware-og.png', width: 1200, height: 630, alt: 'Hardware Infrastructure and Node Operations' }],
     locale: 'en_US',
@@ -72,12 +72,12 @@ export default async function HardwarePillarPage() {
     '@type': 'WebPage',
     name: 'Hardware Infrastructure: Validator Nodes and HSM Security',
     description: metadata.description,
-    url: 'https://ethicalcrypto.ai/hardware',
+    url: 'https://ethical-crypto.com/hardware',
     datePublished: '2026-04-20T00:00:00Z',
     dateModified: new Date().toISOString(),
     inLanguage: 'en-US',
-    isPartOf: { '@type': 'WebSite', name: 'Ethical Crypto', url: 'https://ethicalcrypto.ai' },
-    author: { '@type': 'Organization', name: 'Ethical Crypto', url: 'https://ethicalcrypto.ai' },
+    isPartOf: { '@type': 'WebSite', name: 'Ethical Crypto', url: 'https://ethical-crypto.com' },
+    author: { '@type': 'Organization', name: 'Ethical Crypto', url: 'https://ethical-crypto.com' },
   };
 
   return (

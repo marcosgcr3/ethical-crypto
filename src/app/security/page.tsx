@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Security/Wallets: Air-Gapped Custody & Asset Protection | Ethical Crypto',
   description: 'The tactical guide to crypto operational security and wallet management. Master air-gapped custody, multi-sig governance, and privacy engineering.',
   alternates: {
-    canonical: 'https://ethicalcrypto.ai/security',
+    canonical: 'https://ethical-crypto.com/security',
   },
 };
 

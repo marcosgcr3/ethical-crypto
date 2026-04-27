@@ -5,18 +5,18 @@ import prisma from '@/lib/prisma';
 
 export const metadata: Metadata = {
   title: 'Crypto Intelligence: The Ultimate Guide to Protocol Mastery',
-  description: 'What is protocol intelligence? Master the digital frontier with our comprehensive guide to wealthspan, network fundamentals, blockchain security, and hardware verification.',
+  description: 'What is protocol intelligence? Master the digital frontier with our comprehensive guide to cryptocurrency, wealthspan, blockchain security, and cryptography.',
   alternates: {
-    canonical: 'https://ethicalcrypto.com/crypto',
+    canonical: 'https://ethical-crypto.com/crypto',
   },
   openGraph: {
     title: 'Crypto Intelligence: The Ultimate Guide to Protocol Mastery',
-    description: 'What is protocol intelligence? The definitive framework for wealthspan engineering, network fundamentals, and hardware security.',
-    url: 'https://ethicalcrypto.com/crypto',
+    description: 'What is protocol intelligence? The definitive framework for wealthspan engineering, cryptocurrency fundamentals, and hardware security.',
+    url: 'https://ethical-crypto.com/crypto',
     siteName: 'Ethical Crypto',
     images: [
       {
-        url: 'https://ethicalcrypto.com/images/hero.png',
+        url: 'https://ethical-crypto.com/images/hero.png',
         width: 1200,
         height: 630,
         alt: 'Ethical Crypto Intelligence Guide 2026',
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Crypto Intelligence: Master the Digital Frontier (2026)',
-    description: 'The definitive framework for extending your wealthspan and achieving peak protocol performance.',
+    description: 'The definitive framework for extending your wealthspan and achieving peak protocol performance with advanced cryptography.',
     site: '@ethicalcrypto',
     creator: '@ethicalcrypto',
-    images: ['https://ethicalcrypto.com/images/hero.png'],
+    images: ['https://ethical-crypto.com/images/hero.png'],
   },
 };
 
@@ -76,12 +76,12 @@ export default async function CryptoPillarPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Crypto Intelligence: Protocol Mastery Guide (2026)',
-    description: 'Master the digital frontier with our guide to wealthspan, network fundamentals, and blockchain security.',
-    url: 'https://ethicalcrypto.com/crypto',
+    description: 'Master the digital frontier with our guide to wealthspan, cryptocurrency fundamentals, and blockchain security.',
+    url: 'https://ethical-crypto.com/crypto',
     isPartOf: {
       '@type': 'WebSite',
       name: 'Ethical Crypto',
-      url: 'https://ethicalcrypto.com'
+      url: 'https://ethical-crypto.com'
     }
   };
 
@@ -140,7 +140,7 @@ export default async function CryptoPillarPage() {
               </h2>
               <div className="prose prose-zinc lg:prose-xl max-w-none text-zinc-600 leading-relaxed font-medium">
                 <p>
-                  At its core, <strong>protocol intelligence</strong> is the practice of using technical analysis, on-chain data, and architectural experimentation to take control of your digital footprint. It is a mindset that refuses to accept centralized reliance as the default. Instead, intelligent actors view the blockchain as a programmable global state machine—a layer of digital sovereignty that can be optimized for long-term <strong>Wealthspan</strong>.
+                  At its core, <strong>protocol intelligence</strong> is the practice of using technical analysis, cryptography, on-chain data, and architectural experimentation to take control of your digital footprint. It is a mindset that refuses to accept centralized reliance as the default. Instead, intelligent actors view the blockchain as a programmable global state machine—a layer of digital sovereignty that can be optimized for long-term <strong>Wealthspan</strong>.
                 </p>
                 
                 <div className="bg-zinc-50 border border-zinc-100 p-8 rounded-3xl my-10 shadow-inner">

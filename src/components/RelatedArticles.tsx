@@ -12,7 +12,7 @@ export default function RelatedArticles({ articles }: RelatedArticlesProps) {
     return null;
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethicalcrypto.ai';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ethical-crypto.com';
 
   return (
     <section className="py-16 mt-16 border-t border-black/5">

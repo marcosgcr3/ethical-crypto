@@ -15,7 +15,7 @@ export default function Disclaimer() {
         <p className="opacity-50 text-sm font-bold">Effective Date: April 2026</p>
       </header>
       <div className="prose prose-zinc max-w-none space-y-6 text-zinc-500 leading-relaxed font-medium">
-        <p>The information provided by Ethical Crypto (“we,” “us,” or “our”) on ethicalcrypto.com (the “Site”) is for educational and informational purposes only and does not constitute financial, investment, or legal advice.</p>
+        <p>The information provided by Ethical Crypto (“we,” “us,” or “our”) on ethical-crypto.com (the “Site”) is for educational and informational purposes only and does not constitute financial, investment, or legal advice.</p>
         
         <h2 className="font-heading text-2xl font-black mt-8 mb-4 text-black uppercase tracking-tight">No Financial Advice</h2>
         <p>The Site cannot and does not contain financial/investment advice. The cryptographic and protocol information is provided for general informational and educational purposes only and is not a substitute for professional advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals. We do not provide any kind of investment advice. THE USE OR RELIANCE OF ANY INFORMATION CONTAINED ON THE SITE IS SOLELY AT YOUR OWN RISK.</p>

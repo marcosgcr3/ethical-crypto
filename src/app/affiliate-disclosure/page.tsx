@@ -18,7 +18,7 @@ export default function AffiliateDisclosure() {
         <p>In compliance with the FTC guidelines, please assume the following about links and posts on this website:</p>
         
         <h2 className="font-heading text-2xl font-black mt-8 mb-4 text-black uppercase tracking-tight">What is an Affiliate Link?</h2>
-        <p>Many of the links on ethicalcrypto.com are affiliate links. This means that a special tracking code is used and that we may make a small commission on the sale of an item if you purchase through one of these links. The price of the item is the same for you whether it is an affiliate link or not, and using affiliate links helps us to maintain this website and support our ongoing protocol research.</p>
+        <p>Many of the links on ethical-crypto.com are affiliate links. This means that a special tracking code is used and that we may make a small commission on the sale of an item if you purchase through one of these links. The price of the item is the same for you whether it is an affiliate link or not, and using affiliate links helps us to maintain this website and support our ongoing protocol research.</p>
 
         <h2 className="font-heading text-2xl font-black mt-8 mb-4 text-black uppercase tracking-tight">Recommendation Standards</h2>
         <p>We only recommend products or services (such as hardware wallets, security tools, or nodes) that we have thoroughly researched and believe will provide value to our readers. Our priority is always to provide high-quality protocol intelligence to help you in your digital journey.</p>

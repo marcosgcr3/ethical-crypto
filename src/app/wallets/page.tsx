@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'Wallet Intelligence: Hardware, Software & Multi-Sig | Ethical Crypto',
   description: 'The definitive guide to digital asset custody. Master hardware wallets, multi-signature setups, and cold storage engineering.',
   alternates: {
-    canonical: 'https://ethicalcrypto.ai/wallets',
+    canonical: 'https://ethical-crypto.com/wallets',
   },
 };
 

@@ -13,7 +13,7 @@
 
 ```html
 <p class="font-bold text-bioblue text-xl border-l-4 border-bioblue pl-6 my-10 italic">
-    "Telomeres dictate our cellular countdown clock. While you cannot stop them from ticking, modern science is learning how to dramatically alter the tempo."
+    "Telomeres dictate our cellular countdown clock. While you can't stop them from ticking, modern science is learning how to dramatically alter the tempo."
 </p>
 
 <!-- SEO KEY TAKEAWAYS CARD -->
@@ -118,7 +118,7 @@
 
 <h3 class="font-bold text-lg mt-14 mb-4 border-b-2 border-gray-100 pb-2">Peer-Reviewed Clinical Validations & Extended Deeper Reading:</h3>
 <ol class="list-decimal pl-5 text-[14px] opacity-80 space-y-5">
-    <li><strong>Lifestyle and Telomeres:</strong> Ornish et al. (2013). "Effect of comprehensive lifestyle changes on telomerase activity and telomere length". <em>The Lancet Oncology</em>. Shows sustainable elongations from simple habits. <a href="https://pubmed.ncbi.nlm.nih.gov/24051140/" class="text-bioblue underline hover:opacity-80 transition-opacity" target="_blank">Read Clinical Study</a></li>
+    <li><strong>Lifestyle and Telomeres:</strong> Ornish et al. (2013). "Effect of full lifestyle changes on telomerase activity and telomere length". <em>The Lancet Oncology</em>. Shows sustainable elongations from simple habits. <a href="https://pubmed.ncbi.nlm.nih.gov/24051140/" class="text-bioblue underline hover:opacity-80 transition-opacity" target="_blank">Read Clinical Study</a></li>
     <li><strong>The Stress Factor:</strong> Epel et al. (2004). "Accelerated telomere shortening in response to life stress". <em>PNAS</em>. The landmark paper linking mental friction to literal cellular aging. <a href="https://pubmed.ncbi.nlm.nih.gov/15574496/" class="text-bioblue underline hover:opacity-80 transition-opacity" target="_blank">Read Clinical Study</a></li>
 </ol>
 ```

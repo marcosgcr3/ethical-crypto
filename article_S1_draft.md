@@ -47,7 +47,7 @@
 </div>
 
 <p>
-    By 2026, wearable data has taught us that time in bed does not equal time asleep, and time asleep does not guarantee recovery. The holy grail of sleep hacking isn't extending your sleep duration to 9 hours; it's compressing 2 hours of Deep Sleep and 2 hours of REM into a highly efficient, unbreakable 7-hour block.
+    By 2026, wearable data has taught us that time in bed doesn't equal time asleep, and time asleep doesn't guarantee recovery. The holy grail of sleep hacking isn't extending your sleep duration to 9 hours; it's compressing 2 hours of Deep Sleep and 2 hours of REM into a highly efficient, unbreakable 7-hour block.
 </p>
 
 <!-- ACTIONABLE PRO-TIP ALERT -->

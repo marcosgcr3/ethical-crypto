@@ -79,7 +79,7 @@
         </div>
 
         <p class="opacity-80 leading-relaxed m-0 mb-6">
-            You cannot build a towering VO2 Max peak without a massive base. Zone 2 training—defined by exercising at a pace where you can comfortably hold a conversation, primarily using fat as fuel—builds the mitochondrial density necessary to ultimately absorb high-output workloads.
+            You can't build a towering VO2 Max peak without a massive base. Zone 2 training, defined by exercising at a pace where you can comfortably hold a conversation, primarily using fat as fuel, builds the mitochondrial density necessary to ultimately absorb high-output workloads.
         </p>
         <p class="opacity-80 leading-relaxed m-0">
             Committing to 150-180 minutes of true Zone 2 cardio weekly forms the bedrock. It clears lactate efficiently, allowing the intense Zone 5 intervals to push your maximum oxygen uptake parameters to their true genetic limit.

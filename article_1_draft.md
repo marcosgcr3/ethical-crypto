@@ -13,7 +13,7 @@
 
 ```html
 <p class="font-bold text-bioblue text-xl border-l-4 border-bioblue pl-6 my-10 italic">
-    "Biological freedom entails biological responsibility. In biohacking, the researcher and the subject are the same person—an ethical dualism that redefines modern medicine."
+    "Biological freedom entails biological responsibility. In biohacking, the researcher and the subject are the same person, an ethical dualism that redefines modern medicine."
 </p>
 
 <!-- SEO KEY TAKEAWAYS CARD -->

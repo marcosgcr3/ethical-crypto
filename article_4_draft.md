@@ -57,7 +57,7 @@
         <h4 class="font-bold text-bioblue uppercase tracking-widest text-sm">Biohacker Pro-Tip: Scan Before You Sip</h3>
     </div>
     <p class="text-[15px] opacity-90 text-slate m-0 leading-relaxed">
-        Never purchase a protein powder that doesn't provide a Batch-Specific Certificate of Analysis (CoA) or carry an NSF Certified for Sport seal. Use the "NSF Sport" app to scan barcodes in the aisle—if it's not in the database, it's not in your smoothie.
+        Never purchase a protein powder that doesn't provide a Batch-Specific Certificate of Analysis (CoA) or carry an NSF Certified for Sport seal. Use the "NSF Sport" app to scan barcodes in the aisle, if it's not in the database, it's not in your smoothie.
     </p>
 </div>
 

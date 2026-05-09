@@ -13,7 +13,7 @@
 
 ```html
 <p class="font-bold text-bioblue text-xl border-l-4 border-bioblue pl-6 my-10 italic">
-    "Aging is not just wear and tear; it is the accumulation of cells that refuse to die. Clearing these 'zombie cells' is the great frontier of modern longevity."
+    "Aging is not just wear and tear; it's the accumulation of cells that refuse to die. Clearing these 'zombie cells' is the great frontier of modern longevity."
 </p>
 
 <!-- SEO KEY TAKEAWAYS CARD -->
@@ -57,7 +57,7 @@
         <h4 class="font-bold text-bioblue uppercase tracking-widest text-sm">Biohacker Pro-Tip: The Hit-and-Run Protocol</h4>
     </div>
     <p class="text-[15px] opacity-90 text-slate m-0 leading-relaxed">
-        Do not take high-dose senolytics every day. The most scientifically sound method is the "hit-and-run" approach: take compounds like Fisetin or Quercetin for 2-3 consecutive days, followed by a month off. This mimics the clinical trial protocols and prevents cellular resistance.
+        don't take high-dose senolytics every day. The most scientifically sound method is the "hit-and-run" approach: take compounds like Fisetin or Quercetin for 2-3 consecutive days, followed by a month off. This mimics the clinical trial protocols and prevents cellular resistance.
     </p>
 </div>
 

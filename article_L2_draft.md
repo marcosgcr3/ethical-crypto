@@ -47,7 +47,7 @@
 </div>
 
 <p>
-    By 2026, the promise of quantifying our longevity has manifested in the commercial boom of "biological age kits." It is no longer science fiction to spit in a tube and receive a number claiming you are biologically 34 years old when your passport says 42. But beneath the glossy marketing lies complex, often misunderstood science.
+    By 2026, the promise of quantifying our longevity has manifested in the commercial boom of "biological age kits." it's no longer science fiction to spit in a tube and receive a number claiming you are biologically 34 years old when your passport says 42. But beneath the glossy marketing lies complex, often misunderstood science.
 </p>
 
 <!-- ACTIONABLE PRO-TIP ALERT -->
@@ -57,7 +57,7 @@
         <h4 class="font-bold text-bioblue uppercase tracking-widest text-sm">Biohacker Pro-Tip: The PACE Test</h4>
     </div>
     <p class="text-[15px] opacity-90 text-slate m-0 leading-relaxed">
-        If you are going to invest in testing, ignore tests offering only a static "age number". Look for testing companies that utilize the DunedinPACE algorithm. It fundamentally operates as a speedometer—telling you how fast you are currently aging instead of a lifetime accumulation score.
+        If you are going to invest in testing, ignore tests offering only a static "age number". Look for testing companies that utilize the DunedinPACE algorithm. It fundamentally operates as a speedometer, telling you how fast you are currently aging instead of a lifetime accumulation score.
     </p>
 </div>
 

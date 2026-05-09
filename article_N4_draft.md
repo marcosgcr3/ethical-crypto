@@ -47,7 +47,7 @@
 </div>
 
 <p>
-    By 2026, the era of generalized advice has ended. For years, women have suffered burnout, thyroid downregulation, and missed periods by strictly following protocols—like intense 20:4 intermittent fasting or extreme keto—designed by men, for men. Understanding your infradian rhythm allows you to map your biohacks dynamically, leaning into stress when resilient, and recovering deeply when building hormones.
+    By 2026, the era of generalized advice has ended. For years, women have suffered burnout, thyroid downregulation, and missed periods by strictly following protocols, like intense 20:4 intermittent fasting or extreme keto, designed by men, for men. Understanding your infradian rhythm allows you to map your biohacks dynamically, leaning into stress when resilient, and recovering deeply when building hormones.
 </p>
 
 <!-- ACTIONABLE PRO-TIP ALERT -->
@@ -79,7 +79,7 @@
         </div>
 
         <p class="opacity-80 leading-relaxed m-0 mb-6">
-            When a woman engages in chronic caloric restriction or deep fasting during the luteal phase, the body reads it as a famine state. This spikes cortisol, which structurally "steals" pregnenolone—the exact precursor needed to make progesterone.
+            When a woman engages in chronic caloric restriction or deep fasting during the luteal phase, the body reads it as a famine state. This spikes cortisol, which structurally "steals" pregnenolone, the exact precursor needed to make progesterone.
         </p>
         <p class="opacity-80 leading-relaxed m-0">
             The result? Massive PMS symptoms, anxiety, and a downregulation of T3 thyroid hormone, plummeting metabolic rate. A biohacker understands that pushing the accelerator requires knowing when the engine can actually handle the heat.

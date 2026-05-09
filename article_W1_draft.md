@@ -57,7 +57,7 @@
         <h4 class="font-bold text-bioblue uppercase tracking-widest text-sm">Biohacker Pro-Tip: The Habit Stacking Protocol</h4>
     </div>
     <p class="text-[15px] opacity-90 text-slate m-0 leading-relaxed">
-        Do not wear haptic nervous system stimulators 24/7. Just like muscles, the vagus nerve adapts to constant stimuli. Use Apollo Neuro or Sensate exclusively during high-stress peaks or 30 minutes before bed to maximize the neurological response and prevent habituation.
+        don't wear haptic nervous system stimulators 24/7. Just like muscles, the vagus nerve adapts to constant stimuli. Use Apollo Neuro or Sensate exclusively during high-stress peaks or 30 minutes before bed to maximize the neurological response and prevent habituation.
     </p>
 </div>
 
@@ -82,7 +82,7 @@
             Pioneering devices like the Apollo Neuro and Hapbee don’t just read your body; they write to it. Utilizing specific frequencies of touch therapy (haptics) or targeted ultra-low radio frequencies, they essentially send safety signals to the brain through sensory pathways, overriding feelings of panic or distraction.
         </p>
         <p class="opacity-80 leading-relaxed m-0">
-            This signifies a monumental shift. By bypassing the prefrontal cortex—the part of you that has to "try" to relax—these wearables interact directly with your biology. It is the purest expression of bioethical intervention: enhancing human capability safely, seamlessly, and implicitly.
+            This signifies a monumental shift. By bypassing the prefrontal cortex, the part of you that has to "try" to relax, these wearables interact directly with your biology. it's the purest expression of bioethical intervention: enhancing human capability safely, seamlessly, and implicitly.
         </p>
     </div>
 </div>

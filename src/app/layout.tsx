@@ -114,7 +114,7 @@ export default function RootLayout({
         <Footer />
         <CookieConsent />
         <AdSense />
-        <GoogleAnalytics gaId="G-H1BZS390ZD" />
+        <GoogleAnalytics gaId="G-M1N6YP33V7" />
       </body>
     </html>
   );

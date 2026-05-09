@@ -47,7 +47,7 @@
 </div>
 
 <p>
-    In the quest for peak performance, controlling glycemic variability is non-negotiable. While Metformin has long been the darling of the longevity community, **Berberine**—a bioactive compound extracted from several different plants like the Oregon grape and Barberry—has emerged as a potent, natural alternative. But how do these two compounds actually compare when scrutinized under a clinical lens in 2026?
+    In the quest for peak performance, controlling glycemic variability is non-negotiable. While Metformin has long been the darling of the longevity community, **Berberine**, a bioactive compound extracted from several different plants like the Oregon grape and Barberry, has emerged as a potent, natural alternative. But how do these two compounds actually compare when scrutinized under a clinical lens in 2026?
 </p>
 
 <!-- ACTIONABLE PRO-TIP ALERT -->
@@ -57,7 +57,7 @@
         <h4 class="font-bold text-bioblue uppercase tracking-widest text-sm">Biohacker Pro-Tip: Cycle Your Berberine</h4>
     </div>
     <p class="text-[15px] opacity-90 text-slate m-0 leading-relaxed">
-        Berberine has poor bioavailability. To maximize its effect, take it with a source of healthy fats or a small amount of black pepper extract. Additionally, many practitioners recommend a "5 days on, 2 days off" cycle to prevent potential microbiome stagnation.
+        Berberine has poor bioavailability. To maximize its effect, take it with a source of healthy fats or a small amount of black pepper extract. On top of that, many practitioners recommend a "5 days on, 2 days off" cycle to prevent potential microbiome stagnation.
     </p>
 </div>
 

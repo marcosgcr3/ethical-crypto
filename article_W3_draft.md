@@ -82,7 +82,7 @@
             The wellness industry often sells flexible masks and cheap wands that provide barely 5 mW/cm² of irradiance. While these might offer superficial dermatological benefits eventually, they are geometrically incapable of penetrating the dermal layer to heal muscle tissue or systemic inflammation.
         </p>
         <p class="opacity-80 leading-relaxed m-0">
-            For true physiological biohacking—speeding up muscle recovery, enhancing thyroid function, or improving deep sleep—you require a high-wattage panel delivering dual wavelengths (typically 660nm Red and 850nm NIR) at an irradiance of at least 50-100 mW/cm² from 6 inches away.
+            For true physiological biohacking, speeding up muscle recovery, enhancing thyroid function, or improving deep sleep, you require a high-wattage panel delivering dual wavelengths (typically 660nm Red and 850nm NIR) at an irradiance of at least 50-100 mW/cm² from 6 inches away.
         </p>
     </div>
 </div>

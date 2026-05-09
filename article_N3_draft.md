@@ -57,7 +57,7 @@
         <h4 class="font-bold text-bioblue uppercase tracking-widest text-sm">Biohacker Pro-Tip: The D3/K2/Magnesium Triangle</h4>
     </div>
     <p class="text-[15px] opacity-90 text-slate m-0 leading-relaxed">
-        Never take Vitamin D3 in isolation. D3 increases calcium absorption, but without Vitamin K2, that calcium deposits in your arteries instead of your bones. Furthermore, D3 synthesis relies heavily on systemic Magnesium pools. Take all three, or risk biochemical imbalances.
+        Never take Vitamin D3 in isolation. D3 increases calcium absorption, but without Vitamin K2, that calcium deposits in your arteries instead of your bones. Plus, D3 synthesis relies heavily on systemic Magnesium pools. Take all three, or risk biochemical imbalances.
     </p>
 </div>
 
@@ -79,7 +79,7 @@
         </div>
 
         <p class="opacity-80 leading-relaxed m-0 mb-6">
-            Exercise causes acute oxidative stress and inflammation. While that sounds bad, it is precisely this temporary stress signal that tells the body to build stronger muscles and denser mitochondria (hormesis).
+            Exercise causes acute oxidative stress and inflammation. While that sounds bad, it's precisely this temporary stress signal that tells the body to build stronger muscles and denser mitochondria (hormesis).
         </p>
         <p class="opacity-80 leading-relaxed m-0">
             If you take high doses of antioxidants (like high-dose Vitamin C or Ibuprofen) immediately after training, you artificially blunt that stress signal. The body never receives the message to adapt, effectively killing the longevity benefits of your workout.

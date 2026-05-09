@@ -34,7 +34,7 @@
         <li class="flex items-start">
             <span class="text-bioblue mr-3 font-bold shrink-0">2.</span> 
             <div>
-                <strong>Hidden Hunger:</strong> It is possible to be overfed (calorically) but malnourished (micronutrient-wise), leading to brain fog and fatigue.
+                <strong>Hidden Hunger:</strong> it's possible to be overfed (calorically) but malnourished (micronutrient-wise), leading to brain fog and fatigue.
             </div>
         </li>
         <li class="flex items-start">
@@ -47,7 +47,7 @@
 </div>
 
 <p>
-    The classic obsession with calorie counting is a relic of 20th-century nutrition. In the era of functional medicine and 2026 biohacking, we know that the **source** of the calorie matters far more than the number itself. By shifting your focus to nutrient density—the concentration of vitamins, minerals, and phytonutrients per calorie—you unlock the door to genuine cellular optimization.
+    The classic obsession with calorie counting is a relic of 20th-century nutrition. In the era of functional medicine and 2026 biohacking, we know that the **source** of the calorie matters far more than the number itself. By shifting your focus to nutrient density, the concentration of vitamins, minerals, and phytonutrients per calorie, you unlock the door to genuine cellular optimization.
 </p>
 
 <!-- ACTIONABLE PRO-TIP ALERT -->

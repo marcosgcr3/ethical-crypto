@@ -47,7 +47,7 @@
 </div>
 
 <p>
-    By 2026, the obsession with darkness and quiet has been largely superseded by an obsession with thermodynamics. Sleep is essentially a thermal process. Melatonin is often incorrectly labeled the "sleep hormone"; it is actually the "darkness hormone." The real trigger that initiates the cascade into deep, restorative slow-wave sleep is a stark drop in core body temperature.
+    By 2026, the obsession with darkness and quiet has been largely superseded by an obsession with thermodynamics. Sleep is essentially a thermal process. Melatonin is often incorrectly labeled the "sleep hormone"; it's actually the "darkness hormone." The real trigger that initiates the cascade into deep, restorative slow-wave sleep is a stark drop in core body temperature.
 </p>
 
 <!-- ACTIONABLE PRO-TIP ALERT -->

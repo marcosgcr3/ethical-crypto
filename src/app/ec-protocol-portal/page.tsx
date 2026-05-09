@@ -17,7 +17,7 @@ import AdminAnalystPanel from "../../components/AdminAnalystPanel";
 
 import AdminTools from "../../components/AdminTools";
 import DeleteArticleButton from "../../components/DeleteArticleButton";
-import { IconYield, IconSecurity, IconAnalysis, IconHardware } from "../../components/icons/CryptoIcons";
+import { IconYield, IconSecurity, IconAnalysis, IconHardware, IconEye, IconPencil } from "../../components/icons/CryptoIcons";
 
 function getWordCount(html: string) {
   if (!html) return 0;
@@ -74,17 +74,17 @@ export default async function AdminDashboard() {
                 <Link 
                   href={`/${article.category || 'protocols'}/${article.slug || ''}`} 
                   target="_blank"
-                  title="Pulse Check"
+                  title="Preview"
                   className="p-2 text-black/30 hover:text-black hover:bg-black/5 rounded-xl transition-all"
                 >
-                  <IconYield className="w-5 h-5" />
+                  <IconEye className="w-5 h-5" />
                 </Link>
                 <Link 
                   href={`/ec-protocol-portal/editor/${article.id}`} 
-                  title="Modify Logic"
+                  title="Edit"
                   className="p-2 text-black/30 hover:text-black hover:bg-black/5 rounded-xl transition-all"
                 >
-                  <IconAnalysis className="w-5 h-5" />
+                  <IconPencil className="w-5 h-5" />
                 </Link>
                 <DeleteArticleButton articleId={article.id} />
               </div>

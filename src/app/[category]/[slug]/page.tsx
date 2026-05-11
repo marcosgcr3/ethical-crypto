@@ -171,7 +171,7 @@ export default async function ArticlePage({ params }: { params: { category: stri
 
       {/* Header */}
       <header className="mb-16">
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-10 tracking-tighter text-black uppercase">
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black leading-[0.9] mb-10 tracking-tighter text-black uppercase">
             {article.title}<span className="text-zinc-300">.</span>
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-[9px] font-black uppercase tracking-[0.3em] text-black/40">

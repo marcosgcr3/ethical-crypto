@@ -96,7 +96,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                                     <span className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-black tracking-widest border border-black/5 shadow-sm">{category}</span>
                                 </div>
                             </div>
-                            <h3 className="font-heading text-2xl font-black mb-4 text-black group-hover:text-zinc-500 transition-colors leading-[1.1] tracking-tighter uppercase">{article.title}</h3>
+                            <h3 className="font-heading text-xl font-black mb-4 text-black group-hover:text-zinc-500 transition-colors leading-[1.1] tracking-tighter uppercase">{article.title}</h3>
                             <p className="text-zinc-500 text-sm leading-relaxed line-clamp-3 mb-8 font-medium">{article.excerpt}</p>
                             <div className="mt-auto flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-zinc-300">
                                 <div className="flex items-center gap-2">

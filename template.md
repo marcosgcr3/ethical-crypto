@@ -1,127 +1,130 @@
-# Ethical Crypto Article Design System (V2 - Biohacking Inspired)
+# Plantilla Maestra de HTML para Artículos (Ethical Crypto)
 
-This template defines the professional design components used in the Ethical Crypto platform, inspired by the high-impact editorial style of Ethical Biohacking.
+Esta plantilla detalla los fragmentos (snippets) de código HTML exactos que deben usarse para maquetar el interior de los artículos en el panel de administración. Se basa en el sistema de diseño "Serious Light Mode".
 
----
-
-## 1. Hero / Introduction Components
-
-### Option A: High-Impact Bold Quote
-Best for a strong, authoritative start. Uses a thick left border and bold typography.
+## 1. Cita Inicial de Impacto
+Se coloca al principio del artículo para establecer el tono.
 
 ```html
-<p class="not-prose font-black text-black text-2xl md:text-3xl border-l-[6px] border-black pl-8 my-16 italic leading-tight tracking-tighter">
-    "[Impactful quote or summary sentence...]"
+<p class="font-bold text-black text-xl border-l-4 border-black pl-6 my-10 italic">
+    "La frase o cita impactante sobre el mercado o tecnología va aquí."
 </p>
 ```
 
-### Option B: Refined Editorial Quote Card
-Use this for a more traditional journal look with icons and minimal metrics.
+## 2. Tarjeta de Key Takeaways (Resumen de Inteligencia)
+Va justo después de la cita inicial. Utiliza un diseño de cuadrícula limpia.
 
 ```html
-<div class="not-prose mb-16 relative py-12 px-6 text-center max-w-4xl mx-auto border-y border-zinc-100">
-    <!-- Editorial Quote Icon -->
-    <svg class="absolute top-4 left-4 w-12 h-12 text-zinc-100 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V3L22.017 3V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM2.017 21L2.017 18C2.017 16.8954 2.91243 16 4.017 16H7.017C7.56928 16 8.017 15.5523 8.017 15V9C8.017 8.44772 7.56928 8 7.017 8H4.017C2.91243 8 2.017 7.10457 2.017 6V3L10.017 3V15C10.017 18.3137 7.33072 21 4.017 21H2.017Z" />
-    </svg>
-    <div class="space-y-6 relative z-10">
-        <div class="inline-flex items-center gap-3 px-4 py-1.5 bg-black text-white text-[9px] font-black uppercase tracking-[0.4em] rounded-full shadow-lg mx-auto">
-            [CATEGORY TAG]
-        </div>
-        <p class="text-xl md:text-2xl text-zinc-500 font-medium leading-relaxed italic max-w-2xl mx-auto pt-4">
-            "[Impactful quote or summary sentence...]"
-        </p>
-        <div class="flex items-center justify-center gap-8 pt-8">
-            <div class="text-center">
-                <div class="text-xs font-black uppercase tracking-widest text-zinc-300 mb-1">[LABEL 1]</div>
-                <div class="text-sm font-bold uppercase text-black">[VALUE 1]</div>
+<!-- INTEL KEY TAKEAWAYS CARD -->
+<div class="bg-zinc-50 border border-zinc-200 p-8 rounded-2xl mb-12 shadow-sm">
+    <h3 class="font-bold text-lg text-black mb-6 uppercase tracking-widest flex items-center">
+        <svg class="w-6 h-6 text-black mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        Key Intelligence Takeaways
+    </h3>
+    <ul class="list-none space-y-5 text-sm text-black/80 m-0 p-0">
+        <li class="flex items-start">
+            <span class="text-black mr-3 font-black shrink-0">01.</span> 
+            <div>
+                <strong>Punto Clave:</strong> Análisis de la métrica o tendencia.
             </div>
-            <div class="w-px h-8 bg-zinc-100"></div>
-            <div class="text-center">
-                <div class="text-xs font-black uppercase tracking-widest text-zinc-300 mb-1">[LABEL 2]</div>
-                <div class="text-sm font-bold uppercase text-black">[VALUE 2]</div>
+        </li>
+        <li class="flex items-start">
+            <span class="text-black mr-3 font-black shrink-0">02.</span> 
+            <div>
+                <strong>Punto Clave:</strong> Consecuencia directa para el inversor/usuario.
             </div>
+        </li>
+    </ul>
+</div>
+```
+
+## 3. Alertas "Intelligence Pro-Tip"
+Para destacar datos técnicos, consejos de seguridad o "alpha" en medio del contenido.
+
+```html
+<!-- ACTIONABLE PRO-TIP ALERT -->
+<div class="bg-zinc-100 border-l-4 border-black p-8 rounded-r-xl my-12">
+    <div class="flex items-center mb-3">
+        <svg class="w-6 h-6 text-black mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+        <h4 class="font-black text-black uppercase tracking-widest text-xs">Intelligence Hub Pro-Tip</h4>
+    </div>
+    <p class="text-[15px] text-black/70 m-0 leading-relaxed font-medium">
+        Contenido técnico o consejo estratégico de aplicación inmediata.
+    </p>
+</div>
+```
+
+## 4. Tarjetas de Análisis Profundo (Masivas)
+Para desglosar protocolos, activos o conceptos complejos de forma estructurada.
+
+```html
+<div class="space-y-10 my-12">
+    <!-- ANALYSIS CARD -->
+    <div class="bg-white border border-zinc-200 p-10 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="font-extrabold text-2xl text-black mb-6 flex items-center">
+            <div class="bg-black text-white w-10 h-10 rounded-full flex justify-center items-center mr-4 text-xs font-black shrink-0" style="min-width: 40px; min-height: 40px;">01</div> 
+            <h3 class="uppercase tracking-tighter m-0">TÍTULO DEL ANÁLISIS</h3>
         </div>
+        
+        <!-- Comparativa de Riesgo/Beneficio -->
+        <div class="bg-zinc-50 border border-zinc-100 p-4 rounded-xl mb-4 flex justify-between items-center">
+            <span class="text-[10px] uppercase font-black text-black/40">Riesgo Detectado:</span>
+            <span class="text-xs font-bold text-red-500 uppercase">Alta Volatilidad</span>
+        </div>
+        <div class="bg-black/5 border border-black/10 p-4 rounded-xl mb-8 flex justify-between items-center">
+            <span class="text-[10px] uppercase font-black text-black/60">Potencial de Retorno:</span>
+            <span class="text-xs font-black text-black uppercase">Asimétrico Positivo</span>
+        </div>
+
+        <p class="text-black/60 leading-relaxed m-0 mb-6 font-medium">Descripción detallada del activo o protocolo en cuestión.</p>
+        <p class="text-black/60 leading-relaxed m-0 font-medium">Análisis secundario sobre la escalabilidad o seguridad.</p>
     </div>
 </div>
 ```
 
----
-
-## 2. Professional Data Tables
-Clean, modern tables with dark headers and rounded containers.
+## 5. Tablas de Datos de Protocolo
+Para comparar métricas on-chain, TVL, fees o especificaciones técnicas.
 
 ```html
-<div class="not-prose overflow-x-auto rounded-2xl border border-zinc-100 mb-12 shadow-sm">
-    <table class="w-full border-collapse">
-        <thead class="bg-black text-white text-[10px] font-black uppercase tracking-[0.2em]">
+<div class="overflow-x-auto my-12">
+    <table class="min-w-full border border-zinc-200 bg-white rounded-xl overflow-hidden shadow-sm text-sm">
+        <thead class="bg-black text-white">
             <tr>
-                <th class="px-6 py-4 text-left">Feature</th>
-                <th class="px-6 py-4 text-left">[OPTION A]</th>
-                <th class="px-6 py-4 text-left">[OPTION B]</th>
+                <th class="px-6 py-4 text-left font-black uppercase tracking-widest text-[10px]">Métrica</th>
+                <th class="px-6 py-4 text-left font-black uppercase tracking-widest text-[10px]">Valor Actual</th>
+                <th class="px-6 py-4 text-left font-black uppercase tracking-widest text-[10px]">Tendencia</th>
             </tr>
         </thead>
-        <tbody class="text-sm font-medium text-zinc-600">
-            <tr class="border-b border-zinc-50 hover:bg-zinc-50/50 transition-colors">
-                <td class="px-6 py-4 font-black text-black uppercase tracking-tighter">[LABEL]</td>
-                <td class="px-6 py-4">[DATA A]</td>
-                <td class="px-6 py-4">[DATA B]</td>
+        <tbody class="divide-y divide-zinc-100">
+            <tr>
+                <td class="px-6 py-4 font-bold text-black uppercase text-xs">Total Value Locked</td>
+                <td class="px-6 py-4 text-black/70 font-medium">$1.2B</td>
+                <td class="px-6 py-4 text-green-600 font-bold">+12.4%</td>
             </tr>
         </tbody>
     </table>
 </div>
 ```
 
----
-
-## 3. "Pro-Tip" / Insight Cards
-Used for callouts, tips, or important sidebars. Inspired by the thick-border style of Ethical Biohacking.
+## 6. Acordeón de FAQ (Hub de Dudas)
+Para resolver preguntas comunes sobre el tema tratado.
 
 ```html
-<div class="not-prose bg-zinc-50 border-l-4 border-black p-6 rounded-r-2xl my-12 group hover:bg-white hover:shadow-md transition-all">
-    <div class="flex items-start gap-4">
-        <div class="text-black font-black uppercase tracking-widest text-[10px] mt-1 shrink-0">INSIGHT</div>
-        <div class="text-zinc-600 text-sm leading-relaxed">
-            [Insert your pro-tip or important insight here...]
+<div class="space-y-4 my-12">
+    <details class="group border border-zinc-200 rounded-2xl overflow-hidden bg-white">
+        <summary class="flex items-center justify-between p-6 cursor-pointer font-black uppercase tracking-tighter text-sm list-none">
+            ¿Es este protocolo seguro para el largo plazo?
+            <span class="transition-transform group-open:rotate-180 opacity-30">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+            </span>
+        </summary>
+        <div class="p-6 pt-0 text-black/60 text-sm font-medium leading-relaxed border-t border-zinc-50 bg-zinc-50/30">
+            Análisis detallado de la auditoría y la gobernanza del protocolo.
         </div>
-    </div>
+    </details>
 </div>
 ```
 
----
 
-## 4. Feature Highlight Block
-Dark high-impact blocks for core concepts.
-
-```html
-<div class="not-prose space-y-6 mb-16">
-    <h3 class="text-2xl font-black uppercase tracking-tighter border-l-4 border-black pl-4">[SECTION TITLE]</h3>
-    <div class="bg-black text-white p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden group">
-        <div class="relative z-10 space-y-4">
-            <p class="leading-relaxed opacity-60 italic text-lg md:text-xl border-l-2 border-white/20 pl-6">
-                "[Key quote...]"
-            </p>
-            <p class="leading-relaxed opacity-90">
-                [Detailed explanation...]
-            </p>
-        </div>
-    </div>
-</div>
-```
-
----
-
-## 5. FAQ Grid
-Clean, minimalist cards for end-of-article questions.
-
-```html
-<div class="not-prose space-y-8 pt-12 border-t border-zinc-100">
-    <h3 class="text-2xl font-black uppercase tracking-tighter text-center">Frequently Asked Questions</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-zinc-50 border border-zinc-100 p-8 rounded-3xl flex flex-col hover:bg-white hover:shadow-md transition-all">
-            <h4 class="font-black text-black uppercase tracking-tighter text-sm mb-4">[QUESTION?]</h4>
-            <p class="text-zinc-500 text-[13px] leading-relaxed mt-auto">[ANSWER]</p>
-        </div>
-    </div>
-</div>
-```

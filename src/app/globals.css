@@ -43,3 +43,81 @@ body {
 .premium-border {
   border-color: rgba(0, 0, 0, 0.05);
 }
+
+.premium-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+}
+
+.grid-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .grid-comparison {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.premium-container {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 2rem;
+  overflow: hidden;
+  background-color: #FAFAFA;
+}
+
+/* User Requested Teal Style */
+.comparison-table-v4 {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.comparison-table-v4 thead {
+  background-color: #1e6b8a; /* Teal from screenshot */
+  color: #FFFFFF;
+}
+
+.comparison-table-v4 th {
+  padding: 18px 24px;
+  text-align: left;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.comparison-table-v4 td {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #FFFFFF;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.comparison-table-v4 tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table-v4 .feature-label {
+  font-weight: 700;
+  color: #1f2937;
+  width: 25%;
+}

@@ -116,7 +116,7 @@ export default async function Home() {
                               </div>
 
                               <div className="p-10">
-                                <h3 className="font-heading text-2xl font-black mb-4 group-hover:text-zinc-600 transition-colors leading-[1.1] text-black uppercase tracking-tighter">{article.title}</h3>
+                                <h3 className="font-heading text-xl font-black mb-4 group-hover:text-zinc-600 transition-colors leading-[1.1] text-black uppercase tracking-tighter">{article.title}</h3>
                                 <p className="text-sm leading-relaxed line-clamp-3 text-black/50 mb-8 font-medium">{article.excerpt}</p>
                                 <div className="flex items-center text-[10px] font-black tracking-[0.3em] text-black/20 uppercase">
                                     <span>{readTime} MIN READ</span>

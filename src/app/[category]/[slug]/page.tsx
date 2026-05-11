@@ -49,7 +49,7 @@ export async function generateMetadata(
       images: [
         {
           url: article.imageUrl?.startsWith('/images/') 
-            ? `${baseUrl}/api/images/${article.imageUrl.split('/').pop()}` 
+            ? `${baseUrl}/api/images/${article.imageUrl.substring(8)}` 
             : article.imageUrl || `${baseUrl}/images/hero.png`,
           width: 1200,
           height: 630,
@@ -106,7 +106,7 @@ export default async function ArticlePage({ params }: { params: { category: stri
     headline: article.title,
     description: article.excerpt,
     image: article.imageUrl?.startsWith('/images/') 
-      ? `${baseUrl}/api/images/${article.imageUrl.split('/').pop()}` 
+      ? `${baseUrl}/api/images/${article.imageUrl.substring(8)}` 
       : article.imageUrl || `${baseUrl}/images/hero.png`,
     datePublished: article.createdAt.toISOString(),
     dateModified: article.updatedAt.toISOString(),

@@ -174,22 +174,20 @@ export default async function ArticlePage({ params }: { params: { category: stri
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-10 tracking-tighter text-black uppercase">
             {article.title}<span className="text-zinc-300">.</span>
           </h1>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-[10px] font-black uppercase tracking-[0.25em] text-black/40">
-              <Link href="/about" className="flex items-center gap-3 text-black hover:opacity-70 transition-opacity">
-                <div className="w-10 h-10 rounded-xl bg-black text-white p-1 flex items-center justify-center shadow-lg">
-                  <IconNode className="w-5 h-5" />
-                </div>
-                <span>{article.reviewer?.name || 'Satoshi Vanguard'}</span>
+          <div className="flex flex-wrap items-center gap-4 text-[9px] font-black uppercase tracking-[0.3em] text-black/40">
+              <Link href="/about" className="text-black hover:text-zinc-600 transition-colors border-b border-black/10 pb-0.5">
+                {article.reviewer?.name || 'Satoshi Vanguard'}
               </Link>
-              <div className="px-4 py-1.5 bg-black text-white rounded-full text-[9px] font-black tracking-widest">
-                {category}
-              </div>
+              <span className="opacity-10 text-lg font-light">|</span>
+              <span className="text-black/60">{category}</span>
+              <span className="opacity-10 text-lg font-light">|</span>
               <div className="flex items-center gap-2">
-                <IconClock className="w-4 h-4 opacity-30" />
+                <IconClock className="w-3.5 h-3.5 opacity-40" />
                 <span>{calculateReadTime(article.content)} Min Read</span>
               </div>
-              <time className="opacity-50" dateTime={article.createdAt.toISOString()}>
-                {new Date(article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              <span className="opacity-10 text-lg font-light">|</span>
+              <time className="opacity-60" dateTime={article.createdAt.toISOString()}>
+                {new Date(article.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
               </time>
           </div>
       </header>

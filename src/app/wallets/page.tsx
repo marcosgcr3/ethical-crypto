@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { calculateReadTime } from '@/lib/utils';
 import prisma from '@/lib/prisma';
 import { 
   IconSecurity, 
@@ -113,7 +114,7 @@ export default async function WalletsPillarPage() {
                         <h3 className="font-heading text-xl font-black mb-3 text-black group-hover:text-zinc-500 transition-colors leading-tight uppercase tracking-tight">{article.title}</h3>
                         <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2 mb-4 font-medium">{article.excerpt}</p>
                         <div className="flex items-center text-[10px] font-black tracking-widest text-zinc-300">
-                          <span>{Math.max(5, Math.ceil(article.content.split(' ').length / 200))} MIN READ</span>
+                          <span>{calculateReadTime(article.content)} MIN READ</span>
                           <span className="mx-2">•</span>
                           <span>{new Date(article.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                         </div>

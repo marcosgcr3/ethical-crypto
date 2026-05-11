@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import prisma from '@/lib/prisma';
 import Image from 'next/image';
 import Link from 'next/link';
+import { calculateReadTime } from '@/lib/utils';
 import { notFound } from 'next/navigation';
 
 // Revalidate category pages every hour as a fallback to on-demand revalidation
@@ -100,7 +101,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                             <div className="mt-auto flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-zinc-300">
                                 <div className="flex items-center gap-2">
                                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                  <span>{Math.max(5, Math.ceil(article.content.split(' ').length / 200))} MIN READ</span>
+                                  <span>{calculateReadTime(article.content)} MIN READ</span>
                                 </div>
                                 <span>{new Date(article.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                             </div>

@@ -7,6 +7,7 @@ import { getSession } from '@/lib/auth';
 import ReviewerBox from '@/components/ReviewerBox';
 import RelatedArticles from '@/components/RelatedArticles';
 import { IconYield, IconSecurity, IconAnalysis, IconHardware, IconClock, IconArrowUpRight, IconNode } from '@/components/icons/CryptoIcons';
+import { calculateReadTime } from '@/lib/utils';
 
 export async function generateMetadata(
   { params }: { params: Promise<{ category: string, slug: string }> }
@@ -185,7 +186,7 @@ export default async function ArticlePage({ params }: { params: { category: stri
               </div>
               <div className="flex items-center gap-2">
                 <IconClock className="w-4 h-4 opacity-30" />
-                <span>{Math.max(5, Math.ceil(article.content.split(' ').length / 200))} Min Read</span>
+                <span>{calculateReadTime(article.content)} Min Read</span>
               </div>
               <time className="opacity-50" dateTime={article.createdAt.toISOString()}>
                 {new Date(article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}

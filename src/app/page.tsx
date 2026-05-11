@@ -3,6 +3,7 @@ import prisma from '@/lib/prisma';
 import Image from "next/image";
 import Link from "next/link";
 import ScrollButton from '@/components/ScrollButton';
+import { calculateReadTime } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: "Ethical Crypto: Protocol Intelligence & Wealth Engineering",
@@ -89,7 +90,7 @@ export default async function Home() {
                                            category === 'hardware' ? 'wallets' : category;
                     
                     const imgSrc = article.imageUrl;
-                    const readTime = Math.max(5, Math.ceil(article.content.split(' ').length / 200));
+                    const readTime = calculateReadTime(article.content);
                     const dateStr = new Date(article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
                     return (

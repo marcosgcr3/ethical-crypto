@@ -5,6 +5,7 @@ This template defines the professional design components used in the Ethical Cry
 ---
 
 ## 1. Hero / Introduction Cards
+*Note: Do not include the article title in these components, as it is already rendered by the page template.*
 
 ### Option A: Metric Hero Card
 Best for technical articles with key metrics (e.g., Total Staked, Price, APR).
@@ -16,7 +17,6 @@ Best for technical articles with key metrics (e.g., Total Staked, Price, APR).
             <div class="inline-flex items-center gap-2 px-3 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full">
                 ANALYSIS 2026
             </div>
-            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none">[ARTICLE TITLE]</h2>
             <p class="text-zinc-600 leading-relaxed font-medium">
                 [Brief executive summary or introduction text...]
             </p>
@@ -47,13 +47,10 @@ Best for opinion pieces, comparisons, or high-impact editorial reports.
         <div class="inline-flex items-center gap-3 px-4 py-1.5 bg-black text-white text-[9px] font-black uppercase tracking-[0.4em] rounded-full shadow-lg mx-auto">
             NETWORK REPORT
         </div>
-        <h2 class="text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-black">
-            [TITLE A] vs <span class="text-zinc-300 font-serif lowercase italic">[TITLE B]</span>
-        </h2>
-        <p class="text-xl md:text-2xl text-zinc-500 font-medium leading-relaxed italic max-w-2xl mx-auto">
+        <p class="text-xl md:text-2xl text-zinc-500 font-medium leading-relaxed italic max-w-2xl mx-auto pt-4">
             "[Impactful quote or summary sentence...]"
         </p>
-        <div class="flex items-center justify-center gap-8 pt-4">
+        <div class="flex items-center justify-center gap-8 pt-8">
             <div class="text-center">
                 <div class="text-xs font-black uppercase tracking-widest text-zinc-300 mb-1">[LABEL 1]</div>
                 <div class="text-sm font-bold uppercase">[VALUE 1]</div>

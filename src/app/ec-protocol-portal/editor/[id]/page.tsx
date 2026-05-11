@@ -3,7 +3,7 @@ import AdminForm from "@/components/AdminForm";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default async function EditorPage({ params }: { params: { id: string } }) {
+export default async function EditorPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   let article = null;
 

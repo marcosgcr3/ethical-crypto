@@ -171,7 +171,7 @@ export default async function ArticlePage({ params }: { params: { category: stri
 
       {/* Header */}
       <header className="mb-16">
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black leading-[0.9] mb-10 tracking-tighter text-black uppercase">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-10 tracking-tighter text-black uppercase">
             {article.title}<span className="text-zinc-300">.</span>
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-[9px] font-black uppercase tracking-[0.3em] text-black/40">
@@ -212,11 +212,11 @@ export default async function ArticlePage({ params }: { params: { category: stri
               <div 
                   className="prose prose-zinc max-w-none 
                     prose-h2:text-black prose-h2:text-4xl prose-h2:font-black prose-h2:tracking-tight prose-h2:mb-10 prose-h2:mt-20 prose-h2:uppercase
-                    prose-p:text-black/60 prose-p:text-xl prose-p:leading-relaxed prose-p:mb-10 prose-p:font-medium
+                    prose-p:text-black/60 prose-p:text-base prose-p:leading-relaxed prose-p:mb-10 prose-p:font-medium
                     prose-strong:text-black prose-strong:font-bold
                     prose-a:text-black prose-a:underline prose-a:underline-offset-4 hover:prose-a:opacity-70
-                    prose-li:text-black/60 prose-li:mb-4 prose-li:text-lg
-                    prose-table:border-black/5 prose-th:text-black prose-td:text-black/60"
+                    prose-li:text-black/60 prose-li:mb-4 prose-li:text-base
+                    prose-table:border-black/5 prose-th:text-black prose-td:text-black/60 prose-td:text-sm"
                   dangerouslySetInnerHTML={{ __html: article.content }} 
               />
 

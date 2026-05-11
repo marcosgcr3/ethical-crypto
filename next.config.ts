@@ -9,14 +9,19 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://static.cloudflareinsights.com https://*.cloudflareinsights.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://static.cloudflareinsights.com https://*.cloudflareinsights.com https://tpc.googlesyndication.com",
+      "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://static.cloudflareinsights.com https://*.cloudflareinsights.com https://tpc.googlesyndication.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https: http:",
-      "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com",
-      "frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com",
+      "img-src 'self' data: blob: https: http: https://*.google-analytics.com https://*.googlesyndication.com",
+      "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googlesyndication.com https://ep1.adtrafficquality.google https://*.supabase.co",
+      "frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://pagead2.googlesyndication.com https://*.google.com",
+      "media-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'self'",
+      "upgrade-insecure-requests"
     ].join("; "),
   },
 ];

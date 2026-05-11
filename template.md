@@ -4,8 +4,19 @@ This template defines the professional design components used in the Ethical Cry
 
 ---
 
-## 1. Hero / Introduction Card
-Use this for a refined, high-impact editorial look. It focuses on a key quote and minimal metrics.
+## 1. Hero / Introduction Components
+
+### Option A: High-Impact Bold Quote
+Best for a strong, authoritative start. Uses a thick left border and bold typography.
+
+```html
+<p class="not-prose font-black text-black text-2xl md:text-3xl border-l-[6px] border-black pl-8 my-16 italic leading-tight tracking-tighter">
+    "[Impactful quote or summary sentence...]"
+</p>
+```
+
+### Option B: Refined Editorial Quote Card
+Use this for a more traditional journal look with icons and minimal metrics.
 
 ```html
 <div class="not-prose mb-16 relative py-12 px-6 text-center max-w-4xl mx-auto border-y border-zinc-100">

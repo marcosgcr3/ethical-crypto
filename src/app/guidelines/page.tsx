@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Protocol Guidelines & Research Standards | Ethical Crypto',
-  description: 'Our commitment to technical integrity, on-chain evidence, and the secure optimization of digital wealthspan.',
+  title: 'Protocol Guidelines & Research Standards — Master Crypto Research Integrity | Ethical Crypto',
+  description: 'Optimize your strategy for crypto research integrity. Our commitment to technical integrity, on-chain evidence, and the secure optimization of digital wealthspan.',
 };
 
 export default function EthicalGuidelines() {
@@ -16,7 +16,7 @@ export default function EthicalGuidelines() {
       </header>
       <div className="prose prose-zinc max-w-none space-y-6 text-zinc-500 leading-relaxed font-medium">
         <p className="text-lg">
-          The crypto space has unfortunately been saturated by hype-driven marketing, predatory tokenomics, and insecure protocols. <strong>Our platform reclaims this frontier.</strong> We define Ethical Crypto as the systematic, data-driven optimization of digital assets, constrained by technical validity and decentralized security.
+          The crypto space has unfortunately been saturated by hype-driven marketing, predatory tokenomics, and insecure protocols. <strong>Our platform reclaims this frontier with crypto research integrity and absolute technical integrity crypto benchmarks.</strong> We define Ethical Crypto as the systematic, data-driven optimization of digital assets, constrained by technical validity and decentralized security.
         </p>
 
         <p className="font-black uppercase tracking-widest text-[10px] text-zinc-400 border-t border-zinc-100 pt-8">The Core Tenets of Integrity</p>

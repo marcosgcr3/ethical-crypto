@@ -6,8 +6,8 @@ import ScrollButton from '@/components/ScrollButton';
 import { calculateReadTime } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: "Ethical Crypto: Protocol Intelligence & Wealth Engineering",
-  description: "Master the digital frontier with expert cryptocurrency insights. Explore the latest in DeFi, protocol development, and blockchain security.",
+  title: "Ethical Crypto: Protocol Intelligence & Wealth Engineering — Master Crypto Insights | Ethical Crypto",
+  description: "Optimize your strategy for crypto insights. Master the digital frontier with expert cryptocurrency insights. Explore the latest in DeFi, protocol development, and blockchain security.",
   alternates: {
     canonical: 'https://ethical-crypto.com',
   },
@@ -57,7 +57,7 @@ export default async function Home() {
                         <span className="text-zinc-500">Intelligence</span>
                       </h1>
                       <p className="text-base md:text-2xl font-medium leading-relaxed text-black/70 mb-8 md:mb-10 max-w-xl font-sans relative z-10">
-                        The definitive guide to optimizing your digital footprint, securing your assets, and engineering protocol-level growth.
+                        The definitive guide to optimizing your digital footprint, securing your assets, and engineering protocol-level growth. Gain crypto insights with expert cryptocurrency threat intelligence and advanced cryptocurrency intelligence. Explore blockchain security insights to improve your crypto wealth engineering framework.
                       </p>
                       <div className="flex flex-col sm:flex-row gap-5">
                         <ScrollButton targetId="latest-insights" className="bg-black text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-zinc-800 transition-all flex items-center w-fit text-xs shadow-2xl group">

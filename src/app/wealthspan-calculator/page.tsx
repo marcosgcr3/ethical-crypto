@@ -45,7 +45,7 @@ export default function StakingCalculatorPage() {
               Yield <span className="text-zinc-400">Intelligence</span>
             </h1>
             <p className="text-lg md:text-2xl text-black/50 leading-relaxed font-medium max-w-2xl">
-              Quantitative modeling for your <span className="text-black font-bold">digital wealthspan</span>. Project your protocol returns with institutional-grade precision.
+              Quantitative modeling for your <span className="text-black font-bold">digital wealthspan</span>. Project your protocol returns with institutional-grade precision using our staking calculator. As a multi-purpose crypto staking calculator, it allows you to input custom rates, including an eth staking calculator model for Ethereum validators or a crypto yield calculator simulation for DeFi yields.
             </p>
           </div>
 

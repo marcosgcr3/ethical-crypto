@@ -15,8 +15,8 @@ import {
 } from '@/components/icons/CryptoIcons';
 
 export const metadata: Metadata = {
-  title: 'Protocol Intelligence: Technical Audits & Network Analysis | Ethical Crypto',
-  description: 'The definitive library of crypto protocols. Master network topology, smart contract security, and technical decentralization metrics.',
+  title: 'Protocol Intelligence: Technical Audits & Network Analysis — Master Crypto Protocol Intelligence | Ethical Crypto',
+  description: 'Optimize your strategy for crypto protocol intelligence. The definitive library of crypto protocols. Master network topology, smart contract security, and technical decentralization metrics.',
   alternates: {
     canonical: 'https://ethical-crypto.com/protocols',
   },
@@ -81,7 +81,7 @@ export default async function ProtocolsPillarPage() {
               Protocols: <span className="text-zinc-500">Technical</span> Ground Truth
             </h1>
             <p className="text-lg md:text-xl font-medium text-zinc-700 max-w-2xl mx-auto leading-relaxed">
-              Direct audits of the global state machines. Master the code, secure the network, and verify the immutable logic of decentralized systems.
+              Direct audits of the global state machines. Master the code, secure the network, and verify the immutable logic of decentralized systems. Our rigorous crypto protocol audits yield definitive crypto protocol intelligence that is trusted across the Web3 ecosystem.
             </p>
           </div>
       </section>

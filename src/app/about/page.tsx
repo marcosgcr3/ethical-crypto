@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import prisma from '@/lib/prisma';
 
 export const metadata: Metadata = {
-  title: 'About Ethical Crypto | Protocol Intelligence',
-  description: 'The story behind Ethical Crypto. Learn how we blend quantitative analysis with protocol security to optimize digital wealthspan.',
+  title: 'About Ethical Crypto — Master Ethical Crypto Mission | Ethical Crypto',
+  description: 'Optimize your strategy for ethical crypto mission. The story behind Ethical Crypto. Learn how we blend quantitative analysis with protocol security to optimize digital wealthspan.',
 };
 
 export const revalidate = 3600; // Incrementally revalidate every hour
@@ -91,7 +91,7 @@ export default async function AboutUs() {
           </div>
 
           <p>
-            Today, Ethical Crypto serves a community of protocol enthusiasts, security seekers, and decentralized sovereign individuals. We remain 100% independent.
+            Today, learn more about Ethical Crypto and our dedicated team of protocol enthusiasts, security seekers, and decentralized sovereign individuals. Driven by our ethical crypto mission, we remain 100% independent.
           </p>
         </div>
 

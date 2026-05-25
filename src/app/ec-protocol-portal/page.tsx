@@ -109,6 +109,48 @@ export default async function AdminDashboard() {
           <AdminTools articles={articles} />
         </div>
 
+        {/* Analytics & Node Status Counter */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="bg-white p-6 rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-2 mb-2 text-black/40 text-[9px] font-black uppercase tracking-[0.25em]">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Live Node Articles
+            </div>
+            <div className="text-3xl font-black tracking-tighter text-black">
+              {published.length}
+            </div>
+            <div className="text-[10px] font-bold text-black/30 uppercase tracking-widest mt-1">
+              Active and live on Mainnet
+            </div>
+          </div>
+          
+          <div className="bg-white p-6 rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-2 mb-2 text-black/40 text-[9px] font-black uppercase tracking-[0.25em]">
+              <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+              Draft Node Articles
+            </div>
+            <div className="text-3xl font-black tracking-tighter text-black">
+              {drafts.length}
+            </div>
+            <div className="text-[10px] font-bold text-black/30 uppercase tracking-widest mt-1">
+              Pending review and deploy
+            </div>
+          </div>
+          
+          <div className="bg-white p-6 rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-2 mb-2 text-black/40 text-[9px] font-black uppercase tracking-[0.25em]">
+              <span className="w-2 h-2 rounded-full bg-black animate-pulse"></span>
+              Total Intelligence Nodes
+            </div>
+            <div className="text-3xl font-black tracking-tighter text-black">
+              {articles.length}
+            </div>
+            <div className="text-[10px] font-bold text-black/30 uppercase tracking-widest mt-1">
+              Consolidated library corpus
+            </div>
+          </div>
+        </div>
+
         <AdminAnalystPanel reviewer={founder} />
 
         <div className="mb-16">

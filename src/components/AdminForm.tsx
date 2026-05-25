@@ -19,7 +19,7 @@ export default function AdminForm({
     category: article?.category || "protocols",
     excerpt: article?.excerpt || "",
     imageUrl: article?.imageUrl || "",
-    imageGrayscale: article?.imageGrayscale ?? true,
+    imageGrayscale: article?.imageGrayscale ?? false,
     content: article?.content || "",
     published: article?.published ?? true,
     createdAt: article?.createdAt ? new Date(article.createdAt).toISOString().slice(0, 16) : "",
@@ -224,21 +224,7 @@ export default function AdminForm({
                     </div>
                   </div>
                 )}
-                
-                {formData.imageUrl && (
-                  <label className="flex items-center space-x-3 cursor-pointer mt-4 bg-zinc-50 p-3 rounded-lg border border-black/5">
-                    <input 
-                      type="checkbox" 
-                      name="imageGrayscale" 
-                      checked={formData.imageGrayscale} 
-                      onChange={handleCheckboxChange} 
-                      className="w-4 h-4 accent-black rounded border-black/10" 
-                    />
-                    <span className="text-xs font-black uppercase tracking-widest text-black opacity-80">
-                      Apply Grayscale Filter
-                    </span>
-                  </label>
-                )}
+                {/* Grayscale filter option removed at user's request */}
               </div>
             </div>
 

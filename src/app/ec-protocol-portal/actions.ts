@@ -75,7 +75,7 @@ export async function upsertArticle(data: {
           category,
           excerpt,
           imageUrl,
-          imageGrayscale: imageGrayscale ?? true,
+          imageGrayscale: imageGrayscale ?? false,
           content,
           reviewerId: reviewer.id,
           published,

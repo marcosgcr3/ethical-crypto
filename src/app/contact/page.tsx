@@ -30,12 +30,9 @@ export default function ContactUs() {
               </div>
               <div>
                 <h3 className="font-bold uppercase tracking-widest text-[10px] mb-1 text-black">General & Research</h3>
-                <a 
-                  href="mailto:ethicalbiohacking@outlook.es" 
-                  className="opacity-50 text-sm font-bold hover:opacity-100 transition-opacity underline decoration-zinc-300 underline-offset-4"
-                >
-                  ethicalbiohacking@outlook.es
-                </a>
+                <div dangerouslySetInnerHTML={{
+                  __html: `<!--email_off--><a href="mailto:info@ethical-crypto.com" class="opacity-50 text-sm font-bold hover:opacity-100 transition-opacity underline decoration-zinc-300 underline-offset-4">info@ethical-crypto.com</a><!--/email_off-->`
+                }} />
               </div>
             </div>
 

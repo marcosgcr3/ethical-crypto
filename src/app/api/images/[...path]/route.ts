@@ -43,8 +43,9 @@ export async function GET(
     const width = parseInt(searchParams.get("w") || "0", 10);
     const quality = parseInt(searchParams.get("q") || "75", 10);
 
-    // Check if browser supports WebP (default to true for modern clients or when accept header allows image/* or */*)
+    // Check if browser supports AVIF and WebP (default to true for WebP for modern clients or when accept header allows image/* or */*)
     const acceptHeader = request.headers.get("accept") || "";
+    const supportsAvif = acceptHeader.includes("image/avif");
     const supportsWebp = !acceptHeader || 
                          acceptHeader.includes("image/webp") || 
                          acceptHeader.includes("image/*") || 
@@ -75,21 +76,31 @@ export async function GET(
       });
     }
 
-    if (supportsWebp) {
+    if (supportsAvif) {
+      // Compress to AVIF. AVIF quality 50 is visually equivalent to WebP 75 for complex graphics.
+      // If quality is 75, we compress to 50. If custom quality is provided, scale it.
+      const avifQuality = quality <= 75 ? Math.max(quality - 25, 50) : Math.max(quality - 15, 60);
       optimizedBuffer = await pipeline
-        .webp({ quality, effort: 6 })
+        .avif({ quality: avifQuality, effort: 6 })
+        .toBuffer();
+      contentType = "image/avif";
+    } else if (supportsWebp) {
+      // Compress to WebP. WebP quality 65 is visually equivalent to WebP 75 but smaller.
+      const webpQuality = quality <= 75 ? Math.max(quality - 10, 65) : Math.max(quality - 5, 70);
+      optimizedBuffer = await pipeline
+        .webp({ quality: webpQuality, effort: 6 })
         .toBuffer();
       contentType = "image/webp";
     } else {
-      // Fallback for non-webp browsers (e.g., standard JPEG optimization)
+      // Fallback for non-webp/non-avif browsers (e.g., standard PNG/JPEG optimization)
       if (ext === ".png") {
         optimizedBuffer = await pipeline
-          .png({ quality: Math.min(quality, 80), palette: true, compressionLevel: 9 })
+          .png({ quality: Math.min(quality, 75), palette: true, compressionLevel: 9 })
           .toBuffer();
         contentType = "image/png";
       } else {
         optimizedBuffer = await pipeline
-          .jpeg({ quality, mozjpeg: true })
+          .jpeg({ quality: Math.min(quality, 70), mozjpeg: true })
           .toBuffer();
         contentType = "image/jpeg";
       }

@@ -38,14 +38,17 @@ export async function GET(
       ext = path.extname(filename).toLowerCase();
     }
 
-    // Parse query parameters for resizing and quality
+    // Parse query parameters for resizing and quality (Next.js default quality is 75)
     const { searchParams } = new URL(request.url);
     const width = parseInt(searchParams.get("w") || "0", 10);
-    const quality = parseInt(searchParams.get("q") || "80", 10);
+    const quality = parseInt(searchParams.get("q") || "75", 10);
 
-    // Check if browser supports WebP
+    // Check if browser supports WebP (default to true for modern clients or when accept header allows image/* or */*)
     const acceptHeader = request.headers.get("accept") || "";
-    const supportsWebp = acceptHeader.includes("image/webp");
+    const supportsWebp = !acceptHeader || 
+                         acceptHeader.includes("image/webp") || 
+                         acceptHeader.includes("image/*") || 
+                         acceptHeader.includes("*/*");
 
     // Skip optimization for SVGs
     if (ext === ".svg") {
@@ -74,14 +77,14 @@ export async function GET(
 
     if (supportsWebp) {
       optimizedBuffer = await pipeline
-        .webp({ quality, effort: 4 })
+        .webp({ quality, effort: 6 })
         .toBuffer();
       contentType = "image/webp";
     } else {
       // Fallback for non-webp browsers (e.g., standard JPEG optimization)
       if (ext === ".png") {
         optimizedBuffer = await pipeline
-          .png({ quality, palette: true })
+          .png({ quality: Math.min(quality, 80), palette: true, compressionLevel: 9 })
           .toBuffer();
         contentType = "image/png";
       } else {

@@ -81,6 +81,8 @@ export default function RootLayout({
       className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
       <head>
+        <link rel="preconnect" href="https://wwvfyhszgbdffhzlapxz.supabase.co" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

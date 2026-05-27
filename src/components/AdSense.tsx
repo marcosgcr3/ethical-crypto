@@ -30,12 +30,6 @@ export default function AdSense() {
       window.removeEventListener("keydown", handleInteraction);
     };
 
-    // Auto-load after 6.5 seconds if no interaction
-    const timer = setTimeout(() => {
-        setLoadAds(true);
-        removeEventListeners();
-    }, 6500);
-
     // Listen for common user interactions
     window.addEventListener("scroll", handleInteraction, { passive: true });
     window.addEventListener("mousemove", handleInteraction, { passive: true });
@@ -43,7 +37,6 @@ export default function AdSense() {
     window.addEventListener("keydown", handleInteraction, { passive: true });
 
     return () => {
-      clearTimeout(timer);
       removeEventListeners();
     };
   }, []);

@@ -89,9 +89,9 @@ export default function LatestArticles({ initialArticles }: LatestArticlesProps)
                 </div>
 
                 <div className="p-10 pt-0">
-                  <div className="flex items-center text-[10px] font-black tracking-[0.3em] text-black/50 uppercase">
+                  <div className="flex items-center text-[10px] font-black tracking-[0.3em] text-black/60 uppercase">
                     <span>{readTime} MIN READ</span>
-                    <span className="mx-3 opacity-20">•</span>
+                    <span className="mx-3 text-black/40" aria-hidden="true">•</span>
                     <span>{dateStr}</span>
                   </div>
                 </div>

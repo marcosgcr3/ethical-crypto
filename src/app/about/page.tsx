@@ -29,7 +29,7 @@ export default async function AboutUs() {
         <div className="text-center mb-24">
           <h5 className="font-heading font-bold text-black uppercase tracking-widest text-xs mb-4">The Intelligence Directive</h5>
           <h1 className="font-heading text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-10 leading-[0.9]">
-            From Code to <span className="text-zinc-400 underline decoration-black/10">Protocol Intelligence</span>
+            From Code to <span className="text-zinc-600 underline decoration-black/10">Protocol Intelligence</span>
           </h1>
           <div className="prose prose-zinc lg:prose-xl text-zinc-500 font-medium whitespace-pre-wrap leading-relaxed max-w-2xl mx-auto">
             {profile.bio}
@@ -81,11 +81,11 @@ export default async function AboutUs() {
           </p>
           
           <div className="bg-black p-10 md:p-16 rounded-[3rem] text-white overflow-hidden relative group my-16">
-            <h3 className="font-heading font-bold text-zinc-500 uppercase tracking-widest text-xs mb-6">Our Mission</h3>
+            <h3 className="font-heading font-bold text-zinc-400 uppercase tracking-widest text-xs mb-6">Our Mission</h3>
             <p className="text-2xl md:text-4xl font-heading font-extrabold leading-[1.1] mb-8">
               To democratize institutional-grade protocol research and secure digital wealthspan—ethically and for everyone.
             </p>
-            <p className="text-white/40 text-base md:text-lg font-medium">
+            <p className="text-zinc-300 text-base md:text-lg font-medium">
               We provide the framework to help you systematically optimize your digital assets without compromising your security or falling victim to predatory market dynamics.
             </p>
           </div>
@@ -98,15 +98,15 @@ export default async function AboutUs() {
         <div className="mt-24 pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="text-center md:text-left">
                 <div className="text-4xl font-extrabold text-black tracking-tighter">5,000+</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-40">Hours of Protocol Auditing</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-black/60">Hours of Protocol Auditing</div>
             </div>
             <div className="text-center md:text-left">
                 <div className="text-4xl font-extrabold text-black tracking-tighter">100%</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-40">On-Chain Validated Research</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-black/60">On-Chain Validated Research</div>
             </div>
             <div className="text-center md:text-left">
                 <div className="text-4xl font-extrabold text-black tracking-tighter">2026</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-40">Decentralized Vision</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-black/60">Decentralized Vision</div>
             </div>
         </div>
       </div>

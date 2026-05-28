@@ -10,12 +10,12 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 flex flex-col shadow-xl">
         {/* Subtle Top Utility Bar for E-E-A-T Links */}
-        <div className="bg-black text-white/70 py-1.5 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-wider md:tracking-[0.25em] font-bold flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-1 md:gap-6 w-full z-50 text-center border-b border-white/10">
-            <Link href="/contact" className="hover:text-white transition-colors duration-200">Support</Link>
-            <Link href="/about" className="hover:text-white transition-colors duration-200">About Us</Link>
-            <Link href="/guidelines" className="hover:text-white transition-colors duration-200">Research Guidelines</Link>
-            <Link href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
-            <Link href="/disclaimer" className="hover:text-white transition-colors duration-200">Financial Disclaimer</Link>
+        <div className="bg-black text-white/70 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-wider md:tracking-[0.25em] font-bold flex flex-wrap justify-center md:justify-end w-full z-50 text-center border-b border-white/10">
+            <Link href="/contact" className="hover:text-white transition-colors duration-200 py-3 px-4 block">Support</Link>
+            <Link href="/about" className="hover:text-white transition-colors duration-200 py-3 px-4 block">About Us</Link>
+            <Link href="/guidelines" className="hover:text-white transition-colors duration-200 py-3 px-4 block">Research Guidelines</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors duration-200 py-3 px-4 block">Privacy Policy</Link>
+            <Link href="/disclaimer" className="hover:text-white transition-colors duration-200 py-3 px-4 block">Financial Disclaimer</Link>
         </div>
 
         {/* Main Navbar */}
@@ -30,7 +30,7 @@ export default function Navbar() {
                       className="rounded-lg shadow-sm border border-black/5" 
                       priority
                     />
-                    <span className="uppercase text-black">ETHICAL <span className="text-zinc-400">CRYPTO</span></span>
+                    <span className="uppercase text-black">ETHICAL <span className="text-zinc-600">CRYPTO</span></span>
                 </Link>
                 
                 {/* Desktop Navigation */}

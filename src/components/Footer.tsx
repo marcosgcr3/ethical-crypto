@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center overflow-hidden p-1.5 shadow-sm">
                 <Image src="/api/images/supabase/brand-icon-v3.png" alt="Ethical Crypto" width={32} height={32} className="grayscale object-contain" />
               </div>
-              <span>ETHICAL <span className="text-zinc-500">CRYPTO</span></span>
+              <span>ETHICAL <span className="text-zinc-350">CRYPTO</span></span>
             </Link>
             <p className="text-[13px] leading-relaxed text-zinc-300 font-medium max-w-xs">
               Combining the wisdom of institutional capital with the power of modern protocol intelligence to help you achieve peak digital performance ethically and safely.
@@ -74,7 +74,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="flex justify-end pt-8">
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500">
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">
             © 2026 ETHICAL CRYPTO.
           </p>
         </div>

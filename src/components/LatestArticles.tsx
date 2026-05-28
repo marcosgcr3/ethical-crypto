@@ -73,7 +73,7 @@ export default function LatestArticles({ initialArticles }: LatestArticlesProps)
                   )}
                   
                   <div className="absolute top-10 right-10 z-20">
-                    <span className="bg-zinc-50 text-zinc-400 border border-zinc-100 px-3 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest shadow-sm group-hover:border-black/10 group-hover:text-black transition-all">
+                    <span className="bg-zinc-50 text-zinc-600 border border-zinc-100 px-3 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest shadow-sm group-hover:border-black/10 group-hover:text-black transition-all">
                       {displayCategory}
                     </span>
                   </div>
@@ -82,14 +82,14 @@ export default function LatestArticles({ initialArticles }: LatestArticlesProps)
                     <h3 className="font-heading text-xl font-black mb-4 group-hover:text-zinc-600 transition-colors leading-[1.1] text-black uppercase tracking-tighter">
                       {article.title}
                     </h3>
-                    <p className="text-sm leading-relaxed line-clamp-3 text-black/50 mb-6 font-medium">
+                    <p className="text-sm leading-relaxed line-clamp-3 text-black/70 mb-6 font-medium">
                       {article.excerpt}
                     </p>
                   </div>
                 </div>
 
                 <div className="p-10 pt-0">
-                  <div className="flex items-center text-[10px] font-black tracking-[0.3em] text-black/20 uppercase">
+                  <div className="flex items-center text-[10px] font-black tracking-[0.3em] text-black/50 uppercase">
                     <span>{readTime} MIN READ</span>
                     <span className="mx-3 opacity-20">•</span>
                     <span>{dateStr}</span>

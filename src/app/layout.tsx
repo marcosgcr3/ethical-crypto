@@ -10,12 +10,14 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -81,8 +83,8 @@ export default function RootLayout({
       className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
       <head>
-        <link rel="preconnect" href="https://wwvfyhszgbdffhzlapxz.supabase.co" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://wwvfyhszgbdffhzlapxz.supabase.co" crossOrigin="" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

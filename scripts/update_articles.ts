@@ -5,8 +5,8 @@ const prisma = new PrismaClient();
 
 async function main() {
   const articlesToUpdate = [
-    'is-ethereum-still-decentralized-2026',
-    'bitcoin-vs-ethereum'
+    'what-makes-crypto-prices-volatile',
+    'self-custody-crypto-wallets-guide'
   ];
 
   for (const slug of articlesToUpdate) {
@@ -16,7 +16,10 @@ async function main() {
       
       await prisma.article.update({
         where: { slug: slug },
-        data: { content: content }
+        data: { 
+          content: content,
+          published: true
+        }
       });
       console.log(`Updated content for: ${slug}`);
     } else {

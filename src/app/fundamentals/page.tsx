@@ -47,9 +47,9 @@ export default async function FundamentalsPillarPage() {
     <div className="bg-white min-h-screen text-black font-sans selection:bg-black selection:text-white">
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-6 py-12" aria-label="Breadcrumb">
-        <ol className="flex items-center text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
+        <ol className="flex items-center text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600">
           <li><Link href="/" className="hover:text-black transition-colors">Terminal</Link></li>
-          <li className="mx-3 opacity-20">/</li>
+          <li className="mx-3 opacity-20" aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Fundamentals</li>
         </ol>
       </nav>
@@ -67,12 +67,12 @@ export default async function FundamentalsPillarPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-white"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-50 border border-zinc-100 text-zinc-500 rounded-xl text-[10px] font-black uppercase tracking-[0.3em] mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-50 border border-zinc-100 text-zinc-600 rounded-xl text-[10px] font-black uppercase tracking-[0.3em] mb-8 shadow-sm">
               <IconBlockchain className="w-3.5 h-3.5" />
               Network Intelligence v1.4
             </div>
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.1] tracking-tighter uppercase max-w-4xl mx-auto">
-              Fundamentals: <span className="text-zinc-500">Code</span> Logic
+              Fundamentals: <span className="text-zinc-600">Code</span> Logic
             </h1>
             <p className="text-lg md:text-xl font-medium text-zinc-700 max-w-2xl mx-auto leading-relaxed">
               Beyond the noise. Master the crypto protocol fundamentals, protocol tokenomics, and network architecture crypto configurations that define the value capture of the modern crypto protocols ecosystem. Our crypto protocol analysis focuses on true technological value.
@@ -91,7 +91,7 @@ export default async function FundamentalsPillarPage() {
             <section>
               <div className="flex items-center justify-between mb-12">
                 <h2 className="font-heading text-3xl font-black text-black uppercase tracking-tighter">
-                  Fundamental <span className="text-zinc-400">Analysis</span>
+                  Fundamental <span className="text-zinc-600">Analysis</span>
                 </h2>
               </div>
               
@@ -114,9 +114,9 @@ export default async function FundamentalsPillarPage() {
                         )}
                         <h3 className="font-heading text-xl font-black mb-3 text-black group-hover:text-zinc-500 transition-colors leading-tight uppercase tracking-tight">{article.title}</h3>
                         <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2 mb-4 font-medium">{article.excerpt}</p>
-                        <div className="flex items-center text-[10px] font-black tracking-widest text-zinc-300">
+                        <div className="flex items-center text-[10px] font-black tracking-widest text-black/60">
                           <span>{calculateReadTime(article.content)} MIN READ</span>
-                          <span className="mx-2">•</span>
+                          <span className="mx-2 text-black/40" aria-hidden="true">•</span>
                           <span>{new Date(article.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                         </div>
                       </article>
@@ -139,7 +139,7 @@ export default async function FundamentalsPillarPage() {
             {/* FAQ Section */}
             <section id="faq" className="scroll-mt-32">
               <h2 className="font-heading text-3xl md:text-5xl font-black text-black mb-12 uppercase tracking-tighter">
-                Technical <span className="text-zinc-400">FAQ</span>
+                Technical <span className="text-zinc-600">FAQ</span>
               </h2>
               <div className="space-y-4">
                 {faqItems.map((item, idx) => (
@@ -164,19 +164,19 @@ export default async function FundamentalsPillarPage() {
             <div className="bg-zinc-50 p-10 rounded-[3rem] border border-zinc-100 shadow-sm">
               <div className="flex items-center gap-2 mb-8">
                 <IconTarget className="w-5 h-5 text-black" />
-                <h3 className="font-heading text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Network Benchmarks</h3>
+                <h3 className="font-heading text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600">Network Benchmarks</h3>
               </div>
               <ul className="space-y-6 text-xs">
                 <li className="flex justify-between items-center border-b border-zinc-200/50 pb-4">
-                  <span className="font-black uppercase tracking-widest text-zinc-400">Supply Model</span>
+                  <span className="font-black uppercase tracking-widest text-zinc-600">Supply Model</span>
                   <span className="text-black font-black">FIXED / AUDITED</span>
                 </li>
                 <li className="flex justify-between items-center border-b border-zinc-200/50 pb-4">
-                  <span className="font-black uppercase tracking-widest text-zinc-400">Developer Growth</span>
+                  <span className="font-black uppercase tracking-widest text-zinc-600">Developer Growth</span>
                   <span className="text-black font-black">POSITIVE SIGNAL</span>
                 </li>
                 <li className="flex justify-between items-center">
-                  <span className="font-black uppercase tracking-widest text-zinc-400">Value Accrual</span>
+                  <span className="font-black uppercase tracking-widest text-zinc-600">Value Accrual</span>
                   <span className="text-black font-black">DIRECT PROTOCOL</span>
                 </li>
               </ul>

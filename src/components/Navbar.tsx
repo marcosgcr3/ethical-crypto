@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 flex flex-col shadow-xl">
         {/* Subtle Top Utility Bar for E-E-A-T Links */}
-        <div className="bg-black text-white/70 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-wider md:tracking-[0.25em] font-bold flex flex-wrap justify-center md:justify-end w-full z-50 text-center border-b border-white/10">
+        <div className="hidden md:flex bg-black text-white/70 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-wider md:tracking-[0.25em] font-bold flex-wrap justify-center md:justify-end w-full z-50 text-center border-b border-white/10">
             <Link href="/contact" className="hover:text-white transition-colors duration-200 py-3 px-4 block">Support</Link>
             <Link href="/about" className="hover:text-white transition-colors duration-200 py-3 px-4 block">About Us</Link>
             <Link href="/guidelines" className="hover:text-white transition-colors duration-200 py-3 px-4 block">Research Guidelines</Link>

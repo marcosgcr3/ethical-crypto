@@ -23,32 +23,32 @@ export default function Footer() {
           {/* Research / Intelligence */}
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">INTELLIGENCE</h4>
-            <ul className="space-y-4 text-[13px] font-bold text-zinc-100 uppercase tracking-wider">
-              <li><Link href="/protocols" className="hover:text-zinc-400 transition-colors">Protocols</Link></li>
-              <li><Link href="/wealthpumps" className="hover:text-zinc-400 transition-colors">WealthPumps</Link></li>
-              <li><Link href="/fundamentals" className="hover:text-zinc-400 transition-colors">Fundamentals</Link></li>
-              <li><Link href="/security" className="hover:text-zinc-400 transition-colors">Security/Wallets</Link></li>
-              <li><Link href="/wealthspan-calculator" className="hover:text-zinc-400 transition-colors">Calculator</Link></li>
+            <ul className="space-y-1 text-[13px] font-bold text-zinc-100 uppercase tracking-wider">
+              <li><Link href="/protocols" className="hover:text-zinc-400 transition-colors py-2 block">Protocols</Link></li>
+              <li><Link href="/wealthpumps" className="hover:text-zinc-400 transition-colors py-2 block">WealthPumps</Link></li>
+              <li><Link href="/fundamentals" className="hover:text-zinc-400 transition-colors py-2 block">Fundamentals</Link></li>
+              <li><Link href="/security" className="hover:text-zinc-400 transition-colors py-2 block">Security/Wallets</Link></li>
+              <li><Link href="/wealthspan-calculator" className="hover:text-zinc-400 transition-colors py-2 block">Calculator</Link></li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">COMPANY</h4>
-            <ul className="space-y-4 text-[13px] font-bold text-zinc-100 uppercase tracking-wider">
-              <li><Link href="/about" className="hover:text-zinc-400 transition-colors">About Us</Link></li>
-              <li><Link href="/guidelines" className="hover:text-zinc-400 transition-colors">Ethical Guidelines</Link></li>
-              <li><Link href="/contact" className="hover:text-zinc-400 transition-colors">Contact</Link></li>
+            <ul className="space-y-1 text-[13px] font-bold text-zinc-100 uppercase tracking-wider">
+              <li><Link href="/about" className="hover:text-zinc-400 transition-colors py-2 block">About Us</Link></li>
+              <li><Link href="/guidelines" className="hover:text-zinc-400 transition-colors py-2 block">Ethical Guidelines</Link></li>
+              <li><Link href="/contact" className="hover:text-zinc-400 transition-colors py-2 block">Contact</Link></li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">LEGAL</h4>
-            <ul className="space-y-4 text-[13px] font-bold text-zinc-100 uppercase tracking-wider">
-              <li><Link href="/disclaimer" className="hover:text-zinc-400 transition-colors">Financial Disclaimer</Link></li>
-              <li><Link href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-zinc-400 transition-colors">Terms of Service</Link></li>
+            <ul className="space-y-1 text-[13px] font-bold text-zinc-100 uppercase tracking-wider">
+              <li><Link href="/disclaimer" className="hover:text-zinc-400 transition-colors py-2 block">Financial Disclaimer</Link></li>
+              <li><Link href="/privacy" className="hover:text-zinc-400 transition-colors py-2 block">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-zinc-400 transition-colors py-2 block">Terms of Service</Link></li>
             </ul>
           </div>
         </div>

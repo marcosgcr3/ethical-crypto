@@ -38,7 +38,7 @@ export default async function AboutUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
           <div className="space-y-6 text-lg text-zinc-500 leading-relaxed font-medium">
-            <h3 className="font-heading text-2xl font-black text-black uppercase tracking-tighter">The Quant Lab</h3>
+            <h2 className="font-heading text-2xl font-black text-black uppercase tracking-tighter">The Quant Lab</h2>
             <p>
               As protocol architects, we've spent years auditing smart contracts and analyzing tokenomics through the lens of game theory and security. But theoretical analysis alone wasn’t enough. We needed to bridge the gap between whitepaper promises and on-chain reality.
             </p>

@@ -28,6 +28,12 @@ export default function PrivacyPolicy() {
         <p>Like any other website, Ethical Crypto uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
         <p>For more detailed information on the cookies we use, please read our <a href="/cookie-policy" className="text-black underline font-bold">Cookie Policy</a>.</p>
 
+        <h2 className="font-heading text-2xl font-black mt-8 mb-4 text-black uppercase tracking-tight">Google AdSense and Advertising Cookies</h2>
+        <p>We use Google AdSense to serve advertisements on our site. Google, as a third-party vendor, uses cookies to serve ads based on your prior visits to our website or other websites.</p>
+        <p>Google's use of advertising cookies (such as the DoubleClick cookie) enables it and its partners to serve ads to you based on your visit to Ethical Crypto and/or other sites on the Internet.</p>
+        <p>You can opt out of personalized advertising by visiting the <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-black underline font-bold">Google Ads Settings</a> page. Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" className="text-black underline font-bold">www.aboutads.info</a>.</p>
+
+
         <h2 className="font-heading text-2xl font-black mt-8 mb-4 text-black uppercase tracking-tight">GDPR Data Protection Rights</h2>
         <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
         <ul className="list-disc pl-6 space-y-2">

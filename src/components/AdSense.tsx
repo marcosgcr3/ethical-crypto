@@ -1,17 +1,40 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Script from "next/script";
 
 /**
  * AdSense Lazy Loader
- * Delays loading the AdSense script until user interaction or a short delay.
+ * Delays loading the AdSense script until user interaction or a short delay,
+ * AND only loads if the user has accepted cookie consent.
  * This significantly improves initial PageSpeed scores (LCP, TBT, CLS).
  */
 export default function AdSense() {
   const [loadAds, setLoadAds] = useState(false);
+  const [consent, setConsent] = useState<string | null>(null);
 
   useEffect(() => {
+    // Read initial consent from localStorage on client mount
+    if (typeof window !== "undefined") {
+      setConsent(localStorage.getItem("crypto-consent-v2"));
+    }
+
+    const handleConsentUpdate = () => {
+      setConsent(localStorage.getItem("crypto-consent-v2"));
+    };
+
+    window.addEventListener("crypto-consent-updated", handleConsentUpdate);
+    return () => {
+      window.removeEventListener("crypto-consent-updated", handleConsentUpdate);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Only set up interaction listeners if consent is accepted
+    if (consent !== "accepted") {
+      setLoadAds(false);
+      return;
+    }
+
     // If the window is already scrolled, or if we want to force load
     if (window.scrollY > 0) {
       setLoadAds(true);
@@ -39,19 +62,24 @@ export default function AdSense() {
     return () => {
       removeEventListeners();
     };
-  }, []);
+  }, [consent]);
 
   // We return null and inject the script manually in the useEffect 
   // to avoid the 'data-nscript' attribute that AdSense doesn't support.
   useEffect(() => {
-    if (loadAds) {
+    if (loadAds && consent === "accepted") {
+      const scriptId = "adsense-script";
+      // Avoid duplicate injection
+      if (document.getElementById(scriptId)) return;
+
       const script = document.createElement("script");
+      script.id = scriptId;
       script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`;
       script.async = true;
       script.crossOrigin = "anonymous";
       document.head.appendChild(script);
     }
-  }, [loadAds]);
+  }, [loadAds, consent]);
 
   return null;
 }

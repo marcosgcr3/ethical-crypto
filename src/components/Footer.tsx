@@ -48,6 +48,8 @@ export default function Footer() {
             <ul className="space-y-1 text-[13px] font-bold text-zinc-100 uppercase tracking-wider">
               <li><Link href="/disclaimer" className="hover:text-zinc-400 transition-colors py-2 block">Financial Disclaimer</Link></li>
               <li><Link href="/privacy" className="hover:text-zinc-400 transition-colors py-2 block">Privacy Policy</Link></li>
+              <li><Link href="/cookie-policy" className="hover:text-zinc-400 transition-colors py-2 block">Cookie Policy</Link></li>
+              <li><Link href="/affiliate-disclosure" className="hover:text-zinc-400 transition-colors py-2 block">Affiliate Disclosure</Link></li>
               <li><Link href="/terms" className="hover:text-zinc-400 transition-colors py-2 block">Terms of Service</Link></li>
             </ul>
           </div>

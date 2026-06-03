@@ -17,6 +17,10 @@ export default function CookieConsent() {
   const handleConsent = (type: "accepted" | "declined") => {
     localStorage.setItem("crypto-consent-v2", type);
     setShowBanner(false);
+    // Dispatch a custom event to notify other components (Analytics, AdSense, etc.)
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new Event("crypto-consent-updated"));
+    }
   };
 
   if (!showBanner) return null;

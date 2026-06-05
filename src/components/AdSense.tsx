@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * AdSense Lazy Loader
@@ -9,6 +10,7 @@ import { useEffect, useState } from "react";
  * This significantly improves initial PageSpeed scores (LCP, TBT, CLS).
  */
 export default function AdSense() {
+  const pathname = usePathname();
   const [loadAds, setLoadAds] = useState(false);
   const [consent, setConsent] = useState<string | null>(null);
 
@@ -80,6 +82,29 @@ export default function AdSense() {
       document.head.appendChild(script);
     }
   }, [loadAds, consent]);
+
+  useEffect(() => {
+    if (consent !== "accepted" || !loadAds) return;
+
+    const initializeAds = () => {
+      try {
+        const ads = document.querySelectorAll(".adsbygoogle:not([data-adsbygoogle-status])");
+        const adsbygoogle = (window as any).adsbygoogle || [];
+        ads.forEach((ad) => {
+          ad.setAttribute("data-adsbygoogle-status", "reserved");
+          adsbygoogle.push({});
+        });
+      } catch (e) {
+        console.error("AdSense auto-push failed", e);
+      }
+    };
+
+    // Run immediately and after a short timeout to handle page render delay
+    initializeAds();
+    const timer = setTimeout(initializeAds, 500);
+
+    return () => clearTimeout(timer);
+  }, [pathname, consent, loadAds]);
 
   return null;
 }

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import AdSense from "@/components/AdSense";
+import StickyRails from "@/components/StickyRails";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
@@ -117,6 +118,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieConsent />
+        <StickyRails />
         <AdSense />
         <GoogleAnalytics gaId="G-M1N6YP33V7" />
       </body>

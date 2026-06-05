@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { calculateReadTime } from '@/lib/utils';
 import { notFound } from 'next/navigation';
+import AdBanner from '@/components/AdBanner';
 
 // Revalidate category pages every hour as a fallback to on-demand revalidation
 export const revalidate = 3600;
@@ -49,6 +50,17 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     orderBy: { createdAt: 'desc' }
   });
 
+  // Dynamically insert square AdSense blocks (every 3 articles, up to 3 ads max)
+  const itemsToRender = [];
+  let adCount = 0;
+  for (let i = 0; i < articles.length; i++) {
+    itemsToRender.push(articles[i]);
+    if ((i + 1) % 3 === 0 && adCount < 3) {
+      itemsToRender.push({ id: `adsense-category-grid-${adCount}`, isAd: true });
+      adCount++;
+    }
+  }
+
   const categoryLabels: Record<string, string> = {
     wealthspan: 'Wealthspan Engineering',
     fundamentals: 'Protocol Fundamentals',
@@ -85,29 +97,39 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
             </div>
         ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                {articles.map((article) => (
-                    <Link key={article.id} href={`/${category}/${article.slug}`} className="group relative block cursor-pointer">
-                        <article className="h-full flex flex-col">
-                            <div className="relative overflow-hidden rounded-[2.5rem] mb-8 bg-zinc-50 h-72 border border-zinc-100 shadow-sm transition-all group-hover:border-black/10 group-hover:shadow-2xl">
-                                {article.imageUrl && (
-                                    <Image src={article.imageUrl} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
-                                )}
-                                <div className="absolute top-8 left-8">
-                                    <span className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-black tracking-widest border border-black/5 shadow-sm">{category}</span>
-                                </div>
+                {itemsToRender.map((item) => {
+                    if ("isAd" in item) {
+                        return (
+                            <div key={item.id} className="col-span-1 h-full min-h-[350px]">
+                                <AdBanner format="square" />
                             </div>
-                            <h3 className="font-heading text-xl font-black mb-4 text-black group-hover:text-zinc-500 transition-colors leading-[1.1] tracking-tighter uppercase">{article.title}</h3>
-                            <p className="text-zinc-500 text-sm leading-relaxed line-clamp-3 mb-8 font-medium">{article.excerpt}</p>
-                            <div className="mt-auto flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-zinc-300">
-                                <div className="flex items-center gap-2">
-                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                  <span>{calculateReadTime(article.content)} MIN READ</span>
+                        );
+                    }
+                    const article = item;
+                    return (
+                        <Link key={article.id} href={`/${category}/${article.slug}`} className="group relative block cursor-pointer">
+                            <article className="h-full flex flex-col">
+                                <div className="relative overflow-hidden rounded-[2.5rem] mb-8 bg-zinc-50 h-72 border border-zinc-100 shadow-sm transition-all group-hover:border-black/10 group-hover:shadow-2xl">
+                                    {article.imageUrl && (
+                                        <Image src={article.imageUrl} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
+                                    )}
+                                    <div className="absolute top-8 left-8">
+                                        <span className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase text-black tracking-widest border border-black/5 shadow-sm">{category}</span>
+                                    </div>
                                 </div>
-                                <span>{new Date(article.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                            </div>
-                        </article>
-                    </Link>
-                ))}
+                                <h3 className="font-heading text-xl font-black mb-4 text-black group-hover:text-zinc-500 transition-colors leading-[1.1] tracking-tighter uppercase">{article.title}</h3>
+                                <p className="text-zinc-500 text-sm leading-relaxed line-clamp-3 mb-8 font-medium">{article.excerpt}</p>
+                                <div className="mt-auto flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-zinc-300">
+                                    <div className="flex items-center gap-2">
+                                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                      <span>{calculateReadTime(article.content)} MIN READ</span>
+                                    </div>
+                                    <span>{new Date(article.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                </div>
+                            </article>
+                        </Link>
+                    );
+                })}
             </div>
         )}
     </div>

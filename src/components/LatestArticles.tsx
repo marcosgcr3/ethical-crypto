@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { calculateReadTime } from '@/lib/utils';
+import AdBanner from './AdBanner';
 
 interface Article {
   id: string;
@@ -30,10 +31,30 @@ export default function LatestArticles({ initialArticles }: LatestArticlesProps)
   const displayedArticles = initialArticles.slice(0, visibleCount);
   const hasMore = visibleCount < initialArticles.length;
 
+  // Dynamically insert square AdSense blocks (every 3 articles, up to 3 ads max)
+  const itemsToRender = [];
+  let adCount = 0;
+  for (let i = 0; i < displayedArticles.length; i++) {
+    itemsToRender.push(displayedArticles[i]);
+    if ((i + 1) % 3 === 0 && adCount < 3) {
+      itemsToRender.push({ id: `adsense-home-grid-${adCount}`, isAd: true });
+      adCount++;
+    }
+  }
+
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-        {displayedArticles.map((article, index) => {
+        {itemsToRender.map((item, index) => {
+          if ("isAd" in item) {
+            return (
+              <div key={item.id} className="col-span-1 h-full min-h-[350px]">
+                <AdBanner format="square" />
+              </div>
+            );
+          }
+
+          const article = item as Article;
           const category = article.category ?? 'protocols';
           const displayCategory = category === 'wealthspan' ? 'wealthpumps' : 
                                  category === 'crypto' ? 'protocols' : 

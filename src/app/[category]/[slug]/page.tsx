@@ -8,6 +8,9 @@ import ReviewerBox from '@/components/ReviewerBox';
 import RelatedArticles from '@/components/RelatedArticles';
 import { IconYield, IconSecurity, IconAnalysis, IconHardware, IconClock, IconArrowUpRight, IconNode } from '@/components/icons/CryptoIcons';
 import { calculateReadTime } from '@/lib/utils';
+import AdBanner from '@/components/AdBanner';
+import * as cheerio from 'cheerio';
+
 
 export async function generateMetadata(
   { params }: { params: Promise<{ category: string, slug: string }> }
@@ -64,6 +67,59 @@ export async function generateMetadata(
       images: [article.imageUrl || `${baseUrl}/images/hero.png`],
     },
   };
+}
+
+function injectInArticleAds(content: string): string {
+  if (process.env.NEXT_PUBLIC_DISABLE_ADS === "true") {
+    return content;
+  }
+
+  try {
+    const $ = cheerio.load(content, null, false);
+    const container = $('body');
+
+    // Filter top-level blocks of the HTML
+    const topLevelBlocks = container.children().filter((_i: number, el: any) => {
+      const tagName = el.tagName?.toLowerCase();
+      return ['p', 'h2', 'h3', 'ul', 'ol', 'blockquote', 'table', 'div', 'section'].includes(tagName);
+    });
+
+    const AD_SLOTS = [
+      { slot: "4050891498", format: "auto" }, // horizontal
+      { slot: "1477800098", format: "auto" }, // square
+      { slot: "4050891498", format: "auto" }, // horizontal
+      { slot: "1477800098", format: "auto" }, // square
+    ];
+
+    let adIndex = 0;
+    const frequency = 3; // frequency of injection (every 3 blocks)
+
+    topLevelBlocks.each((i: number, el: any) => {
+      const blockCount = i + 1;
+      if (blockCount % frequency === 0 && adIndex < AD_SLOTS.length) {
+        const adConfig = AD_SLOTS[adIndex++];
+        const adHtml = `
+          <div class="w-full overflow-hidden flex flex-col items-center justify-center my-8 adsense-injected" data-block="${blockCount}">
+            <span class="text-[9px] text-black/30 font-black uppercase tracking-[0.2em] mb-3 select-none">Advertisement</span>
+            <div class="w-full flex justify-center bg-zinc-50/50 p-4 rounded-[2.5rem] border border-black/5 min-h-[100px]">
+              <ins class="adsbygoogle"
+                   style="display:block; min-height: 100px; width: 100%;"
+                   data-ad-format="${adConfig.format}"
+                   data-ad-client="ca-pub-8889459576747982"
+                   data-ad-slot="${adConfig.slot}"
+                   data-full-width-responsive="true"></ins>
+            </div>
+          </div>
+        `;
+        $(el).after(adHtml);
+      }
+    });
+
+    return $.html();
+  } catch (err) {
+    console.error("Cheerio ad injection failed", err);
+    return content;
+  }
 }
 
 export const revalidate = 0;
@@ -159,7 +215,7 @@ export default async function ArticlePage({ params }: { params: { category: stri
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       
-      <article className="container mx-auto px-6 max-w-5xl py-20">
+      <article className="container mx-auto px-6 max-w-6xl py-20">
       {/* Breadcrumbs */}
       <nav className="flex items-center text-[10px] font-black uppercase tracking-[0.3em] text-black/30 mb-12">
           <Link href="/" className="hover:text-black transition-opacity">Terminal</Link>
@@ -207,8 +263,10 @@ export default async function ArticlePage({ params }: { params: { category: stri
           </div>
       )}
 
-      {/* Content Injection Area */}
-          <div className="max-w-4xl mx-auto">
+      {/* Content Injection Area with responsive sidebar on desktop */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+          {/* Main Column */}
+          <div className="lg:col-span-8 w-full">
               <div 
                   className="prose prose-zinc max-w-none 
                     prose-h2:text-black prose-h2:text-4xl prose-h2:font-black prose-h2:tracking-tight prose-h2:mb-10 prose-h2:mt-20 prose-h2:uppercase
@@ -217,27 +275,36 @@ export default async function ArticlePage({ params }: { params: { category: stri
                     prose-a:text-black prose-a:underline prose-a:underline-offset-4 hover:prose-a:opacity-70
                     prose-li:text-black/60 prose-li:mb-4 prose-li:text-base
                     prose-table:border-black/5 prose-th:text-black prose-td:text-black/60 prose-td:text-sm"
-                  dangerouslySetInnerHTML={{ __html: article.content }} 
+                  dangerouslySetInnerHTML={{ __html: injectInArticleAds(article.content) }} 
               />
+
+              {/* Horizontal Ad in article footer */}
+              <AdBanner format="horizontal" className="my-8" />
 
               {/* Author / Reviewer Box */}
               {article.reviewer && (
                 <ReviewerBox reviewer={article.reviewer} />
               )}
-              
-              {/* Related Articles Matrix */}
-              <RelatedArticles articles={relatedArticles} />
-              
-              <div className="mt-20 text-center pb-20">
-                    <Link 
-                      href="/" 
-                      className="inline-flex items-center gap-4 text-black font-black px-12 py-5 rounded-2xl bg-zinc-50 hover:bg-zinc-100 transition-all text-xs uppercase tracking-[0.2em] border border-black/5 group"
-                    >
-                     <IconArrowUpRight className="w-4 h-4 -rotate-[135deg] group-hover:-translate-x-1 transition-transform" />
-                     Return to Intelligence Feed
-                   </Link>
-              </div>
           </div>
+
+          {/* Sticky Sidebar with Vertical Ad */}
+          <aside className="hidden lg:block lg:col-span-4 sticky top-36 h-fit">
+              <AdBanner format="vertical" />
+          </aside>
+      </div>
+
+      {/* Related Articles Matrix */}
+      <RelatedArticles articles={relatedArticles} />
+      
+      <div className="mt-20 text-center pb-20">
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-4 text-black font-black px-12 py-5 rounded-2xl bg-zinc-50 hover:bg-zinc-100 transition-all text-xs uppercase tracking-[0.2em] border border-black/5 group"
+            >
+             <IconArrowUpRight className="w-4 h-4 -rotate-[135deg] group-hover:-translate-x-1 transition-transform" />
+             Return to Intelligence Feed
+           </Link>
+      </div>
       </article>
     </div>
   );

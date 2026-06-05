@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CookieConsent from "@/components/CookieConsent";
 import AdSense from "@/components/AdSense";
 import StickyRails from "@/components/StickyRails";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
@@ -117,7 +116,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <CookieConsent />
         <StickyRails />
         <AdSense />
         <GoogleAnalytics gaId="G-M1N6YP33V7" />

@@ -5,38 +5,14 @@ import { usePathname } from "next/navigation";
 
 /**
  * AdSense Lazy Loader
- * Delays loading the AdSense script until user interaction or a short delay,
- * AND only loads if the user has accepted cookie consent.
+ * Delays loading the AdSense script until user interaction or a short delay.
  * This significantly improves initial PageSpeed scores (LCP, TBT, CLS).
  */
 export default function AdSense() {
   const pathname = usePathname();
   const [loadAds, setLoadAds] = useState(false);
-  const [consent, setConsent] = useState<string | null>(null);
 
   useEffect(() => {
-    // Read initial consent from localStorage on client mount
-    if (typeof window !== "undefined") {
-      setConsent(localStorage.getItem("crypto-consent-v2"));
-    }
-
-    const handleConsentUpdate = () => {
-      setConsent(localStorage.getItem("crypto-consent-v2"));
-    };
-
-    window.addEventListener("crypto-consent-updated", handleConsentUpdate);
-    return () => {
-      window.removeEventListener("crypto-consent-updated", handleConsentUpdate);
-    };
-  }, []);
-
-  useEffect(() => {
-    // Only set up interaction listeners if consent is accepted
-    if (consent !== "accepted") {
-      setLoadAds(false);
-      return;
-    }
-
     // If the window is already scrolled, or if we want to force load
     if (window.scrollY > 0) {
       setLoadAds(true);
@@ -61,15 +37,23 @@ export default function AdSense() {
     window.addEventListener("touchstart", handleInteraction, { passive: true });
     window.addEventListener("keydown", handleInteraction, { passive: true });
 
+    // Set a safety timeout of 3 seconds to ensure Google's CMP displays
+    // even if the user doesn't immediately interact with the page.
+    const safetyTimer = setTimeout(() => {
+      setLoadAds(true);
+      removeEventListeners();
+    }, 3000);
+
     return () => {
       removeEventListeners();
+      clearTimeout(safetyTimer);
     };
-  }, [consent]);
+  }, []);
 
   // We return null and inject the script manually in the useEffect 
   // to avoid the 'data-nscript' attribute that AdSense doesn't support.
   useEffect(() => {
-    if (loadAds && consent === "accepted") {
+    if (loadAds) {
       const scriptId = "adsense-script";
       // Avoid duplicate injection
       if (document.getElementById(scriptId)) return;
@@ -81,10 +65,10 @@ export default function AdSense() {
       script.crossOrigin = "anonymous";
       document.head.appendChild(script);
     }
-  }, [loadAds, consent]);
+  }, [loadAds]);
 
   useEffect(() => {
-    if (consent !== "accepted" || !loadAds) return;
+    if (!loadAds) return;
 
     const initializeAds = () => {
       try {
@@ -104,7 +88,7 @@ export default function AdSense() {
     const timer = setTimeout(initializeAds, 500);
 
     return () => clearTimeout(timer);
-  }, [pathname, consent, loadAds]);
+  }, [pathname, loadAds]);
 
   return null;
 }

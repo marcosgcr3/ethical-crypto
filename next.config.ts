@@ -9,8 +9,8 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://static.cloudflareinsights.com https://*.cloudflareinsights.com https://tpc.googlesyndication.com",
-      "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://static.cloudflareinsights.com https://*.cloudflareinsights.com https://tpc.googlesyndication.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://static.cloudflareinsights.com https://*.cloudflareinsights.com https://tpc.googlesyndication.com https://fundingchoicesmessages.google.com",
+      "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://static.cloudflareinsights.com https://*.cloudflareinsights.com https://tpc.googlesyndication.com https://fundingchoicesmessages.google.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https: http: https://*.google-analytics.com https://*.googlesyndication.com",

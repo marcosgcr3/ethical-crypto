@@ -85,10 +85,10 @@ function injectInArticleAds(content: string): string {
     });
 
     const AD_SLOTS = [
-      { slot: "4050891498", format: "auto" }, // horizontal
-      { slot: "1477800098", format: "auto" }, // square
-      { slot: "4050891498", format: "auto" }, // horizontal
-      { slot: "1477800098", format: "auto" }, // square
+      { slot: "2997353521", format: "fluid", layout: "in-article" },
+      { slot: "2997353521", format: "fluid", layout: "in-article" },
+      { slot: "2997353521", format: "fluid", layout: "in-article" },
+      { slot: "2997353521", format: "fluid", layout: "in-article" },
     ];
 
     let adIndex = 0;
@@ -101,13 +101,13 @@ function injectInArticleAds(content: string): string {
         const adHtml = `
           <div class="w-full overflow-hidden flex flex-col items-center justify-center my-8 adsense-injected" data-block="${blockCount}">
             <span class="text-[9px] text-black/30 font-black uppercase tracking-[0.2em] mb-3 select-none">Advertisement</span>
-            <div class="w-full flex justify-center bg-zinc-50/50 p-4 rounded-[2.5rem] border border-black/5 min-h-[100px]">
+            <div class="w-full flex justify-center bg-zinc-50/50 p-4 rounded-[2.5rem] border border-black/5">
               <ins class="adsbygoogle"
-                   style="display:block; min-height: 100px; width: 100%;"
+                   style="display:block; text-align:center;"
+                   data-ad-layout="${adConfig.layout}"
                    data-ad-format="${adConfig.format}"
-                   data-ad-client="ca-pub-8889459576747982"
-                   data-ad-slot="${adConfig.slot}"
-                   data-full-width-responsive="true"></ins>
+                   data-ad-client="${process.env.NEXT_PUBLIC_ADSENSE_ID || 'ca-pub-8889459576747982'}"
+                   data-ad-slot="${adConfig.slot}"></ins>
             </div>
           </div>
         `;

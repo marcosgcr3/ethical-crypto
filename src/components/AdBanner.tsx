@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 interface AdBannerProps {
-  format: "vertical" | "horizontal" | "square";
+  format: "vertical" | "horizontal" | "square" | "in-article";
   className?: string;
 }
 
@@ -11,6 +11,7 @@ const SLOT_IDS = {
   vertical: "3186334132",
   horizontal: "4050891498",
   square: "1477800098",
+  "in-article": "2997353521",
 };
 
 export default function AdBanner({ format, className }: AdBannerProps) {
@@ -74,6 +75,10 @@ export default function AdBanner({ format, className }: AdBannerProps) {
     containerClasses = "w-full h-full overflow-hidden flex flex-col items-center justify-center";
     wrapperClasses = "w-full h-full flex items-center justify-center bg-zinc-50/50 p-6 rounded-[3rem] border border-black/5 min-h-[300px] hover:border-zinc-200 hover:shadow-2xl transition-all duration-500";
     style = { display: "block", width: "100%", height: "100%", minHeight: "250px" };
+  } else if (format === "in-article") {
+    containerClasses = "w-full overflow-hidden flex flex-col items-center justify-center my-8";
+    wrapperClasses = "w-full flex justify-center bg-zinc-50/50 p-4 rounded-[2.5rem] border border-black/5";
+    style = { display: "block", textAlign: "center" };
   }
 
   return (
@@ -86,10 +91,11 @@ export default function AdBanner({ format, className }: AdBannerProps) {
           ref={adRef}
           className="adsbygoogle"
           style={style}
-          data-ad-client="ca-pub-8889459576747982"
+          data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_ID || "ca-pub-8889459576747982"}
           data-ad-slot={slotId}
-          data-ad-format={format === "square" ? "rectangle" : "auto"}
-          data-full-width-responsive="true"
+          data-ad-format={format === "in-article" ? "fluid" : (format === "square" ? "rectangle" : "auto")}
+          {...(format === "in-article" && { "data-ad-layout": "in-article" })}
+          {...(format !== "in-article" && { "data-full-width-responsive": "true" })}
         />
       </div>
     </div>

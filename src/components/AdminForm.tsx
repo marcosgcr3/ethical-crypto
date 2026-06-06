@@ -122,6 +122,9 @@ export default function AdminForm({
           router.push("/ec-protocol-portal");
           router.refresh();
         }, 1500);
+      } else {
+        setError(res.error || "Failed to save article.");
+        setLoading(false);
       }
     } catch (err: any) {
       setError(err.message || "Failed to save article.");

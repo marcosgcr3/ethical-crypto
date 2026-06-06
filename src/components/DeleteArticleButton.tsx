@@ -1,22 +1,24 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { deleteArticle } from "../app/ec-protocol-portal/actions";
+import { useRouter } from "next/navigation";
+import { deleteArticle } from "@/app/ec-protocol-portal/actions";
 
 interface DeleteArticleButtonProps {
   articleId: string;
 }
 
 export default function DeleteArticleButton({ articleId }: DeleteArticleButtonProps) {
+  const router = useRouter();
   const [isConfirming, setIsConfirming] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  // Auto-reset confirmation after 3 seconds
+  // Auto-reset confirmation after 6 seconds
   useEffect(() => {
     if (isConfirming) {
       const timer = setTimeout(() => {
         setIsConfirming(false);
-      }, 3000);
+      }, 6000);
       return () => clearTimeout(timer);
     }
   }, [isConfirming]);
@@ -29,7 +31,16 @@ export default function DeleteArticleButton({ articleId }: DeleteArticleButtonPr
 
     setIsDeleting(true);
     try {
-      await deleteArticle(articleId);
+      const res = await deleteArticle(articleId);
+      if (res?.success) {
+        setIsDeleting(false);
+        setIsConfirming(false);
+        router.refresh();
+      } else {
+        console.error("Failed to delete article: server returned success false");
+        setIsDeleting(false);
+        setIsConfirming(false);
+      }
     } catch (error) {
       console.error("Failed to delete article:", error);
       setIsDeleting(false);
@@ -51,3 +62,4 @@ export default function DeleteArticleButton({ articleId }: DeleteArticleButtonPr
     </button>
   );
 }
+

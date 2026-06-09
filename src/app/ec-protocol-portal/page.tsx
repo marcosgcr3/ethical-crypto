@@ -54,8 +54,21 @@ export default async function AdminDashboard() {
         ) : (
           list.map((article) => (
               <li key={article.id} className="grid grid-cols-12 gap-4 px-8 py-6 items-center hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-black">
-                <div className="col-span-6 md:col-span-3 font-bold text-sm text-black line-clamp-1" title={article.title}>
-                  {article.title}
+                <div className="col-span-6 md:col-span-3 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-zinc-150 border border-black/5 flex-shrink-0 relative flex items-center justify-center">
+                    {article.imageUrl ? (
+                      <img 
+                        src={article.imageUrl} 
+                        alt="" 
+                        className={`w-full h-full object-cover ${article.imageGrayscale ? 'grayscale' : ''}`}
+                      />
+                    ) : (
+                      <span className="text-[9px] font-black tracking-wider text-black/30">N/A</span>
+                    )}
+                  </div>
+                  <div className="font-bold text-sm text-black line-clamp-2" title={article.title}>
+                    {article.title}
+                  </div>
                 </div>
                 <div className="col-span-4 md:col-span-2">
                   <span className="text-[9px] font-black uppercase tracking-widest text-black bg-black/5 px-2 py-1 rounded-full border border-black/10">

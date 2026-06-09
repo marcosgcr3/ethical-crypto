@@ -60,7 +60,7 @@ export default async function AdminDashboard() {
                       <img 
                         src={article.imageUrl} 
                         alt="" 
-                        className={`w-full h-full object-cover ${article.imageGrayscale ? 'grayscale' : ''}`}
+                        className="w-full h-full object-cover"
                       />
                     ) : (
                       <span className="text-[9px] font-black tracking-wider text-black/30">N/A</span>

@@ -215,7 +215,7 @@ export default async function ArticlePage({ params }: { params: { category: stri
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       
-      <article className="container mx-auto px-6 max-w-6xl py-20">
+      <article className="container mx-auto px-6 max-w-4xl py-20">
       {/* Breadcrumbs */}
       <nav className="flex items-center text-[10px] font-black uppercase tracking-[0.3em] text-black/30 mb-12">
           <Link href="/" className="hover:text-black transition-opacity">Terminal</Link>
@@ -258,39 +258,31 @@ export default async function ArticlePage({ params }: { params: { category: stri
                 className="object-cover transition-all duration-700" 
                 priority 
                 fetchPriority="high"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
+                sizes="(max-width: 768px) 100vw, 896px"
               />
           </div>
       )}
 
-      {/* Content Injection Area with responsive sidebar on desktop */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
-          {/* Main Column */}
-          <div className="lg:col-span-8 w-full">
-              <div 
-                  className="prose prose-zinc max-w-none 
-                    prose-h2:text-black prose-h2:text-4xl prose-h2:font-black prose-h2:tracking-tight prose-h2:mb-10 prose-h2:mt-20 prose-h2:uppercase
-                    prose-p:text-black/60 prose-p:text-base prose-p:leading-relaxed prose-p:mb-10 prose-p:font-medium
-                    prose-strong:text-black prose-strong:font-bold
-                    prose-a:text-black prose-a:underline prose-a:underline-offset-4 hover:prose-a:opacity-70
-                    prose-li:text-black/60 prose-li:mb-4 prose-li:text-base
-                    prose-table:border-black/5 prose-th:text-black prose-td:text-black/60 prose-td:text-sm"
-                  dangerouslySetInnerHTML={{ __html: injectInArticleAds(article.content) }} 
-              />
+      {/* Content Injection Area */}
+      <div className="w-full mb-20">
+          <div 
+              className="prose prose-zinc max-w-none 
+                prose-h2:text-black prose-h2:text-4xl prose-h2:font-black prose-h2:tracking-tight prose-h2:mb-10 prose-h2:mt-20 prose-h2:uppercase
+                prose-p:text-black/60 prose-p:text-base prose-p:leading-relaxed prose-p:mb-10 prose-p:font-medium
+                prose-strong:text-black prose-strong:font-bold
+                prose-a:text-black prose-a:underline prose-a:underline-offset-4 hover:prose-a:opacity-70
+                prose-li:text-black/60 prose-li:mb-4 prose-li:text-base
+                prose-table:border-black/5 prose-th:text-black prose-td:text-black/60 prose-td:text-sm"
+              dangerouslySetInnerHTML={{ __html: injectInArticleAds(article.content) }} 
+          />
 
-              {/* Horizontal Ad in article footer */}
-              <AdBanner format="horizontal" className="my-8" />
+          {/* Horizontal Ad in article footer */}
+          <AdBanner format="horizontal" className="my-8" />
 
-              {/* Author / Reviewer Box */}
-              {article.reviewer && (
-                <ReviewerBox reviewer={article.reviewer} />
-              )}
-          </div>
-
-          {/* Sticky Sidebar with Vertical Ad */}
-          <aside className="hidden lg:block lg:col-span-4 sticky top-36 h-fit">
-              <AdBanner format="vertical" />
-          </aside>
+          {/* Author / Reviewer Box */}
+          {article.reviewer && (
+            <ReviewerBox reviewer={article.reviewer} />
+          )}
       </div>
 
       {/* Related Articles Matrix */}
